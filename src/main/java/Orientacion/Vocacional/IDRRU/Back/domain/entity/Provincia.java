@@ -3,6 +3,7 @@ package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
