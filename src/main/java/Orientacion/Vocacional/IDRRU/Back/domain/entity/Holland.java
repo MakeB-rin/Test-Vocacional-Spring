@@ -1,4 +1,26 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+
+@Entity
 public class Holland {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_holland")
+    private Integer idHolland;
+
+    private Integer personalidad;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "holland")
+    private List<Resultado> resultados;
+
 }
