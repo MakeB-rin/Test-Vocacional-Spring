@@ -1,1 +1,14 @@
-INSERT INTO facultad () VALUES ();
+INSERT INTO municipio(nombre) VALUES ('LA PAZ');
+INSERT INTO municipio(nombre) VALUES ('EL ALTO');
+INSERT INTO municipio(nombre) VALUES ('PALCA');
+INSERT INTO municipio(nombre) VALUES ('MECAPACA');
+INSERT INTO municipio(nombre) VALUES ('ACHOCALLA');
+INSERT INTO municipio(nombre) VALUES ('LAJA');
+INSERT INTO municipio(nombre) VALUES ('VIACHA');
+INSERT INTO municipio(nombre) VALUES ('PUCARANI');
+INSERT INTO municipio(nombre) VALUES ('CARANAVI');
+INSERT INTO municipio(nombre) VALUES ('ACHACACHI');
+INSERT INTO municipio(nombre) VALUES ('TEOPONTE');
+INSERT INTO municipio(nombre) VALUES ('COROICO');
+INSERT INTO municipio(nombre) VALUES ('YANACACHI');
+INSERT INTO municipio(nombre) VALUES ('GUANAY');

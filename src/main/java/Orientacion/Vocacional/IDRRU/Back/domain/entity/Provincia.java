@@ -3,6 +3,8 @@ package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,8 +22,7 @@ public class Provincia {
 
     private String nombre;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_municipio", nullable = false)
-    private Municipio municipio;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "provincia")
+    private List<Municipio> municipios;
 
 }

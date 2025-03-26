@@ -22,8 +22,9 @@ public class Municipio {
 
     private String nombre;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "municipio")
-    private List<Provincia> provincias;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_provincia", nullable = false)
+    private Provincia provincia;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "municipio")
     private List<Estudiante> estudiantes;
