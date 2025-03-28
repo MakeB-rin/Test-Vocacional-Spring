@@ -13,16 +13,13 @@ import java.util.List;
 @Setter
 @Entity
 public class Facultad {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_facultad")
     private Integer idFacultad;
-
     private String codigo;
     private String nombre;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "facultad")
     private List<Resultado> resultados;
-
 }

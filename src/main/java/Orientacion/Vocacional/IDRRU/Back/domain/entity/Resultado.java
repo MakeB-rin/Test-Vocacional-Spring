@@ -1,6 +1,5 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,10 +8,8 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-
 @Entity
 public class Resultado {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_resultado")
@@ -22,7 +19,6 @@ public class Resultado {
     private Integer aptitud;
     private String puntajeHolland;
     private String fecha;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_estudiante", nullable = false)
