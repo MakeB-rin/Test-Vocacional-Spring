@@ -44,17 +44,11 @@ public class ResultadoMapper {
         dto.setAptitud(resultado.getAptitud());
         dto.setPuntajeHolland(resultado.getPuntajeHolland());
         dto.setFecha(resultado.getFecha());
-
-        // Se asignan los IDs de las relaciones (asumiendo que no sean nulas)
-        dto.setIdEstudiante(resultado.getEstudiante() != null ?
-                resultado.getEstudiante().getIdEstudiante() : null);
-        dto.setIdChaside(resultado.getChaside() != null ?
-                resultado.getChaside().getIdChaside() : null);
-        dto.setIdHolland(resultado.getHolland() != null ?
-                resultado.getHolland().getIdHolland() : null);
-        dto.setIdFacultad(resultado.getFacultad() != null ?
-                resultado.getFacultad().getIdFacultad() : null);
-
+        // Se asignan los IDs de las relaciones
+        dto.setIdEstudiante(resultado.getEstudiante() != null ? resultado.getEstudiante().getIdEstudiante() : null);
+        dto.setIdChaside(resultado.getChaside() != null ? resultado.getChaside().getIdChaside() : null);
+        dto.setIdHolland(resultado.getHolland() != null ? resultado.getHolland().getIdHolland() : null);
+        dto.setIdFacultad(resultado.getFacultad() != null ? resultado.getFacultad().getIdFacultad() : null);
         return dto;
     }
 }

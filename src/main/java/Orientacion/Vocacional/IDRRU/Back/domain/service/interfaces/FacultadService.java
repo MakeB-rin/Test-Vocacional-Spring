@@ -4,7 +4,7 @@ import Orientacion.Vocacional.IDRRU.Back.domain.entity.Facultad;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.FacultadDto;
 
 import java.util.List;
-
+// Interfaz del servicio para operaciones de Facultad
 public interface FacultadService {
     Facultad create(FacultadDto facultadDto);
     Facultad update(Integer id, FacultadDto facultadDto);
