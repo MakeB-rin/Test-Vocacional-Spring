@@ -1,0 +1,24 @@
+#IMAGEN MODELO
+FROM eclipse-temurin:21.0.6_7-jdk
+
+#DEFINIR DIRECTORIO RAIZ
+WORKDIR /root
+
+#COPIAR Y PEGAR ARCHIVOS DENTRO DEL CONTENDOR
+COPY ./pom.xml /root
+COPY ./.mvn /root/.mvn
+COPY ./.mvnw /root
+
+#DESCARGAR LAS DEPENDENCIAS
+RUN ./mvnw depdency:go-offline
+
+#COPIAR EL CODIGO FUENTE DENTRO DEL CONTENEDOR
+COPY ./src /root/src
+
+#CONTRUIR LA APLICACION
+RUN ./mvnw clean install -DskipTest #no ejecutar pruebas
+
+#LEVANTAR LA APLICACION CUANDO EL CONTENEDOR INICIE
+ENTRYPOINT ["java","-jar"]
+
+
