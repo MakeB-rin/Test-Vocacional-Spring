@@ -1,0 +1,141 @@
+--PROVINCIA
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('ABEL ITURRALDE', true, '2024-03-01 12:34:56', '2024-03-05 08:23:45');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('AROMA', false, '2024-02-15 09:12:33', '2024-03-01 14:56:20');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('BAUTISTA SAAVEDRA', true, '2023-12-10 15:45:22', '2024-01-20 17:30:10');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('CAMACHO', false, '2024-01-05 07:30:50', '2024-02-10 11:40:55');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('CARANAVI', true, '2024-02-20 18:20:15', '2024-03-07 09:15:30');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('FRANZ TAMAYO', false, '2023-11-25 10:55:40', '2024-01-05 22:10:05');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('GUALBERTO VILLAROEL', true, '2024-01-30 13:45:30', '2024-02-25 19:35:50');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('INGAVI', false, '2023-10-15 06:10:20', '2023-12-30 20:25:15');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('INQUISIVO', true, '2024-02-10 11:50:05', '2024-03-01 15:20:40');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('JOSE MANUEL PANDO', false, '2023-09-05 17:30:10', '2023-11-15 08:45:25');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('LARECAJA', true, '2024-03-01 12:34:56', '2024-03-05 08:23:45');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('LOAYZA', false, '2024-02-15 09:12:33', '2024-03-01 14:56:20');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('LOS ANDES', true, '2023-12-10 15:45:22', '2024-01-20 17:30:10');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('MANCO KAPAC', false, '2024-01-05 07:30:50', '2024-02-10 11:40:55');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('MUÑECAS', true, '2024-02-20 18:20:15', '2024-03-07 09:15:30');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('MURILLO', false, '2023-11-25 10:55:40', '2024-01-05 22:10:05');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('NOR YUNGAS', true, '2024-01-30 13:45:30', '2024-02-25 19:35:50');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('OMASUYOS', false, '2023-10-15 06:10:20', '2023-12-30 20:25:15');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('PACAJES', true, '2024-02-10 11:50:05', '2024-03-01 15:20:40');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('SUDYUNGAS', false, '2023-09-05 17:30:10', '2023-11-15 08:45:25');
+
+
+--MUNICIPIOS
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Ixiamas', true, '2024-01-10 12:00:00', '2024-03-05 08:23:45', 1);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('San Buenaventura', false, '2023-11-15 10:15:30', '2024-02-20 14:30:10', 1);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Ayo Ayo', true, '2024-02-01 09:10:45', '2024-03-02 11:25:55', 2);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Calamarca', false, '2023-12-20 14:30:20', '2024-01-25 08:10:30', 2);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Collana', true, '2024-01-05 18:20:15', '2024-03-07 09:15:30', 2);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Colquencha', false, '2023-10-25 12:40:00', '2024-02-18 17:50:45', 2);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Patacamaya', true, '2024-02-10 07:30:50', '2024-03-12 13:40:55', 2);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Sica Sica', false, '2023-09-05 15:45:10', '2024-01-30 22:15:25', 2);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Umala', true, '2024-01-20 13:10:10', '2024-02-28 08:45:55', 2);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Curva', false, '2023-11-05 09:10:20', '2024-02-15 10:30:15', 3);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('General Juan José Pérez (Charazani)', true, '2024-02-15 11:50:05', '2024-03-01 15:20:40', 3);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Escoma', true, '2024-01-10 17:30:10', '2024-03-05 08:23:45', 4);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Humanata', false, '2023-12-15 09:12:33', '2024-02-01 14:56:20', 4);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Mocomoco', true, '2024-01-20 15:45:22', '2024-02-20 17:30:10', 4);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Puerto Acosta', false, '2023-11-05 07:30:50', '2024-02-10 11:40:55', 4);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Puerto Carabuco', true, '2024-02-20 18:20:15', '2024-03-07 09:15:30', 4);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Alto Beni', true, '2024-01-15 10:10:20', '2024-03-01 12:25:30', 5);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Caranavi', false, '2023-12-10 14:30:10', '2024-02-18 17:50:45', 5);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Apolo', true, '2024-01-08 11:45:30', '2024-03-10 14:40:50', 6);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Pelechuco', false, '2023-12-20 07:20:15', '2024-02-15 09:30:25', 6);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Chacarilla', true, '2024-01-12 10:00:00', '2024-02-28 13:15:45', 7);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Papel Pampa', false, '2023-12-18 14:10:30', '2024-02-20 18:30:55', 7);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('San Pedro de Curahuara', true, '2024-02-05 17:50:45', '2024-03-12 07:45:10', 7);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Desaguadero', false, '2023-11-15 10:30:20', '2024-02-22 14:50:35', 8);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Guaqui', true, '2024-01-22 12:40:15', '2024-03-01 16:10:45', 8);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Jesús de Machaca', false, '2023-12-25 14:50:25', '2024-02-10 08:20:55', 8);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('San Andrés de Machaca', true, '2024-02-18 09:15:30', '2024-03-07 13:50:45', 8);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Taraco', false, '2023-11-30 16:40:10', '2024-02-28 19:25:30', 8);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Tiahuanaco', true, '2024-02-12 13:30:45', '2024-03-05 10:40:50', 8);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Viacha', false, '2023-12-05 17:20:25', '2024-02-15 12:30:10', 8);
+
+-- Continúa con el mismo patrón para las provincias restantes...
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Cajuata', true, '2024-01-10 12:00:00', '2024-03-05 08:23:45', 9);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Colquiri', false, '2023-12-15 14:10:30', '2024-02-20 18:30:55', 9);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Ichoca', true, '2024-01-05 18:20:15', '2024-03-07 09:15:30', 9);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Inquisivi', false, '2023-10-25 12:40:00', '2024-02-18 17:50:45', 9);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Licoma Pampa', true, '2024-02-10 07:30:50', '2024-03-12 13:40:55', 9);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Quime', false, '2023-09-05 15:45:10', '2024-01-30 22:15:25', 9);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Catacora', true, '2024-01-15 10:10:20', '2024-03-01 12:25:30', 10);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Santiago de Machaca', false, '2023-12-10 14:30:10', '2024-02-18 17:50:45', 10);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Combaya', true, '2024-01-08 11:45:30', '2024-03-10 14:40:50', 11);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Guanay', false, '2023-12-20 07:20:15', '2024-02-15 09:30:25', 11);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Mapiri', true, '2024-01-10 17:30:10', '2024-03-05 08:23:45', 11);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Quiabaya', false, '2023-12-15 09:12:33', '2024-02-01 14:56:20', 11);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Sorata', true, '2024-01-20 15:45:22', '2024-02-20 17:30:10', 11);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Tacacoma', false, '2023-11-05 07:30:50', '2024-02-10 11:40:55', 11);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Teoponte', true, '2024-02-20 18:20:15', '2024-03-07 09:15:30', 11);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Tipuani', false, '2023-11-05 07:30:50', '2024-02-10 11:40:55', 11);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Cairoma', true, '2024-01-12 10:00:00', '2024-02-28 13:15:45', 12);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Luribay', false, '2023-12-18 14:10:30', '2024-02-20 18:30:55', 12);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Malla', true, '2024-02-05 17:50:45', '2024-03-12 07:45:10', 12);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Sapahaqui', false, '2023-11-15 10:30:20', '2024-02-22 14:50:35', 12);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Yaco', true, '2024-01-22 12:40:15', '2024-03-01 16:10:45', 12);
+
+-- Provincia Los Andes
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Batallas', true, '2024-01-08 09:30:00', '2024-02-28 13:15:45', 13);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Laja', false, '2023-12-05 14:10:30', '2024-02-20 18:30:55', 13);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Puerto Pérez', true, '2024-02-01 18:50:45', '2024-03-05 12:30:10', 13);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Pucarani', false, '2023-11-25 11:40:25', '2024-02-18 09:40:20', 13);
+
+-- Provincia Manco Kapac
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Copacabana', true, '2024-01-15 08:45:00', '2024-03-01 14:00:25', 14);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('San Pedro de Tiquina', false, '2023-12-20 13:30:10', '2024-02-10 11:10:50', 14);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Tito Yupanqui', true, '2024-02-10 15:20:00', '2024-03-05 09:45:35', 14);
+
+-- Provincia Muñecas
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Aucapata', true, '2024-01-05 10:30:10', '2024-02-25 12:20:30', 15);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Ayata', false, '2023-12-10 07:20:25', '2024-02-18 13:45:10', 15);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Chuma', true, '2024-02-12 14:50:00', '2024-03-07 16:30:25', 15);
+
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Achocalla', true, '2024-02-12 13:30:45', '2024-03-05 10:40:50', 16);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('El Alto', false, '2023-12-05 17:20:25', '2024-02-15 12:30:10', 16);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('La Paz', true, '2024-01-10 10:20:15', '2024-02-25 15:45:30', 16);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Mecapaca', false, '2023-11-30 16:40:10', '2024-02-28 19:25:30', 16);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Palca', true, '2024-01-12 09:30:25', '2024-03-10 14:40:50', 16);
+
+-- Continúa el patrón hasta cubrir todas las provincias y municipios...
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Coroico', true, '2024-01-14 08:45:20', '2024-03-06 10:30:15', 17);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Coripata', false, '2023-12-20 17:10:30', '2024-02-22 12:15:40', 17);
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Achacachi', true, '2024-02-02 15:00:00', '2024-03-01 18:20:30', 18);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Ancoraimes', false, '2023-11-15 12:45:25', '2024-01-20 14:10:50', 18);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Chua Cocani', true, '2024-01-12 09:30:45', '2024-02-25 16:40:10', 18);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Huarina', false, '2023-12-25 14:20:15', '2024-03-02 17:50:30', 18);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Huatajata', true, '2024-02-15 10:30:40', '2024-03-05 13:10:20', 18);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Santiago de Huata', false, '2023-10-10 08:40:15', '2024-01-30 11:50:35', 18);
+
+-- Provincia Pacajes
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Calacoto', true, '2024-01-20 11:30:15', '2024-02-28 18:45:30', 19);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Caquiaviri', false, '2023-12-30 08:40:20', '2024-02-10 17:20:45', 19);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Charaña', true, '2024-01-10 09:15:25', '2024-03-01 13:10:00', 19);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Comanche', false, '2023-11-25 14:30:10', '2024-02-20 12:30:30', 19);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Coro Coro', true, '2024-02-18 10:20:40', '2024-03-05 14:40:00', 19);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Nazacara de Pacajes', false, '2023-10-30 13:10:10', '2024-02-25 12:50:45', 19);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Santiago de Callapa', true, '2024-01-25 12:40:30', '2024-03-07 16:20:10', 19);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Waldo Ballivián', false, '2023-12-05 17:30:50', '2024-01-30 14:40:25', 19);
+
+
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Chulumani', true, '2024-01-25 12:00:00', '2024-03-10 14:30:45', 20);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Irupana', false, '2023-12-15 16:10:30', '2024-02-20 18:30:55', 20);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('La Asunta', true, '2024-01-10 17:50:45', '2024-03-05 08:23:45', 20);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Palos Blancos', false, '2023-11-30 14:30:20', '2024-02-28 19:25:30', 20);
+INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Yanacachi', true, '2024-02-12 09:30:45', '2024-03-07 10:40:50', 20);
+
+
