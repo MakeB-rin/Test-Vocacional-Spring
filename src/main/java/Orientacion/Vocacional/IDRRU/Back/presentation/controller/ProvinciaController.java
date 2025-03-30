@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/provincia")
-
 public class ProvinciaController {
 
     private final ProvinciaService provinciaService;
@@ -29,7 +29,7 @@ public class ProvinciaController {
         return ResponseEntity.status(HttpStatus.OK).body(provinciaFound);
     }
 
-    @PostMapping("/{id}")
+    @PostMapping("/")
     public ResponseEntity<Provincia> save(@Valid @RequestBody ProvinciaDto dto){
         Provincia provinciaToSave = provinciaService.create(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(provinciaToSave);
