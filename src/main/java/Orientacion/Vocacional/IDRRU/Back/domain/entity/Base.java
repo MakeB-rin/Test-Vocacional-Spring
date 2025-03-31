@@ -16,12 +16,12 @@ public class Base {
     @Column(name = "active")
     public boolean active = true;
 
-    @Column(updatable = false, name = "create_at")
+    @Column(updatable = false, name = "created_at")
     @CreationTimestamp
     public LocalDateTime createdAt;
 
 
-    @Column(name = "update_at")
+    @Column(name = "updated_at")
     @UpdateTimestamp
     public LocalDateTime updatedAt;
 }

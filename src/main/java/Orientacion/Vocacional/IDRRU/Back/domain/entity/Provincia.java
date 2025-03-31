@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 
 @Entity
-public class Provincia {
+public class Provincia extends Base {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
