@@ -138,4 +138,17 @@ INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALU
 INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Palos Blancos', false, '2023-11-30 14:30:20', '2024-02-28 19:25:30', 20);
 INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Yanacachi', true, '2024-02-12 09:30:45', '2024-03-07 10:40:50', 20);
 
-
+-- Facultad
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FA', 'FACULTAD DE AGRONOMÍA', true, '2024-03-01 12:34:56', '2024-03-05 08:23:45');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FAADU', 'FACULTAD DE ARQUITECTURA, ARTES, DISEÑO Y URBANISMO', false, '2024-02-15 09:12:33', '2024-03-01 14:56:20');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCEF', 'FACULTAD DE CIENCIAS ECONÓMICAS Y FINANCIERAS', true, '2023-12-10 15:45:22', '2024-01-20 17:30:10');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCFB', 'FACULTAD DE CIENCIAS FARMACÉUTICAS Y BIOQUÍMICAS', false, '2024-01-05 07:30:50', '2024-02-10 11:40:55');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCG', 'FACULTAD DE CIENCIAS GEOLÓGICAS', true, '2024-02-20 18:20:15', '2024-03-07 09:15:30');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCPN', 'FACULTAD DE CIENCIAS PURAS Y NATURALES', false, '2023-11-25 10:55:40', '2024-01-05 22:10:05');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCS', 'FACULTAD DE CIENCIAS SOCIALES', true, '2024-01-30 13:45:30', '2024-02-25 19:35:50');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FDCJP', 'FACULTAD DE DERECHO Y CIENCIAS POLÍTICAS', false, '2023-10-15 06:10:20', '2023-12-30 20:25:15');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FHCE', 'FACULTAD DE HUMANIDADES Y CIENCIAS DE LA EDUCACIÓN', true, '2024-02-10 11:50:05', '2024-03-01 15:20:40');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FI', 'FACULTAD DE INGENIERÍA', false, '2023-09-05 17:30:10', '2023-11-15 08:45:25');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FMENT', 'FACULTAD DE MEDICINA, ENFERMERÍA, NUTRICIÓN Y TECNOLOGÍA MÉDICA', true, '2024-03-01 12:34:56', '2024-03-05 08:23:45');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FO', 'FACULTAD DE ODONTOLOGÍA', false, '2024-02-15 09:12:33', '2024-03-01 14:56:20');
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FT', 'FACULTAD DE TECNOLOGÍA', true, '2023-12-10 15:45:22', '2024-01-20 17:30:10');
