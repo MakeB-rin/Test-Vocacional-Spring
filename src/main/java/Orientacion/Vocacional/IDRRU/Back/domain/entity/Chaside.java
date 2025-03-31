@@ -1,5 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class Chaside {
     private String codigo;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "chaside")
+    @JsonIgnore
     private List<Resultado> resultados;
 
 }
