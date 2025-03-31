@@ -4,7 +4,9 @@ import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Provincia;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ProvinciaDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EstudianteMapper {
 
     public Estudiante fromDtoToEntity(EstudianteDto dto, Estudiante estudiante) {
