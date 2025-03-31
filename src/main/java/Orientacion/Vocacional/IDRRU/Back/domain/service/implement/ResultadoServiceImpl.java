@@ -1,9 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.service.implement;
 
-import Orientacion.Vocacional.IDRRU.Back.data.repository.FacultadRepository;
-import Orientacion.Vocacional.IDRRU.Back.data.repository.ResultadoRepository;
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Facultad;
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Resultado;
+import Orientacion.Vocacional.IDRRU.Back.data.repository.*;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.*;
 import Orientacion.Vocacional.IDRRU.Back.domain.mapper.ResultadoMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ResultadoService;
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
@@ -20,9 +18,9 @@ public class ResultadoServiceImpl implements ResultadoService {
     private final ResultadoRepository resultadoRepository;
     private final ResultadoMapper resultadoMapper;
     private final FacultadRepository facultadRepository;
-    // private final EstudianteRepository estudianteRepository;
-    // private final ChasideRepository chasideRepository;
-    // private final HollandRepository hollandRepository;
+     private final EstudianteRepository estudianteRepository;
+     private final ChasideRepository chasideRepository;
+     private final HollandRepository hollandRepository;
 
 
     @Override
@@ -31,8 +29,6 @@ public class ResultadoServiceImpl implements ResultadoService {
         Facultad facultad = facultadRepository.findById(resultadoDto.getIdFacultad())
                 .orElseThrow(() -> new EntityNotFoundException("Facultad no encontrada con id " + resultadoDto.getIdFacultad()));
         resultado.setFacultad(facultad);
-
-        /*
         // Resolver relación con Estudiante
         Estudiante estudiante = estudianteRepository.findById(resultadoDto.getIdEstudiante())
                 .orElseThrow(() -> new EntityNotFoundException("Estudiante no encontrado con id " + resultadoDto.getIdEstudiante()));
@@ -47,7 +43,6 @@ public class ResultadoServiceImpl implements ResultadoService {
         Holland holland = hollandRepository.findById(resultadoDto.getIdHolland())
                 .orElseThrow(() -> new EntityNotFoundException("Holland no encontrado con id " + resultadoDto.getIdHolland()));
         resultado.setHolland(holland);
-        */
         return resultadoRepository.save(resultado);
     }
 
@@ -73,13 +68,11 @@ public class ResultadoServiceImpl implements ResultadoService {
             existingResultado.setFacultad(facultad);
         }
 
-        /*
         if(resultadoDto.getIdEstudiante() != null) {
             Estudiante estudiante = estudianteRepository.findById(resultadoDto.getIdEstudiante())
                 .orElseThrow(() -> new EntityNotFoundException("Estudiante no encontrado con id " + resultadoDto.getIdEstudiante()));
             existingResultado.setEstudiante(estudiante);
         }
-        */
         return resultadoRepository.save(existingResultado);
     }
 
