@@ -1,5 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,7 +24,8 @@ public class Provincia extends Base {
 
     private String nombre;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "provincia")
+    @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Municipio> municipios;
 
 }

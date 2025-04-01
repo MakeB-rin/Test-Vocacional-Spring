@@ -139,3 +139,18 @@ INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALU
 INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Yanacachi', true, '2024-02-12 09:30:45', '2024-03-07 10:40:50', 20);
 
 
+-- Chaside
+INSERT INTO chaside(codigo) VALUES('Tabla 1C');
+INSERT INTO chaside(codigo) VALUES('Tabla 2H');
+INSERT INTO chaside(codigo) VALUES('Tabla 3A');
+INSERT INTO chaside(codigo) VALUES('Tabla 4S');
+INSERT INTO chaside(codigo) VALUES('Tabla 5I');
+INSERT INTO chaside(codigo) VALUES('Tabla 6D');
+INSERT INTO chaside(codigo) VALUES('Tabla 7E');
+
+-- Holland
+
+INSERT INTO holland(personalidad) VALUES(1);
+INSERT INTO holland(personalidad) VALUES(2);
+INSERT INTO holland(personalidad) VALUES(3);
+INSERT INTO holland(personalidad) VALUES(4);

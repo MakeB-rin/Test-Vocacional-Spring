@@ -1,5 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,10 +24,10 @@ public class Municipio extends Base{
 
     private String nombre;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_provincia", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_provincia",referencedColumnName = "id_provincia", nullable = false)
     private Provincia provincia;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "municipio")
-    private List<Estudiante> estudiantes;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "municipio")
+//    private List<Estudiante> estudiantes;
 }
