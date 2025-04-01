@@ -25,7 +25,7 @@ public class Estudiante {
     private String apMaterno;
     private String colegio;
     private String curso;
-    private String edad;
+    private Integer edad;
     private String celular;
 
     @ManyToOne(fetch = FetchType.LAZY)

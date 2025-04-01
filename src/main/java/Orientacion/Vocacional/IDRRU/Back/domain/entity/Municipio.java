@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 
 @Entity
-public class Municipio {
+public class Municipio extends Base{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
