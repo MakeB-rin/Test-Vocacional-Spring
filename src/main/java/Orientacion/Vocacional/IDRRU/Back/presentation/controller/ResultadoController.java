@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/resultados")
+@RequestMapping("/resultado")
 public class ResultadoController {
 
     private final ResultadoService resultadoService;

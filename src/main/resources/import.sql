@@ -137,8 +137,43 @@ INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALU
 INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('La Asunta', true, '2024-01-10 17:50:45', '2024-03-05 08:23:45', 20);
 INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Palos Blancos', false, '2023-11-30 14:30:20', '2024-02-28 19:25:30', 20);
 INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALUES ('Yanacachi', true, '2024-02-12 09:30:45', '2024-03-07 10:40:50', 20);
+
+
+-- Chaside
+INSERT INTO chaside(codigo) VALUES('Tabla 1C');
+INSERT INTO chaside(codigo) VALUES('Tabla 2H');
+INSERT INTO chaside(codigo) VALUES('Tabla 3A');
+INSERT INTO chaside(codigo) VALUES('Tabla 4S');
+INSERT INTO chaside(codigo) VALUES('Tabla 5I');
+INSERT INTO chaside(codigo) VALUES('Tabla 6D');
+INSERT INTO chaside(codigo) VALUES('Tabla 7E');
+
+-- Holland
+
+INSERT INTO holland(personalidad) VALUES(1);
+INSERT INTO holland(personalidad) VALUES(2);
+INSERT INTO holland(personalidad) VALUES(3);
+INSERT INTO holland(personalidad) VALUES(4);
+
+
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("OMAR", "CALLE", "GUACHALLA", "321654", 18, "45625", "SAN SIMON", "6TO", 1);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("MARCO", "QUISPE", "ALANOCA", "852963", 17, "74152", "BOLIVAR", "6TO", 2);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("NEIL", "ARUQUIPA", "TOLA", "741852", 17, "78956", "HUGO CHAVEZ", "6TO", 5);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("OSCAR", "MARIN", "VELASQUEZ", "253411", 18, "52637", "AYACUCHO", "6TO", 7);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("FERNANDO", "PEREZ", "LOAYZA", "456852", 19, "58697", "CARLOS MEDINACELLI", "6TO", 9);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("ALEX", "FUENTES", "CATACORA", "963456", 16, "25145", "4 DE JULIO", "6TO", 12);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("VANESSA", "MENDOZA", "FLORES", "123852", 17, "52638", "LOS ANDES", "6TO", 15);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("NICKOL", "PAREDES", "MORALES", "741879", 18, "96857", "SLOMON", "6TO", 17);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("JUANA", "MAMANI", "SULLY", "456221", 19, "55236", "DORA SCHMIT", "6TO", 19);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("RAQUEL", "LOZA", "PEDRAZA", "112255", 17, "65421", "BOLVIA", "6TO", 25);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("FEDERICO", "BOLAÑOS", "GOMEZ", "458796", 17, "85967", "SARACHO", "6TO", 34);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("GONZALO", "GONZALES", "GARCIA", "965236", 16, "85231", "CALVERT", "6TO", 45);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("FRANCO", "HUANCA", "MONCADA", "362547", 18, "12356", "BOLIVIAN-SUECO", "6TO", 58);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("ESTELA", "QUINO", "AVERANGA", "745214", 18, "35789", "SAGRADOS CORAZONES", "6TO", 69);
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio) VALUES("MARIO", "TARQUI", "NINA", "96357", 19, "96325", "DON BOSCO", "6TO", 78);
+
 ----------------
--- FACULTADES --
+-- FACULTAD --
 ----------------
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FA', 'FACULTAD DE AGRONOMÍA', true, '2025-04-01 10:45:23', '2025-04-01 10:45:23');
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FAADU', 'FACULTAD DE ARQUITECTURA, ARTES, DISEÑO Y URBANISMO', true, '2025-04-01 10:45:23', '2025-04-01 10:45:23');

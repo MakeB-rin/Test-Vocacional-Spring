@@ -13,7 +13,7 @@ import java.util.List;
 // Controlador REST para Facultad
 @RestController
 @AllArgsConstructor
-@RequestMapping("/facultades")
+@RequestMapping("/facultad")
 public class FacultadController {
 
     private final FacultadService facultadService;
