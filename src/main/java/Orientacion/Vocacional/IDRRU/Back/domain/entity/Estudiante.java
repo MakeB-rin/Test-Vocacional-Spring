@@ -13,7 +13,7 @@ import java.util.List;
 @ToString
 
 @Entity
-public class Estudiante {
+public class Estudiante extends Base{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

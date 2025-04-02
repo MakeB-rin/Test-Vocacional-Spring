@@ -13,7 +13,7 @@ import java.util.List;
 @ToString
 
 @Entity
-public class Holland {
+public class Holland extends Base{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_holland")
