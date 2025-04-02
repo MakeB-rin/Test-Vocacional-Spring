@@ -1,5 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -33,6 +34,7 @@ public class Estudiante {
     private Municipio municipio;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "estudiante")
+    @JsonIgnore
     private List<Resultado> resultados;
 
 }
