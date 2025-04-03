@@ -140,17 +140,17 @@ INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALU
 
 
 -- Chaside
-INSERT INTO chaside(codigo) VALUES('Tabla 1C');
-INSERT INTO chaside(codigo) VALUES('Tabla 2H');
-INSERT INTO chaside(codigo) VALUES('Tabla 3A');
-INSERT INTO chaside(codigo) VALUES('Tabla 4S');
-INSERT INTO chaside(codigo) VALUES('Tabla 5I');
-INSERT INTO chaside(codigo) VALUES('Tabla 6D');
-INSERT INTO chaside(codigo) VALUES('Tabla 7E');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo) VALUES(true, NULL, NULL, 'Tabla 1C');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 2H');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 3A');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 4S');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 5I');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 6D');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 7E');
+
 
 -- Holland
-
-INSERT INTO holland(personalidad) VALUES(1);
-INSERT INTO holland(personalidad) VALUES(2);
-INSERT INTO holland(personalidad) VALUES(3);
-INSERT INTO holland(personalidad) VALUES(4);
+INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 1, NULL, NULL);
+INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 2, NULL, NULL);
+INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 3, NULL, NULL);
+INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 4, NULL, NULL);
