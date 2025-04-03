@@ -172,16 +172,19 @@ INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, cel
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('ESTELA', 'QUINO', 'AVERANGA', '745214', 18, '35789', 'SAGRADOS CORAZONES', '6TO', 15, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('MARIO', 'TARQUI', 'NINA', '96357', 19, '96325', 'DON BOSCO', '6TO', 16, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
 
-INSERT INTO facultad (codigo, nombre) VALUES ('FA', 'FACULTAD DE AGRONOMÍA');
-INSERT INTO facultad (codigo, nombre) VALUES ('FAADU', 'FACULTAD DE ARQUITECTURA, ARTES, DISEÑO Y URBANISMO');
-INSERT INTO facultad (codigo, nombre) VALUES ('FCEF', 'FACULTAD DE CIENCIAS ECONÓMICAS Y FINANCIERAS');
-INSERT INTO facultad (codigo, nombre) VALUES ('FCFB', 'FACULTAD DE CIENCIAS FARMACÉUTICAS Y BIOQUÍMICAS');
-INSERT INTO facultad (codigo, nombre) VALUES ('FCG', 'FACULTAD DE CIENCIAS GEOLÓGICAS');
-INSERT INTO facultad (codigo, nombre) VALUES ('FCPN', 'FACULTAD DE CIENCIAS PURAS Y NATURALES');
-INSERT INTO facultad (codigo, nombre) VALUES ('FCS', 'FACULTAD DE CIENCIAS SOCIALES');
-INSERT INTO facultad (codigo, nombre) VALUES ('FDCJP', 'FACULTAD DE DERECHO Y CIENCIAS POLÍTICAS');
-INSERT INTO facultad (codigo, nombre) VALUES ('FHCE', 'FACULTAD DE HUMANIDADES Y CIENCIAS DE LA EDUCACIÓN');
-INSERT INTO facultad (codigo, nombre) VALUES ('FI', 'FACULTAD DE INGENIERÍA');
-INSERT INTO facultad (codigo, nombre) VALUES ('FMENT', 'FACULTAD DE MEDICINA, ENFERMERÍA, NUTRICIÓN Y TECNOLOGÍA MÉDICA');
-INSERT INTO facultad (codigo, nombre) VALUES ('FO', 'FACULTAD DE ODONTOLOGÍA');
-INSERT INTO facultad (codigo, nombre) VALUES ('FT', 'FACULTAD DE TECNOLOGÍA');
+----------------
+-- FACULTAD ---
+----------------
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FA', 'FACULTAD DE AGRONOMÍA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FAADU', 'FACULTAD DE ARQUITECTURA, ARTES, DISEÑO Y URBANISMO', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCEF', 'FACULTAD DE CIENCIAS ECONÓMICAS Y FINANCIERAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCFB', 'FACULTAD DE CIENCIAS FARMACÉUTICAS Y BIOQUÍMICAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCG', 'FACULTAD DE CIENCIAS GEOLÓGICAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCPN', 'FACULTAD DE CIENCIAS PURAS Y NATURALES', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCS', 'FACULTAD DE CIENCIAS SOCIALES', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FDCJP', 'FACULTAD DE DERECHO Y CIENCIAS POLÍTICAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FHCE', 'FACULTAD DE HUMANIDADES Y CIENCIAS DE LA EDUCACIÓN', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FI', 'FACULTAD DE INGENIERÍA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FMENT', 'FACULTAD DE MEDICINA, ENFERMERÍA, NUTRICIÓN Y TECNOLOGÍA MÉDICA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FO', 'FACULTAD DE ODONTOLOGÍA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FT', 'FACULTAD DE TECNOLOGÍA', true, NOW(), NOW());
