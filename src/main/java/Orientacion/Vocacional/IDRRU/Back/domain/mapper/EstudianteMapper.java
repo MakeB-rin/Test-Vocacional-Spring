@@ -1,13 +1,16 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.mapper;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Provincia;
+
+import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ProvinciaService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
-import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ProvinciaDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EstudianteMapper {
+    @Autowired
+    ProvinciaService provinciaService;
 
     public Estudiante fromDtoToEntity(EstudianteDto dto, Estudiante estudiante) {
         Estudiante estudianteAux = new Estudiante( );
@@ -23,6 +26,8 @@ public class EstudianteMapper {
         estudianteAux.setCurso(dto.getCurso());
         estudianteAux.setEdad(dto.getEdad());
         estudianteAux.setCelular(dto.getCelular());
+        estudianteAux.setProvincia(provinciaService.getById(dto.getId_provincia()));
+
         return estudianteAux;
     }
 }

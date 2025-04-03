@@ -40,4 +40,7 @@ public class EstudianteDto {
     @NotBlank(message = "El celular NO debe ser blanco")
     @Size(min = 1, max = 200, message = "el celular debe tener entre 2-198 caracteres")
     private String celular;
+
+    @NotBlank(message = "Debe incluir el id municipio")
+    private Integer id_provincia;
 }

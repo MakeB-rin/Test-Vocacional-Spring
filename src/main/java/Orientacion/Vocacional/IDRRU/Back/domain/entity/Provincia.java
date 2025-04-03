@@ -28,4 +28,8 @@ public class Provincia extends Base {
     @JsonIgnore
     private List<Municipio> municipios;
 
+    @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Estudiante> estudiantes;
+
 }

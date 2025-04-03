@@ -29,11 +29,11 @@ public class Estudiante extends Base{
     private Integer edad;
     private String celular;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_municipio", nullable = false)
-    private Municipio municipio;
+    @ManyToOne
+    @JoinColumn(name = "id_provincia",referencedColumnName = "id_provincia", nullable = false)
+    private Provincia provincia;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "estudiante")
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Resultado> resultados;
 
