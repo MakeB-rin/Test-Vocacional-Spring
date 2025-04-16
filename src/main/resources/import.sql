@@ -188,3 +188,6 @@ INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('F
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FMENT', 'FACULTAD DE MEDICINA, ENFERMERÍA, NUTRICIÓN Y TECNOLOGÍA MÉDICA', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FO', 'FACULTAD DE ODONTOLOGÍA', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FT', 'FACULTAD DE TECNOLOGÍA', true, NOW(), NOW());
+
+
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, apellido, email, nombre, password, rol) VALUES (true, 1, now(), now(), 'admin', 'admin', 'admin@mail.com', 'admin', '$2a$10$dZTWcB1gfFI11HxZdVWQSuBkYaAon1He/dVL9hkfDAlBMG2d0gYeK', 'ADMIN');
