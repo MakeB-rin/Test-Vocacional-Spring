@@ -17,6 +17,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+// Importa withDefaults para la configuración CORS
+import static org.springframework.security.config.Customizer.withDefaults;
+
 /**
  * Configuración de seguridad para la aplicación.
  * Define las rutas protegidas, los filtros de autenticación y el proveedor de autenticación.
@@ -38,16 +41,21 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                // *** INICIO: MODIFICACIÓN NECESARIA ***
+                // Habilita CORS usando la configuración predeterminada (buscará un Bean WebMvcConfigurer o CorsConfigurationSource)
+                .cors(withDefaults())
+                // *** FIN: MODIFICACIÓN NECESARIA ***
+
                 .csrf(csrf -> csrf.disable()) // Desactiva protección CSRF (ya que se usa JWT)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/facultad/**").permitAll() // Público
-                        .requestMatchers("/auth/register").permitAll()
-                        .requestMatchers("/auth/login").permitAll()
+                        .requestMatchers("/auth/register").permitAll() // Público
+                        .requestMatchers("/auth/login").permitAll() // Público
 
-
+                        // Ejemplo: Requiere rol ADMIN para /provincia (verifica si este rol existe en tu sistema)
                         .requestMatchers("/provincia/**").hasRole("ADMIN")
 
-
+                        // Cualquier otra solicitud requiere autenticación
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

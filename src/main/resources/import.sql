@@ -182,7 +182,7 @@ INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('F
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCG', 'FACULTAD DE CIENCIAS GEOLÓGICAS', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCPN', 'FACULTAD DE CIENCIAS PURAS Y NATURALES', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCS', 'FACULTAD DE CIENCIAS SOCIALES', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FDCJP', 'FACULTAD DE DERECHO Y CIENCIAS POLÍTICAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FDCP', 'FACULTAD DE DERECHO Y CIENCIAS POLÍTICAS', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FHCE', 'FACULTAD DE HUMANIDADES Y CIENCIAS DE LA EDUCACIÓN', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FI', 'FACULTAD DE INGENIERÍA', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FMENT', 'FACULTAD DE MEDICINA, ENFERMERÍA, NUTRICIÓN Y TECNOLOGÍA MÉDICA', true, NOW(), NOW());
