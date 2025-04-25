@@ -13,6 +13,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+/**
+ * Servicio para operaciones de autenticacion y registro.
+ */
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -23,6 +26,12 @@ public class AuthService {
     private final UsuarioMapper usuarioMapper;
     private final TokenBlacklistService tokenBlacklistService;
 
+    /**
+     * Realiza el proceso de inicio de sesion.
+     *
+     * @param request Datos de la solicitud de login (usuario y contrasena).
+     * @return Respuesta con el token JWT y datos del usuario.
+     */
     public AuthDto.LoginResponse login(AuthDto.LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
@@ -32,7 +41,7 @@ public class AuthService {
         String token = jwtUtil.generateToken(user);
 
         Usuario usuario = usuarioRepository.findByUsername(user.getUsername())
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado después de autenticación"));
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado despues de autenticacion"));
 
         return AuthDto.LoginResponse.builder()
                 .token(token)
@@ -42,9 +51,15 @@ public class AuthService {
                 .build();
     }
 
+    /**
+     * Registra un nuevo usuario en el sistema.
+     *
+     * @param request Datos de la solicitud de registro.
+     * @return El DTO del usuario registrado.
+     */
     public UsuarioDto register(AuthDto.RegisterRequest request) {
         if (usuarioRepository.existsByUsername(request.getUsername())) {
-            throw new RuntimeException("El nombre de usuario ya está en uso");
+            throw new RuntimeException("El nombre de usuario ya esta en uso");
         }
 
         UsuarioDto dto = new UsuarioDto(
@@ -63,6 +78,11 @@ public class AuthService {
         return usuarioMapper.fromEntityToDto(savedUsuario);
     }
 
+    /**
+     * Invalida un token JWT para cerrar sesion.
+     *
+     * @param token El token JWT a invalidar (puede incluir "Bearer ").
+     */
     public void logout(String token) {
         if (token != null && token.startsWith("Bearer ")) {
             token = token.substring(7);

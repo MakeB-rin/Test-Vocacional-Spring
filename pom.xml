@@ -65,7 +65,7 @@
 			<artifactId>spring-boot-starter-validation</artifactId>
 			<version>3.4.2</version>
 		</dependency>
-<!--		agregando dependencias para el inicio de sesion-->
+		<!-- agregando dependencias para el inicio de sesion-->
 		<!-- Seguridad de Spring Boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

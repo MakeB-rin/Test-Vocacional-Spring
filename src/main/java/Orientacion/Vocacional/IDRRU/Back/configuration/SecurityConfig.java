@@ -17,12 +17,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-// Importa withDefaults para la configuración CORS
+// Importa withDefaults para la configuracion CORS
 import static org.springframework.security.config.Customizer.withDefaults;
 
 /**
- * Configuración de seguridad para la aplicación.
- * Define las rutas protegidas, los filtros de autenticación y el proveedor de autenticación.
+ * Configuracion principal de seguridad para la aplicacion.
+ * Usa JWT para proteger los endpoints.
  */
 @Configuration
 @EnableWebSecurity
@@ -33,57 +33,68 @@ public class SecurityConfig {
     private final UserDetailsService userDetailsService;
 
     /**
-     * Define la cadena de filtros de seguridad y las políticas de autorización.
-     * @param http Objeto HttpSecurity proporcionado por Spring Security.
-     * @return Cadena de filtros de seguridad configurada.
-     * @throws Exception En caso de error durante la configuración.
+     * Configura la cadena de filtros de seguridad HTTP.
+     * Define reglas de acceso (autorizacion) e integra filtros.
+     *
+     * @param http Configuracion de seguridad HTTP.
+     * @return Cadena de filtros configurada.
+     * @throws Exception Si falla la configuracion.
      */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // *** INICIO: MODIFICACIÓN NECESARIA ***
-                // Habilita CORS usando la configuración predeterminada (buscará un Bean WebMvcConfigurer o CorsConfigurationSource)
-                .cors(withDefaults())
-                // *** FIN: MODIFICACIÓN NECESARIA ***
 
-                .csrf(csrf -> csrf.disable()) // Desactiva protección CSRF (ya que se usa JWT)
+                .cors(withDefaults()) // Habilita CORS con configuracion por defecto
+                // Deshabilita CSRF, es seguro en APIs REST sin sesiones con cookies.
+                .csrf(csrf -> csrf.disable())
+
+                // Configura reglas de autorizacion por ruta.
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/facultad/**").permitAll() // Público
-                        .requestMatchers("/auth/register").permitAll() // Público
-                        .requestMatchers("/auth/login").permitAll() // Público
+                        // Permite acceso sin autenticacion a estas rutas.
+                        .requestMatchers("/facultad/**").permitAll()
+                        .requestMatchers("/auth/register").permitAll()
+                        .requestMatchers("/auth/login").permitAll()
 
-                        // Ejemplo: Requiere rol ADMIN para /provincia (verifica si este rol existe en tu sistema)
+                        // Requiere rol ADMIN para acceder a esta ruta.
                         .requestMatchers("/provincia/**").hasRole("ADMIN")
 
-                        // Cualquier otra solicitud requiere autenticación
+                        // Cualquier otra ruta requiere autenticacion.
                         .anyRequest().authenticated()
                 )
+
+                // Configura gestion de sesiones como STATELESS (sin estado).
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // No se mantiene sesión (JWT)
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                .authenticationProvider(authenticationProvider()) // Proveedor de autenticación personalizado
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class); // Agrega el filtro JWT
+                // Establece el proveedor de autenticacion personalizado.
+                .authenticationProvider(authenticationProvider())
+                // Agrega el filtro JWT antes del filtro de autenticacion de usuario/clave.
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
 
     /**
-     * Configura el proveedor de autenticación usando un UserDetailsService y un codificador de contraseñas.
-     * @return Proveedor de autenticación.
+     * Configura el proveedor de autenticacion DAO.
+     * Usa UserDetailsService y PasswordEncoder.
+     *
+     * @return Proveedor de autenticacion configurado.
      */
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService);
-        authProvider.setPasswordEncoder(passwordEncoder());
+        authProvider.setPasswordEncoder(passwordEncoder()); // Usa el PasswordEncoder definido
         return authProvider;
     }
 
     /**
-     * Proporciona el AuthenticationManager que se utiliza para autenticar usuarios.
-     * @param config Configuración de autenticación.
-     * @return AuthenticationManager.
-     * @throws Exception En caso de error.
+     * Proporciona el gestor de autenticacion.
+     * Spring Security lo usa para autenticar.
+     *
+     * @param config Configuracion de autenticacion de Spring.
+     * @return Gestor de autenticacion.
+     * @throws Exception Si hay un error.
      */
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
@@ -91,8 +102,10 @@ public class SecurityConfig {
     }
 
     /**
-     * Codificador de contraseñas que utiliza el algoritmo BCrypt.
-     * @return PasswordEncoder.
+     * Define el codificador de contraseñas (BCrypt).
+     * Es seguro para hashear contraseñas.
+     *
+     * @return Codificador de contraseñas.
      */
     @Bean
     public PasswordEncoder passwordEncoder() {

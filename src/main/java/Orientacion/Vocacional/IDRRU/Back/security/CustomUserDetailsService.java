@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 
+/**
+ * Implementacion personalizada de UserDetailsService.
+ * Usada por Spring Security para cargar los datos del usuario.
+ */
 @Service
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
@@ -19,23 +23,21 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final UsuarioRepository usuarioRepository;
 
     /**
-     * Carga los detalles del usuario a partir del nombre de usuario.
-     * Este metodo es utilizado por Spring Security durante la autenticación.
+     * Busca y carga los detalles de un usuario por su nombre de usuario.
+     * Utilizado por el framework de seguridad.
      *
-     * @param username nombre de usuario.
-     * @return detalles del usuario (UserDetails).
-     * @throws UsernameNotFoundException si el usuario no existe.
+     * @param username El nombre de usuario a buscar.
+     * @return UserDetails que representa al usuario.
+     * @throws UsernameNotFoundException si el usuario no es encontrado.
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + username));
 
-        // Se crea una instancia de User (propia de Spring Security)
-        // con el nombre de usuario, la contraseña y los roles como autoridad.
         return new User(
                 usuario.getUsername(),
-                usuario.getPassword(),
+                usuario.getPassword(), // La contrasena deberia estar codificada
                 Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + usuario.getRol()))
         );
     }

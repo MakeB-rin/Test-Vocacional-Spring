@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Entidad del usuario.
+ * Entidad que representa un usuario del sistema.
  */
 @Data
 @AllArgsConstructor
@@ -36,5 +36,5 @@ public class Usuario extends Base {
     private String email;
 
     @Column(name = "rol")
-    private String rol = "USER"; // Valor por defecto
+    private String rol = "ADMIN";
 }

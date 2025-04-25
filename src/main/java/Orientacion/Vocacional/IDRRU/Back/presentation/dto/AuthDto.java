@@ -5,7 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * DTO para datos relacionados con autenticacion y registro.
+ */
 public class AuthDto {
+
+    /**
+     * Representa la solicitud de inicio de sesion.
+     */
     @Data
     @Builder
     @AllArgsConstructor
@@ -15,6 +22,9 @@ public class AuthDto {
         private String password;
     }
 
+    /**
+     * Representa la respuesta despues de un inicio de sesion exitoso.
+     */
     @Data
     @Builder
     @AllArgsConstructor
@@ -26,6 +36,9 @@ public class AuthDto {
         private String rol;
     }
 
+    /**
+     * Representa la solicitud para registrar un nuevo usuario.
+     */
     @Data
     @Builder
     @AllArgsConstructor
