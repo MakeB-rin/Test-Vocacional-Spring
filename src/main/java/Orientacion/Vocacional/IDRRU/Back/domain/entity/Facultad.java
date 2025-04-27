@@ -6,9 +6,11 @@ import lombok.*;
 import java.util.List;
 
 // Entidad Facultad: Representa una facultad en la base de datos
-@Data // Incluye @Getter, @Setter, @ToString, @EqualsAndHashCode
+// Incluye @Getter, @Setter, @ToString, @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Facultad extends Base{
     @Id
@@ -22,7 +24,7 @@ public class Facultad extends Base{
     @Column(nullable = false, length = 200)
     private String nombre;
 
-    // Relación con la entidad Resultado
-    // @OneToMany(mappedBy = "facultad", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    // private List<Resultado> resultados;
+    //Relación con la entidad Resultado
+    @OneToMany(mappedBy = "facultad", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Resultado> resultados;
 }

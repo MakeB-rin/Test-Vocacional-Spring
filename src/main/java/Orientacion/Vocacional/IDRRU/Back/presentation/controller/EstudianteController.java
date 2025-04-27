@@ -1,14 +1,11 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
+import Orientacion.Vocacional.IDRRU.Back.domain.mapper.EstudianteMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.EstudianteService;
-import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
-import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ProvinciaService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,45 +15,41 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/estudiante")
-
 public class EstudianteController {
+
     @Autowired
-    private ProvinciaService provinciaService;
-
-
     private final EstudianteService estudianteService;
 
-    @GetMapping
-    public ResponseEntity<List<Estudiante>> getAll(){
-        List<Estudiante> EstudianteList = estudianteService.findAll();
+    @Autowired
+    private final EstudianteMapper estudianteMapper;
+
+    @GetMapping("/")
+    public ResponseEntity<List<EstudianteDto>> getAll(){
+        List<EstudianteDto> EstudianteList = estudianteMapper.fromEntityListToDto(estudianteService.findAll());
         return ResponseEntity.status(HttpStatus.OK).body(EstudianteList);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Estudiante> findById(@PathVariable Integer id){
-        Estudiante estudianteFound = estudianteService.findById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(estudianteFound);
+    public ResponseEntity<EstudianteDto> findById(@PathVariable Integer id){
+        EstudianteDto estudianteDto = estudianteMapper.fromEntityToDto(estudianteService.findById(id));
+        return ResponseEntity.status(HttpStatus.OK).body(estudianteDto);
     }
 
     @PostMapping("/")
-    public ResponseEntity<Estudiante> save(@Valid @RequestBody EstudianteDto dto) {
-        Estudiante estudianteSave = estudianteService.create(dto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(estudianteSave);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Estudiante> delete(@PathVariable Integer id) {
-        estudianteService.delete(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<EstudianteDto> save(@Valid @RequestBody EstudianteDto dto) {
+        EstudianteDto estudianteDto = estudianteMapper.fromEntityToDto(estudianteService.create(dto));
+        return ResponseEntity.status(HttpStatus.OK).body(estudianteDto);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Estudiante> update(@PathVariable Integer id, @Valid @RequestBody EstudianteDto estudianteDto) {
-        Estudiante estudianteUpdate = estudianteService.update(id, estudianteDto);
-        return ResponseEntity.ok(estudianteUpdate);
+    public ResponseEntity<EstudianteDto> update(@PathVariable Integer id, @Valid @RequestBody EstudianteDto estudianteDto) {
+        EstudianteDto estudianteUpdate = estudianteMapper.fromEntityToDto(estudianteService.update(id, estudianteDto));
+        return ResponseEntity.status(HttpStatus.OK).body(estudianteUpdate);
     }
 
-
-
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<EstudianteDto> delete(@PathVariable Integer id) {
+        estudianteService.delete(id);
+        return ResponseEntity.ok().build();
+    }
 }

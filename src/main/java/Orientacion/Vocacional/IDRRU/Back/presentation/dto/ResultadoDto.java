@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResultadoDto {
+
     private Integer idResultado;
 
     @NotNull(message = "El interes no puede ser nulo")

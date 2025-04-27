@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @MappedSuperclass
-
 public class Base {
     @Column(name = "active")
     public boolean active = true;

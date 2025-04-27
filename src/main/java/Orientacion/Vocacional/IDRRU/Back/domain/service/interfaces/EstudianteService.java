@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface EstudianteService {
 
-    public List<Estudiante> findAll();
+    List<Estudiante> findAll();
 
-    public Estudiante findById(Integer id);
+    Estudiante findById(Integer id);
 
-    public Estudiante create(EstudianteDto estudianteDto);
+    Estudiante create(EstudianteDto estudianteDto);
 
-    public Estudiante update(Integer id, EstudianteDto estudianteDto);
+    Estudiante update(Integer id, EstudianteDto estudianteDto);
 
-    public void delete(Integer id);
+    void delete(Integer id);
 }

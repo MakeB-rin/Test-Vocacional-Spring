@@ -1,7 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.List;
@@ -10,9 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
-
-@Entity
+@Builder
+@Entity(name = "estudiante")
 public class Estudiante extends Base{
 
     @Id
@@ -20,21 +19,35 @@ public class Estudiante extends Base{
     @Column(name = "id_estudiante")
     private Integer idEstudiante;
 
+    @Column(name = "ci_estudiante")
     private String ciEstudiante;
+
+    @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "ap_paterno")
     private String apPaterno;
+
+    @Column(name = "ap_materno")
     private String apMaterno;
+
+    @Column(name = "colegio")
     private String colegio;
+
+    @Column(name = "curso")
     private String curso;
+
+    @Column(name = "edad")
     private Integer edad;
+
+    @Column(name = "celular")
     private String celular;
 
     @ManyToOne
-    @JoinColumn(name = "id_provincia",referencedColumnName = "id_provincia", nullable = false)
-    private Provincia provincia;
+    @JoinColumn(name = "id_municipio",referencedColumnName = "id_municipio", nullable = false)
+    private Municipio municipio;
 
     @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Resultado> resultados;
 
 }

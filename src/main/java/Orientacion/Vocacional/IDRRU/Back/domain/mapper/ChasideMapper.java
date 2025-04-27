@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ChasideMapper {
 
-        public Chaside fromDtoToEntity(ChasideDto dto, Chaside chaside) {
+    public Chaside fromDtoToEntity(ChasideDto dto, Chaside chaside) {
         Chaside chasideAux = new Chaside ();
 
         if (chaside != null) {

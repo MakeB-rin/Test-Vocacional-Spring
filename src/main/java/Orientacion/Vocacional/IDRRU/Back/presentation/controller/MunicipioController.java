@@ -1,6 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
+import Orientacion.Vocacional.IDRRU.Back.domain.mapper.MunicipioMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.MunicipioDto;
 import jakarta.validation.Valid;
@@ -23,6 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MunicipioController {
 
   private final MunicipioService municipioService;
+  private final MunicipioMapper municipioMapper;
+
   @GetMapping
   public ResponseEntity<List<Municipio>> getAll() {
     List<Municipio> municipioList = municipioService.getAll();
@@ -30,9 +33,9 @@ public class MunicipioController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Municipio> getById(@PathVariable Integer id) {
-    Municipio municipioFound = municipioService.getById(id);
-    return ResponseEntity.status(HttpStatus.OK).body(municipioFound);
+  public ResponseEntity<MunicipioDto> getById(@PathVariable Integer id) {
+    MunicipioDto municipioDto = municipioMapper.fromEntityToDto(municipioService.getById(id));
+    return ResponseEntity.status(HttpStatus.OK).body(municipioDto);
   }
 
   @PostMapping("/{id}")

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class ResultadoMapper {
 
     public Resultado fromDtoToEntity(ResultadoDto dto, Resultado resultado) {
+
         Resultado resultadoAux = (resultado != null) ? resultado : new Resultado();
 
         resultadoAux.setInteres(dto.getInteres());
@@ -33,12 +34,14 @@ public class ResultadoMapper {
 
         return resultadoAux;
     }
+
     // Metodo opcional para convertir entidad a DTO
     public ResultadoDto fromEntityToDto(Resultado resultado) {
         if (resultado == null) {
             return null;
         }
         ResultadoDto dto = new ResultadoDto();
+
         dto.setIdResultado(resultado.getIdResultado());
         dto.setInteres(resultado.getInteres());
         dto.setAptitud(resultado.getAptitud());
