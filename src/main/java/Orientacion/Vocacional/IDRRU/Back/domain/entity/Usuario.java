@@ -6,7 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Entidad que representa un usuario del sistema.
+ * Entidad de usuario.
+ * Representa un usuario en el sistema con credenciales y datos personales básicos.
  */
 @Data
 @AllArgsConstructor
@@ -28,13 +29,4 @@ public class Usuario extends Base {
 
     @Column(nullable = false, length = 100)
     private String nombre;
-
-    @Column(length = 100)
-    private String apellido;
-
-    @Column(length = 100)
-    private String email;
-
-    @Column(name = "rol")
-    private String rol = "ADMIN";
 }

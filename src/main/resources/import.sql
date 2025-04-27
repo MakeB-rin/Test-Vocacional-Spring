@@ -173,7 +173,7 @@ INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, cel
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('MARIO', 'TARQUI', 'NINA', '96357', 19, '96325', 'DON BOSCO', '6TO', 16, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
 
 ----------------
--- FACULTAD ---
+--- FACULTAD ---
 ----------------
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FA', 'FACULTAD DE AGRONOMÍA', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FAADU', 'FACULTAD DE ARQUITECTURA, ARTES, DISEÑO Y URBANISMO', true, NOW(), NOW());
@@ -189,5 +189,11 @@ INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('F
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FO', 'FACULTAD DE ODONTOLOGÍA', true, NOW(), NOW());
 INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FT', 'FACULTAD DE TECNOLOGÍA', true, NOW(), NOW());
 
-
-INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, apellido, email, nombre, password, rol) VALUES (true, 1, now(), now(), 'admin', 'admin', 'admin@mail.com', 'admin', '$2a$10$dZTWcB1gfFI11HxZdVWQSuBkYaAon1He/dVL9hkfDAlBMG2d0gYeK', 'ADMIN');
+----------------
+---  USUARIO ---
+----------------
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 1, now(), now(), 'ADMIN', 'ADMINISTRADOR', '$2a$10$dZTWcB1gfFI11HxZdVWQSuBkYaAon1He/dVL9hkfDAlBMG2d0gYeK');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 2, now(), now(), 'ADMIN1', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 3, now(), now(), 'ADMIN2', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 4, now(), now(), 'ADMIN3', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 5, now(), now(), 'ADMIN4', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');

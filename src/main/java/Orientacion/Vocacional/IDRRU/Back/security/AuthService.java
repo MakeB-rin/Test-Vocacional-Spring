@@ -1,20 +1,20 @@
-package Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces;
+package Orientacion.Vocacional.IDRRU.Back.security;
 
 import Orientacion.Vocacional.IDRRU.Back.data.repository.UsuarioRepository;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Usuario;
-import Orientacion.Vocacional.IDRRU.Back.domain.mapper.UsuarioMapper;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.AuthDto;
-import Orientacion.Vocacional.IDRRU.Back.presentation.dto.UsuarioDto;
-import Orientacion.Vocacional.IDRRU.Back.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import java.util.Date;
 
 /**
- * Servicio para operaciones de autenticacion y registro.
+ * Servicio para autenticacion de usuarios.
+ * Maneja operaciones de inicio de sesion, registro y cierre de sesion.
  */
 @Service
 @RequiredArgsConstructor
@@ -23,7 +23,7 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
     private final UsuarioRepository usuarioRepository;
-    private final UsuarioMapper usuarioMapper;
+    private final PasswordEncoder passwordEncoder;
     private final TokenBlacklistService tokenBlacklistService;
 
     /**
@@ -32,13 +32,12 @@ public class AuthService {
      * @param request Datos de la solicitud de login (usuario y contrasena).
      * @return Respuesta con el token JWT y datos del usuario.
      */
-    public AuthDto.LoginResponse login(AuthDto.LoginRequest request) {
+    public AuthDto.LoginResponse iniciarSesion(AuthDto.LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
         );
-
         UserDetails user = (UserDetails) authentication.getPrincipal();
-        String token = jwtUtil.generateToken(user);
+        String token = jwtUtil.generarToken(user);
 
         Usuario usuario = usuarioRepository.findByUsername(user.getUsername())
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado despues de autenticacion"));
@@ -47,7 +46,6 @@ public class AuthService {
                 .token(token)
                 .username(usuario.getUsername())
                 .nombre(usuario.getNombre())
-                .rol(usuario.getRol())
                 .build();
     }
 
@@ -55,27 +53,19 @@ public class AuthService {
      * Registra un nuevo usuario en el sistema.
      *
      * @param request Datos de la solicitud de registro.
-     * @return El DTO del usuario registrado.
+     * @return El usuario registrado.
      */
-    public UsuarioDto register(AuthDto.RegisterRequest request) {
+    public Usuario registrarUsuario(AuthDto.RegisterRequest request) {
         if (usuarioRepository.existsByUsername(request.getUsername())) {
             throw new RuntimeException("El nombre de usuario ya esta en uso");
         }
 
-        UsuarioDto dto = new UsuarioDto(
-                null,
-                request.getUsername(),
-                request.getPassword(),
-                request.getNombre(),
-                request.getApellido(),
-                request.getEmail(),
-                "ADMIN" // Rol por defecto
-        );
+        Usuario usuario = new Usuario();
+        usuario.setUsername(request.getUsername());
+        usuario.setPassword(passwordEncoder.encode(request.getPassword()));
+        usuario.setNombre(request.getNombre());
 
-        Usuario usuario = usuarioMapper.fromDtoToEntity(dto, null);
-        Usuario savedUsuario = usuarioRepository.save(usuario);
-
-        return usuarioMapper.fromEntityToDto(savedUsuario);
+        return usuarioRepository.save(usuario);
     }
 
     /**
@@ -83,10 +73,13 @@ public class AuthService {
      *
      * @param token El token JWT a invalidar (puede incluir "Bearer ").
      */
-    public void logout(String token) {
+    public void cerrarSesion(String token) {
         if (token != null && token.startsWith("Bearer ")) {
             token = token.substring(7);
         }
-        tokenBlacklistService.blacklistToken(token);
+        Date expirationDate = jwtUtil.extraerExpiracion(token);
+        Long expirationTimeMillis = expirationDate.getTime();
+        tokenBlacklistService.blacklistToken(token, expirationTimeMillis);
+
     }
 }

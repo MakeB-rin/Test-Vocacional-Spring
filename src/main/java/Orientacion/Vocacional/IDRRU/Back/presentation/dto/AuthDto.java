@@ -1,5 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +12,6 @@ import lombok.NoArgsConstructor;
  */
 public class AuthDto {
 
-    /**
-     * Representa la solicitud de inicio de sesion.
-     */
     @Data
     @Builder
     @AllArgsConstructor
@@ -21,10 +20,6 @@ public class AuthDto {
         private String username;
         private String password;
     }
-
-    /**
-     * Representa la respuesta despues de un inicio de sesion exitoso.
-     */
     @Data
     @Builder
     @AllArgsConstructor
@@ -33,21 +28,21 @@ public class AuthDto {
         private String token;
         private String username;
         private String nombre;
-        private String rol;
     }
-
-    /**
-     * Representa la solicitud para registrar un nuevo usuario.
-     */
     @Data
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
     public static class RegisterRequest {
+        @NotBlank(message = "El nombre de usuario no debe estar en blanco")
+        @Size(min = 3, max = 50, message = "El nombre de usuario debe tener entre 3 y 50 caracteres")
         private String username;
+
+        @NotBlank(message = "La contrasena no debe estar en blanco")
+        @Size(min = 4, message = "La contrasena debe tener al menos 4 caracteres")
         private String password;
+
+        @NotBlank(message = "El nombre no debe estar en blanco")
         private String nombre;
-        private String apellido;
-        private String email;
     }
 }

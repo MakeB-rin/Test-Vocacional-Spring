@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 
+
 /**
- * Implementacion personalizada de UserDetailsService.
- * Usada por Spring Security para cargar los datos del usuario.
+ * Servicio que implementa UserDetailsService para cargar usuarios.
  */
 @Service
 @RequiredArgsConstructor
@@ -24,7 +24,6 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     /**
      * Busca y carga los detalles de un usuario por su nombre de usuario.
-     * Utilizado por el framework de seguridad.
      *
      * @param username El nombre de usuario a buscar.
      * @return UserDetails que representa al usuario.
@@ -37,8 +36,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         return new User(
                 usuario.getUsername(),
-                usuario.getPassword(), // La contrasena deberia estar codificada
-                Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + usuario.getRol()))
+                usuario.getPassword(),
+                Collections.emptyList()
         );
     }
 }
