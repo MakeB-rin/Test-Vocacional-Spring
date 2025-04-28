@@ -7,13 +7,11 @@ import lombok.*;
 
 import java.util.List;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Getter
 @Setter
-
 @Entity
 public class Provincia extends Base {
 
@@ -25,11 +23,8 @@ public class Provincia extends Base {
     private String nombre;
 
     @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Municipio> municipios;
 
-    @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Estudiante> estudiantes;
+
 
 }
