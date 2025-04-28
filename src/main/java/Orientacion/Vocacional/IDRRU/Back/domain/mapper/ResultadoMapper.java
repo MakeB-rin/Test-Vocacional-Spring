@@ -4,6 +4,9 @@ import Orientacion.Vocacional.IDRRU.Back.domain.entity.*;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDto;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ResultadoMapper {
 
@@ -14,7 +17,8 @@ public class ResultadoMapper {
         resultadoAux.setInteres(dto.getInteres());
         resultadoAux.setAptitud(dto.getAptitud());
         resultadoAux.setPuntajeHolland(dto.getPuntajeHolland());
-        resultadoAux.setFecha(dto.getFecha());
+        //No editar el año
+        //resultadoAux.setFecha(dto.getFecha());
 
         Estudiante estudiante = new Estudiante();
         estudiante.setIdEstudiante(dto.getIdEstudiante());
@@ -54,4 +58,59 @@ public class ResultadoMapper {
         dto.setIdFacultad(resultado.getFacultad() != null ? resultado.getFacultad().getIdFacultad() : null);
         return dto;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public List<ResultadoDto> fromEntityListToDtoList(List<Resultado> resultadoList) {
+        List<ResultadoDto> resultadoDtoList = new ArrayList<>();
+        for(Resultado resultado : resultadoList){
+
+            ResultadoDto resultadoDto = new ResultadoDto();
+
+            resultadoDto.setIdResultado(resultado.getIdResultado());
+            resultadoDto.setAptitud(resultado.getAptitud());
+            resultadoDto.setInteres(resultado.getInteres());
+            resultadoDto.setFecha(resultado.getFecha());
+            resultadoDto.setPuntajeHolland(resultado.getPuntajeHolland());
+            if(resultado.getEstudiante() != null){
+                resultadoDto.setIdEstudiante(resultado.getEstudiante().getIdEstudiante());
+            }
+            if(resultado.getChaside() != null){
+                resultadoDto.setIdChaside(resultado.getChaside().getIdChaside());
+            }
+            if(resultado.getHolland() != null){
+                resultadoDto.setIdEstudiante(resultado.getHolland().getIdHolland());
+            }
+            if(resultado.getFacultad() != null){
+                resultadoDto.setIdEstudiante(resultado.getFacultad().getIdFacultad());
+            }
+
+            resultadoDtoList.add(resultadoDto);
+        }
+        return resultadoDtoList;
+    }
+
+
+
+
 }

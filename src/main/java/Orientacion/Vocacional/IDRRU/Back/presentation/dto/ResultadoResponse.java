@@ -1,22 +1,20 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
+import lombok.*;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
+@Getter
+@Setter
 public class ResultadoResponse {
 
-    private Integer municipioId;
 
-    private String nombre;
+    private String municipio;
 
-    private Integer cantidadEstudiantes;
+    private String facultad;
+
+    private Long cantidadEstudiantes;
 
 
 }

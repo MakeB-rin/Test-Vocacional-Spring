@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.text.SimpleDateFormat;
+import java.time.Year;
+
 // Entidad Resultado: Representa un resultado en la base de datos
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,6 +30,15 @@ public class Resultado extends Base{
 
     @Column(name = "fecha")
     private String fecha;
+
+
+    // Este anotacios hace que se ejecuta antes de que un objeto sea guardado en la bd
+    @PrePersist
+    public void prePersist(){
+        if(fecha == null){
+            this.fecha = Year.now().toString(); // cadena
+        }
+    }
 
     @ManyToOne
     @JoinColumn(name = "id_estudiante", referencedColumnName = "id_estudiante", nullable = false)

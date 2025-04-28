@@ -1,6 +1,5 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
-import Orientacion.Vocacional.IDRRU.Back.domain.mapper.EstudianteMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.EstudianteService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
 import jakarta.validation.Valid;
@@ -20,35 +19,42 @@ public class EstudianteController {
     @Autowired
     private final EstudianteService estudianteService;
 
-    @Autowired
-    private final EstudianteMapper estudianteMapper;
-
     @GetMapping("/")
     public ResponseEntity<List<EstudianteDto>> getAll(){
-        List<EstudianteDto> EstudianteList = estudianteMapper.fromEntityListToDto(estudianteService.findAll());
+        List<EstudianteDto> EstudianteList = estudianteService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(EstudianteList);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<EstudianteDto> findById(@PathVariable Integer id){
-        EstudianteDto estudianteDto = estudianteMapper.fromEntityToDto(estudianteService.findById(id));
+        EstudianteDto estudianteDto = estudianteService.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(estudianteDto);
     }
 
     @PostMapping("/")
-    public ResponseEntity<EstudianteDto> save(@Valid @RequestBody EstudianteDto dto) {
-        EstudianteDto estudianteDto = estudianteMapper.fromEntityToDto(estudianteService.create(dto));
-        return ResponseEntity.status(HttpStatus.OK).body(estudianteDto);
+    public ResponseEntity<Object> save(@Valid @RequestBody EstudianteDto dto) {
+        try{
+            EstudianteDto estudianteDto = estudianteService.create(dto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(estudianteDto);
+        }catch (Exception e){
+          return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error en el servidor E" + e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<EstudianteDto> update(@PathVariable Integer id, @Valid @RequestBody EstudianteDto estudianteDto) {
-        EstudianteDto estudianteUpdate = estudianteMapper.fromEntityToDto(estudianteService.update(id, estudianteDto));
+        EstudianteDto estudianteUpdate = estudianteService.update(id, estudianteDto);
         return ResponseEntity.status(HttpStatus.OK).body(estudianteUpdate);
     }
 
+    @PutMapping("/state/{id}")
+    public ResponseEntity<Object> save(@PathVariable Integer id) {
+        estudianteService.changeState(id);
+        return ResponseEntity.ok().build();
+    }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<EstudianteDto> delete(@PathVariable Integer id) {
+    public ResponseEntity<Object> delete(@PathVariable Integer id) {
         estudianteService.delete(id);
         return ResponseEntity.ok().build();
     }
