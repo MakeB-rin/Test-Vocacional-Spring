@@ -6,6 +6,7 @@ import Orientacion.Vocacional.IDRRU.Back.domain.mapper.EstudianteMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.EstudianteService;
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,34 +24,54 @@ public class EstudianteServiceImpl implements EstudianteService {
     private EstudianteMapper estudianteMapper;
 
     @Override
-    public List<Estudiante> findAll() {
-        return estudianteRepository.findAll();
+    public List<EstudianteDto> findAll() {
+        List<Estudiante> estudianteList = estudianteRepository.findAll();
+        return estudianteMapper.fromEntityListToDto(estudianteList);
     }
 
     @Override
-    public Estudiante findById(Integer id){
-        return estudianteRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Estudiante" , id));
+    public EstudianteDto findById(Integer id){
+        Estudiante estudiante = estudianteRepository.findById(id)
+                .orElseThrow(()->new EntityNotFoundException("Estudiante" , id));
+        return estudianteMapper.fromEntityToDto(estudiante);
     }
 
     @Override
-    public Estudiante create(EstudianteDto estudianteDto) {
+    public EstudianteDto create(EstudianteDto estudianteDto) {
         Estudiante estudiante = estudianteMapper.fromDtoToEntity(estudianteDto, null);
-        return estudianteRepository.save(estudiante);
+        Estudiante estudianteSave = estudianteRepository.save(estudiante);
+        return estudianteMapper.fromEntityToDto(estudianteSave);
     }
 
     @Override
-    public Estudiante update(Integer id, EstudianteDto estudianteDto) {
-        Estudiante estudianteFound = estudianteRepository.findById(id).orElseThrow(
+    public EstudianteDto update(Integer id, EstudianteDto estudianteDto) {
+
+        Estudiante estudianteId =  estudianteRepository.findById(id).orElseThrow(
                 ()-> new EntityNotFoundException("Estudiante", id));
-        Estudiante estudianteSave = estudianteMapper.fromDtoToEntity(estudianteDto, estudianteFound);
-        return estudianteRepository.save(estudianteSave);
+
+        Estudiante estudianteEdit = estudianteMapper.fromDtoToEntity(estudianteDto, estudianteId);
+        Estudiante estudianteResultado = estudianteRepository.save(estudianteEdit);
+
+        return estudianteMapper.fromEntityToDto(estudianteResultado);
     }
 
+
+    @Transactional
     @Override
     public void delete(Integer id) {
         estudianteRepository.findById(id).orElseThrow(
                 ()-> new EntityNotFoundException("Estudiante", id));
         estudianteRepository.deleteById(id);
+    }
+
+    //eliminacion LOGICA
+    @Override
+    public void changeState(Integer id) {
+
+        Estudiante estudiante = estudianteRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Estudiante", id));
+        estudiante.active= estudiante.active? false: true;
+        estudianteRepository.save(estudiante);
     }
 
 }

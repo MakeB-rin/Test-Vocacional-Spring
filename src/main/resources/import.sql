@@ -140,37 +140,37 @@ INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALU
 
 
 -- Chaside
-INSERT INTO chaside(codigo) VALUES('Tabla 1C');
-INSERT INTO chaside(codigo) VALUES('Tabla 2H');
-INSERT INTO chaside(codigo) VALUES('Tabla 3A');
-INSERT INTO chaside(codigo) VALUES('Tabla 4S');
-INSERT INTO chaside(codigo) VALUES('Tabla 5I');
-INSERT INTO chaside(codigo) VALUES('Tabla 6D');
-INSERT INTO chaside(codigo) VALUES('Tabla 7E');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo) VALUES(true, NULL, NULL, 'Tabla 1C');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 2H');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 3A');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 4S');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 5I');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 6D');
+INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 7E');
+
 
 -- Holland
+INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 1, NULL, NULL);
+INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 2, NULL, NULL);
+INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 3, NULL, NULL);
+INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 4, NULL, NULL);
 
-INSERT INTO holland(personalidad) VALUES(1);
-INSERT INTO holland(personalidad) VALUES(2);
-INSERT INTO holland(personalidad) VALUES(3);
-INSERT INTO holland(personalidad) VALUES(4);
 
-
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('OMAR', 'CALLE', 'GUACHALLA', '321654', 18, '45625', 'SAN SIMON', '6TO', 1, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('MARCO', 'QUISPE', 'ALANOCA', '852963', 17, '74152', 'BOLIVAR', '6TO', 2, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('OSCAR', 'MARIN', 'VELASQUEZ', '253411', 18, '52637', 'AYACUCHO', '6TO', 3, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('NEIL', 'ARUQUIPA', 'TOLA', '741852', 17, '78956', 'HUGO CHAVEZ', '6TO', 4, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('FERNANDO', 'PEREZ', 'LOAYZA', '456852', 19, '58697', 'CARLOS MEDINACELLI', '6TO', 9, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('ALEX', 'FUENTES', 'CATACORA', '963456', 16, '25145', '4 DE JULIO', '6TO', 5, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('VANESSA', 'MENDOZA', 'FLORES', '123852', 17, '52638', 'LOS ANDES', '6TO', 6, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('NICKOL', 'PAREDES', 'MORALES', '741879', 18, '96857', 'SLOMON', '6TO', 7, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('JUANA', 'MAMANI', 'SULLY', '456221', 19, '55236', 'DORA SCHMIT', '6TO', 8, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('RAQUEL', 'LOZA', 'PEDRAZA', '112255', 17, '65421', 'BOLVIA', '6TO', 10, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('FEDERICO', 'BOLAÑOS', 'GOMEZ', '458796', 17, '85967', 'SARACHO', '6TO', 12, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('GONZALO', 'GONZALES', 'GARCIA', '965236', 16, '85231', 'CALVERT', '6TO', 13, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('FRANCO', 'HUANCA', 'MONCADA', '362547', 18, '12356', 'BOLIVIAN-SUECO', '6TO', 14, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('ESTELA', 'QUINO', 'AVERANGA', '745214', 18, '35789', 'SAGRADOS CORAZONES', '6TO', 15, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_provincia, active, created_at, updated_at) VALUES('MARIO', 'TARQUI', 'NINA', '96357', 19, '96325', 'DON BOSCO', '6TO', 16, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('OMAR', 'CALLE', 'GUACHALLA', '321654', 18, '45625', 'SAN SIMON', '6TO', 1, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('MARCO', 'QUISPE', 'ALANOCA', '852963', 17, '74152', 'BOLIVAR', '6TO', 2, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('OSCAR', 'MARIN', 'VELASQUEZ', '253411', 18, '52637', 'AYACUCHO', '6TO', 3, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('NEIL', 'ARUQUIPA', 'TOLA', '741852', 17, '78956', 'HUGO CHAVEZ', '6TO', 4, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('FERNANDO', 'PEREZ', 'LOAYZA', '456852', 19, '58697', 'CARLOS MEDINACELLI', '6TO', 9, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('ALEX', 'FUENTES', 'CATACORA', '963456', 16, '25145', '4 DE JULIO', '6TO', 5, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('VANESSA', 'MENDOZA', 'FLORES', '123852', 17, '52638', 'LOS ANDES', '6TO', 6, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('NICKOL', 'PAREDES', 'MORALES', '741879', 18, '96857', 'SLOMON', '6TO', 7, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('JUANA', 'MAMANI', 'SULLY', '456221', 19, '55236', 'DORA SCHMIT', '6TO', 8, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('RAQUEL', 'LOZA', 'PEDRAZA', '112255', 17, '65421', 'BOLVIA', '6TO', 10, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('FEDERICO', 'BOLAÑOS', 'GOMEZ', '458796', 17, '85967', 'SARACHO', '6TO', 12, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('GONZALO', 'GONZALES', 'GARCIA', '965236', 16, '85231', 'CALVERT', '6TO', 13, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('FRANCO', 'HUANCA', 'MONCADA', '362547', 18, '12356', 'BOLIVIAN-SUECO', '6TO', 14, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('ESTELA', 'QUINO', 'AVERANGA', '745214', 18, '35789', 'SAGRADOS CORAZONES', '6TO', 15, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('MARIO', 'TARQUI', 'NINA', '96357', 19, '96325', 'DON BOSCO', '6TO', 16, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
 
 ----------------
 --- FACULTAD ---

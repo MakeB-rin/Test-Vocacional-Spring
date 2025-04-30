@@ -1,7 +1,9 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
 
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Base;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,8 +16,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class MunicipioDto {
+public class MunicipioDto extends Base {
+
+
+  private Integer idMunicipio;
+
   @NotBlank(message = "El nombre NO debe ser blanco")
   @Size(min = 1, max = 200, message = "el nombre debe tener entre 2-198 caracteres")
   private String Nombre;
+
+  private Integer idProvincia;
+
 }
