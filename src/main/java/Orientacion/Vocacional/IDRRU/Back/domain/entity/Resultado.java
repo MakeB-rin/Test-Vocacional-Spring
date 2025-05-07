@@ -32,7 +32,7 @@ public class Resultado extends Base{
     private String fecha;
 
 
-    // Este anotacios hace que se ejecuta antes de que un objeto sea guardado en la bd
+    // Este anotacion hace que se ejecuta antes de que un objeto sea guardado en la bd
     @PrePersist
     public void prePersist(){
         if(fecha == null){
