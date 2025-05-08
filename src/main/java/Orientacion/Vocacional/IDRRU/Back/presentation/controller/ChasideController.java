@@ -25,7 +25,7 @@ public class ChasideController {
         return ResponseEntity.status(HttpStatus.OK).body(chasideDto);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<ChasideDto>> getById() {
         List<ChasideDto> chasideList = chasideService.getAll();
         return ResponseEntity.status(HttpStatus.OK).body(chasideList);

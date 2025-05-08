@@ -22,16 +22,23 @@ public class EstudianteController {
     // http://localhost:8080/estudiante/?id=5
     // @RequestParam(required = false) Integer id (id o null)
     // List.of(estudianteDto) crea una lista inmutable que contiene solo ese objeto.
-    @GetMapping("/")
-    public ResponseEntity<List<EstudianteDto>> getAll(@RequestParam(required = false) Integer id){
-        if(id != null){
-            EstudianteDto estudianteDto = estudianteService.findById(id);
-            return ResponseEntity.status(HttpStatus.OK).body(List.of(estudianteDto));
-        }else {
-            List<EstudianteDto> EstudianteList = estudianteService.findAll();
-            return ResponseEntity.status(HttpStatus.OK).body(EstudianteList);
-        }
+//    @GetMapping("/")
+//    public ResponseEntity<List<EstudianteDto>> getAll(@RequestParam(required = false) Integer id){
+//        if(id != null){
+//            EstudianteDto estudianteDto = estudianteService.findById(id);
+//            return ResponseEntity.status(HttpStatus.OK).body(List.of(estudianteDto));
+//        }else {
+//            List<EstudianteDto> EstudianteList = estudianteService.findAll();
+//            return ResponseEntity.status(HttpStatus.OK).body(EstudianteList);
+//        }
+//    }
+
+    @GetMapping
+    public ResponseEntity<List<EstudianteDto>> getAll(){
+        List<EstudianteDto> EstudianteList = estudianteService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(EstudianteList);
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<EstudianteDto> findById(@PathVariable Integer id){

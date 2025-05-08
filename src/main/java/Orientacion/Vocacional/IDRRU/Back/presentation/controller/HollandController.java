@@ -27,7 +27,7 @@ public class HollandController {
         return ResponseEntity.status(HttpStatus.OK).body(hollandDto);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<HollandDto>> getById() {
         List<HollandDto> hollandList = hollandService.getAll();
         return ResponseEntity.status(HttpStatus.OK).body(hollandList);

@@ -26,7 +26,7 @@ public class ResultadoController {
         return ResponseEntity.ok(resultadoDto);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<ResultadoDto>> getAll() {
         List<ResultadoDto> resultadosDto = resultadoService.getAll();
         return ResponseEntity.ok(resultadosDto);

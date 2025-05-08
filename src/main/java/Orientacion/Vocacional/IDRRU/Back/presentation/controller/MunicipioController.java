@@ -20,7 +20,7 @@ public class MunicipioController {
   private final MunicipioService municipioService;
   private final MunicipioMapper municipioMapper;
 
-  @GetMapping("/")
+  @GetMapping
   public ResponseEntity<List<MunicipioDto>> getAll() {
     List<MunicipioDto> municipioList = municipioService.getAll();
     return ResponseEntity.status(HttpStatus.OK).body(municipioList);
