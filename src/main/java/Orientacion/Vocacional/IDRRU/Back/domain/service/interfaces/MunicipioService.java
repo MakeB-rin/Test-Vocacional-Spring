@@ -6,13 +6,8 @@ import java.util.List;
 
 public interface MunicipioService {
 
-
-  List<Municipio> getAll();
-  Municipio create(MunicipioDto municipioDto);
   Municipio getById(Integer id);
-  void delete(Integer id);
 
-  void changeState(Integer id);
+  List<MunicipioDto> getAll();
 
-  Municipio update(Integer id, MunicipioDto municipioDto);
 }

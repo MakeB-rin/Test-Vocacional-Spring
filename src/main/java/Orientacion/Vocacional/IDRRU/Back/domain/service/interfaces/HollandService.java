@@ -7,10 +7,10 @@ import java.util.List;
 
 public interface HollandService {
 
-    Holland getById(Integer id);
+    HollandDto getById(Integer id);
 
-    List<Holland> getAll();
+    List<HollandDto> getAll();
 
-    Holland create(HollandDto hollandDto);
+    HollandDto create(HollandDto hollandDto);
 
 }

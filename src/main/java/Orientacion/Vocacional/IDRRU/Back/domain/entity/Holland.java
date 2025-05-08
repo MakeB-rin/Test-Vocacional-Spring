@@ -19,8 +19,7 @@ public class Holland extends Base{
 
     private Integer personalidad;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "holland")
-    @JsonIgnore
+    @OneToMany(mappedBy = "holland", cascade = CascadeType.ALL)
     private List<Resultado> resultados;
 
 }

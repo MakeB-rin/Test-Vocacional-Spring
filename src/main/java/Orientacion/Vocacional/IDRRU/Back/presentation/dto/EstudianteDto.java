@@ -13,6 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class EstudianteDto extends Base {
 
 

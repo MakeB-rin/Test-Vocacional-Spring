@@ -24,19 +24,22 @@ public class ChasideServiceImpl implements ChasideService {
     private ChasideMapper chasideMapper;
 
     @Override
-    public Chaside getById(Integer id){
-        return chasideRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Chaside", id));
+    public ChasideDto getById(Integer id){
+        Chaside chaside = chasideRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Chaside", id));
+        return chasideMapper.fromEntityToDto(chaside);
     }
 
     @Override
-    public List<Chaside> getAll(){
-        return chasideRepository.findAll();
+    public List<ChasideDto> getAll(){
+        List<Chaside> chasideList = chasideRepository.findAll();
+        return chasideMapper.fromEntityListToDto(chasideList);
     }
 
     @Override
-    public Chaside create(ChasideDto chasideDto){
+    public ChasideDto create(ChasideDto chasideDto){
         Chaside chaside = chasideMapper.fromDtoToEntity(chasideDto, null);
-        return chasideRepository.save(chaside);
+        Chaside chasideSave = chasideRepository.save(chaside);
+        return chasideMapper.fromEntityToDto(chasideSave);
     }
 
 }

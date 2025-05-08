@@ -22,20 +22,20 @@ public class HollandController {
     private final HollandService hollandService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Holland> getById(@PathVariable Integer id) {
-        Holland holland = hollandService.getById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(holland);
+    public ResponseEntity<HollandDto> getById(@PathVariable Integer id) {
+        HollandDto hollandDto = hollandService.getById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(hollandDto);
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<Holland>> getById() {
-        List<Holland> hollandList = hollandService.getAll();
+    public ResponseEntity<List<HollandDto>> getById() {
+        List<HollandDto> hollandList = hollandService.getAll();
         return ResponseEntity.status(HttpStatus.OK).body(hollandList);
     }
 
     @PostMapping("/")
-    public ResponseEntity<Holland> save(@Valid @RequestBody HollandDto dto) {
-        Holland holland = hollandService.create(dto);
+    public ResponseEntity<HollandDto> save(@Valid @RequestBody HollandDto dto) {
+        HollandDto holland = hollandService.create(dto);
         return ResponseEntity.status(HttpStatus.OK).body(holland);
     }
 }

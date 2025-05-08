@@ -1,6 +1,8 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
+
 import lombok.*;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -8,7 +10,6 @@ import lombok.*;
 @Getter
 @Setter
 public class ResultadoResponse {
-
 
     private String municipio;
 

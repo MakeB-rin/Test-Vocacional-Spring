@@ -7,10 +7,10 @@ import java.util.List;
 
 public interface ChasideService {
 
-    Chaside getById(Integer id);
+    ChasideDto getById(Integer id);
 
-    List<Chaside> getAll();
+    List<ChasideDto> getAll();
 
-    Chaside create(ChasideDto chasideDto);
+    ChasideDto create(ChasideDto chasideDto);
 
 }

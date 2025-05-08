@@ -2,15 +2,16 @@ package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 // DTO para Facultad con validaciones
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+@Builder
 public class FacultadDto {
+
     private Integer idFacultad;
 
     @NotBlank(message = "El código no debe ser blanco")

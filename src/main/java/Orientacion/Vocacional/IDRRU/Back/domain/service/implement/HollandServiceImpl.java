@@ -23,19 +23,22 @@ public class HollandServiceImpl implements HollandService {
     private HollandMapper hollandMapper;
 
     @Override
-    public Holland getById(Integer id){
-        return hollandRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Holland", id));
+    public HollandDto getById(Integer id){
+        Holland holland = hollandRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Holland", id));
+        return hollandMapper.fromEntityToDto(holland);
     }
 
     @Override
-    public List<Holland> getAll(){
-        return hollandRepository.findAll();
+    public List<HollandDto> getAll(){
+        List<Holland> holland = hollandRepository.findAll();
+        return hollandMapper.fromEntityListToDto(holland);
     }
 
     @Override
-    public Holland create(HollandDto hollandDto){
+    public HollandDto create(HollandDto hollandDto){
         Holland holland = hollandMapper.fromDtoToEntity(hollandDto, null);
-        return hollandRepository.save(holland);
+        Holland hollandSave = hollandRepository.save(holland);
+        return hollandMapper.fromEntityToDto(hollandSave);
     }
 
 }

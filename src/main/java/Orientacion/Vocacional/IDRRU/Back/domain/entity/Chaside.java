@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @Entity
 public class Chaside extends Base{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_chaside")
@@ -19,8 +20,7 @@ public class Chaside extends Base{
 
     private String codigo;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "chaside")
-    @JsonIgnore
+    @OneToMany(mappedBy = "chaside", cascade = CascadeType.ALL)
     private List<Resultado> resultados;
 
 }
