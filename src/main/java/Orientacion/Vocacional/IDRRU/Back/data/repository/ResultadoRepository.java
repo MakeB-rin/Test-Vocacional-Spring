@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface  ResultadoRepository extends GenericRepository<Resultado, Integer>{
@@ -25,6 +26,6 @@ public interface  ResultadoRepository extends GenericRepository<Resultado, Integ
      ORDER BY m.nombre""")
     List<ResultadoResponse> busquedaMunicipioList();
 
-
-
+    Optional<Resultado> findByEstudianteIdEstudiante(Integer idEstudiante);
+    List<Resultado> findAllByEstudianteIdEstudiante(Integer idEstudiante);
 }

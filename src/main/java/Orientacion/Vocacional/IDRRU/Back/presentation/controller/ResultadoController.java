@@ -61,4 +61,11 @@ public class ResultadoController {
         List<ResultadoResponse> resultadoResponseList = resultadoService.searchToMunicipioList();
         return ResponseEntity.ok(resultadoResponseList);
     }
+    @GetMapping("/estudiante/{estudianteId}")
+    public ResponseEntity<List<ResultadoDto>> getByEstudianteId(@PathVariable Integer estudianteId) {
+        List<ResultadoDto> resultados = resultadoService.getByEstudianteId(estudianteId);
+        return ResponseEntity.ok(resultados);
+    }
+
+
 }

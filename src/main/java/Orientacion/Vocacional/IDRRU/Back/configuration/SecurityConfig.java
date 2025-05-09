@@ -49,11 +49,11 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         // Rutas publicas
-
                         .requestMatchers("/auth/login").permitAll()
                         //.requestMatchers("/estudiante/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/estudiante/**").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/estudiante/**").permitAll()
+
                         // Las demas rutas requieren autenticacion
                         .anyRequest().authenticated()
                 )
