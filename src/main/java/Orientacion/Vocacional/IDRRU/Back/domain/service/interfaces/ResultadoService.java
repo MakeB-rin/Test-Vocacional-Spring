@@ -21,4 +21,7 @@ public interface ResultadoService {
     void delete(Integer id);
 
     List<ResultadoResponse> searchToMunicipioList();
+
+    List<ResultadoDto> getByEstudianteId(Integer estudianteId);
+
 }

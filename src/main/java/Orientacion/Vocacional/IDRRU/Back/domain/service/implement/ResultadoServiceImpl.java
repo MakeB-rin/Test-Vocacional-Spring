@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -72,4 +73,13 @@ public class ResultadoServiceImpl implements ResultadoService {
     public List<ResultadoResponse> searchToMunicipioList(){
         return resultadoRepository.busquedaMunicipioList();
     }
+
+    @Override
+    public List<ResultadoDto> getByEstudianteId(Integer estudianteId) {
+        List<Resultado> resultados = resultadoRepository.findAllByEstudianteIdEstudiante(estudianteId);
+        return resultados.stream()
+                .map(resultadoMapper::fromEntityToDto)
+                .collect(Collectors.toList());
+    }
+
 }
