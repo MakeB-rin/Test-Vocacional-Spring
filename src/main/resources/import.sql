@@ -168,7 +168,7 @@ INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, cel
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('GONZALO', 'GONZALES', 'GARCIA', '965236', 16, '85231', 'CALVERT', '6TO', 13, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('FRANCO', 'HUANCA', 'MONCADA', '362547', 18, '12356', 'BOLIVIAN-SUECO', '6TO', 14, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('ESTELA', 'QUINO', 'AVERANGA', '745214', 18, '35789', 'SAGRADOS CORAZONES', '6TO', 15, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('MARIO', 'TARQUI', 'NINA', '96357', 19, '96325', 'DON BOSCO', '6TO', 16, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('MARIO', 'TARQUI', 'NINA', '96357', 19, '96325', 'DON BOSCO', '6TO', 16, true, NOW(), NOW());
 
 ----------------
 --- FACULTAD ---
