@@ -58,6 +58,7 @@ public class SecurityConfig {
                         //.requestMatchers("/estudiante/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/estudiante/**").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/estudiante/**").permitAll()
+
                         // Las demas rutas requieren autenticacion
                         .anyRequest().authenticated()
                 )

@@ -140,20 +140,18 @@ INSERT INTO municipio(nombre, active, created_at, updated_at, id_provincia) VALU
 
 
 -- Chaside
-INSERT INTO public.chaside(active, created_at, updated_at, codigo) VALUES(true, NULL, NULL, 'Tabla 1C');
-INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 2H');
-INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 3A');
-INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 4S');
-INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 5I');
-INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 6D');
-INSERT INTO public.chaside(active, created_at, updated_at, codigo)VALUES(true, NULL, NULL, 'Tabla 7E');
-
-
+INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 1C');
+INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 2H');
+INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 3A');
+INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 4S');
+INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 5I');
+INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 6D');
+INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 7E');
 -- Holland
-INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 1, NULL, NULL);
-INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 2, NULL, NULL);
-INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 3, NULL, NULL);
-INSERT INTO public.holland(active, personalidad, created_at, updated_at)VALUES(true, 4, NULL, NULL);
+INSERT INTO holland (active, personalidad, created_at, updated_at) VALUES (true, 1, NOW(), NOW());
+INSERT INTO holland (active, personalidad, created_at, updated_at) VALUES (true, 2, NOW(), NOW());
+INSERT INTO holland (active, personalidad, created_at, updated_at) VALUES (true, 3, NOW(), NOW());
+INSERT INTO holland (active, personalidad, created_at, updated_at) VALUES (true, 4, NOW(), NOW());
 
 
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('OMAR', 'CALLE', 'GUACHALLA', '321654', 18, '45625', 'SAN SIMON', '6TO', 1, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
@@ -170,7 +168,7 @@ INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, cel
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('GONZALO', 'GONZALES', 'GARCIA', '965236', 16, '85231', 'CALVERT', '6TO', 13, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('FRANCO', 'HUANCA', 'MONCADA', '362547', 18, '12356', 'BOLIVIAN-SUECO', '6TO', 14, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
 INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('ESTELA', 'QUINO', 'AVERANGA', '745214', 18, '35789', 'SAGRADOS CORAZONES', '6TO', 15, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
-INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('MARIO', 'TARQUI', 'NINA', '96357', 19, '96325', 'DON BOSCO', '6TO', 16, true, '2024-01-20 11:30:15', '2024-02-28 18:45:30');
+INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, celular, colegio, curso, id_municipio, active, created_at, updated_at) VALUES('MARIO', 'TARQUI', 'NINA', '96357', 19, '96325', 'DON BOSCO', '6TO', 16, true, NOW(), NOW());
 
 ----------------
 --- FACULTAD ---
@@ -197,3 +195,9 @@ INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombr
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 3, now(), now(), 'ADMIN2', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 4, now(), now(), 'ADMIN3', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 5, now(), now(), 'ADMIN4', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 6, 1, 1, 75, NOW(), NOW(), NOW(), 'R:10, I:8, A:7, S:6, E:5, C:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 6, 2, 2, 85, NOW(), NOW(), NOW(), 'I:9, R:7, A:6, S:5, C:4, E:3');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 3, 3, 3, 3, 92, NOW(), NOW(), NOW(), 'A:10, E:9, S:8, I:7, R:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 4, 4, 4, 70, NOW(), NOW(), NOW(), 'S:8, E:7, C:6, R:5, I:4, A:3');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 5, 5, 1, 1, 81, NOW(), NOW(), NOW(), 'E:9, A:8, S:7, I:6, C:5, R:4');

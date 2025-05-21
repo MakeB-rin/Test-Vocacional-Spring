@@ -47,6 +47,10 @@ public class EstudianteMapper {
         estudianteDto.setCurso(estudiante.getCurso());
         estudianteDto.setEdad(estudiante.getEdad());
         estudianteDto.setCelular(estudiante.getCelular());
+
+        estudianteDto.setCreatedAt(estudiante.getCreatedAt());
+        estudianteDto.setUpdatedAt(estudiante.getUpdatedAt());
+
         if(estudiante.getMunicipio() != null){
             estudianteDto.setId_municipio(estudiante.getMunicipio().getIdMunicipio());
         }
@@ -67,6 +71,10 @@ public class EstudianteMapper {
             estudianteDto.setCurso(estudianteAux.getCurso());
             estudianteDto.setEdad(estudianteAux.getEdad());
             estudianteDto.setCelular(estudianteAux.getCelular());
+
+            estudianteDto.setCreatedAt(estudianteAux.getCreatedAt());
+            estudianteDto.setUpdatedAt(estudianteAux.getUpdatedAt());
+            
             if(estudianteAux.getMunicipio() != null){
                 estudianteDto.setId_municipio(estudianteAux.getMunicipio().getIdMunicipio());
             }
