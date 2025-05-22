@@ -1,6 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
@@ -21,4 +22,8 @@ public class FacultadDto {
     @NotBlank(message = "El nombre no debe ser blanco")
     @Size(min = 1, max = 200, message = "El nombre debe tener entre 1 y 200 caracteres")
     private String nombre;
+
+    @NotNull(message = "Debe incluir el id chaside")
+    private Integer idChaside;
+
 }

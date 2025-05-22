@@ -51,10 +51,8 @@ public class EstudianteServiceImpl implements EstudianteService {
 
         Estudiante estudianteEdit = estudianteMapper.fromDtoToEntity(estudianteDto, estudianteId);
         Estudiante estudianteResultado = estudianteRepository.save(estudianteEdit);
-
         return estudianteMapper.fromEntityToDto(estudianteResultado);
     }
-
 
     @Transactional
     @Override

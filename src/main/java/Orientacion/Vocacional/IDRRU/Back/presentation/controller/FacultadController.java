@@ -19,29 +19,29 @@ public class FacultadController {
     private final FacultadService facultadService;
 
     @PostMapping
-    public ResponseEntity<Facultad> create(@Valid @RequestBody FacultadDto facultadDto) {
-        Facultad createdFacultad = facultadService.create(facultadDto);
+    public ResponseEntity<FacultadDto> save(@Valid @RequestBody FacultadDto facultadDto) {
+        FacultadDto createdFacultad = facultadService.create(facultadDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdFacultad);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Facultad> update(
+    public ResponseEntity<FacultadDto> update(
             @PathVariable Integer id,
             @Valid @RequestBody FacultadDto facultadDto
     ) {
-        Facultad updatedFacultad = facultadService.update(id, facultadDto);
+        FacultadDto updatedFacultad = facultadService.update(id, facultadDto);
         return ResponseEntity.ok(updatedFacultad);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Facultad> getById(@PathVariable Integer id) {
-        Facultad facultad = facultadService.getById(id);
+    public ResponseEntity<FacultadDto> findById(@PathVariable Integer id) {
+        FacultadDto facultad = facultadService.findById(id);
         return ResponseEntity.ok(facultad);
     }
 
     @GetMapping
-    public ResponseEntity<List<Facultad>> getAll() {
-        List<Facultad> facultades = facultadService.getAll();
+    public ResponseEntity<List<FacultadDto>> getAll() {
+        List<FacultadDto> facultades = facultadService.findAll();
         return ResponseEntity.ok(facultades);
     }
 

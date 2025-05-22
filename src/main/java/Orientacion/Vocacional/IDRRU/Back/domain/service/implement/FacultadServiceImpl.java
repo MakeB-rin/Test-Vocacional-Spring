@@ -1,6 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.service.implement;
 
 import Orientacion.Vocacional.IDRRU.Back.data.repository.FacultadRepository;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Facultad;
 import Orientacion.Vocacional.IDRRU.Back.domain.mapper.FacultadMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.FacultadService;
@@ -22,9 +23,10 @@ public class FacultadServiceImpl implements FacultadService {
      * Crea una nueva Facultad a partir de un DTO.
      */
     @Override
-    public Facultad create(FacultadDto facultadDto) {
+    public FacultadDto create(FacultadDto facultadDto) {
         Facultad facultad = facultadMapper.fromDtoToEntity(facultadDto, null);
-        return facultadRepository.save(facultad);
+        Facultad facultadSave = facultadRepository.save(facultad);
+        return facultadMapper.fromEntityToDto(facultadSave) ;
     }
 
     /**
@@ -32,27 +34,34 @@ public class FacultadServiceImpl implements FacultadService {
      * Lanza una excepción si no se encuentra.
      */
     @Override
-    public Facultad getById(Integer id) {
-        return facultadRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Facultad no encontrada con id " + id));
+    public FacultadDto findById(Integer id) {
+        Facultad facultad = facultadRepository.findById(id).
+                orElseThrow(() -> new EntityNotFoundException("Facultad no encontrada con id " + id));
+
+        return facultadMapper.fromEntityToDto(facultad);
+
     }
 
     /**
      * Retorna todas las facultades registradas.
      */
     @Override
-    public List<Facultad> getAll() {
-        return facultadRepository.findAll();
+    public List<FacultadDto> findAll() {
+        List<Facultad> facultadList = facultadRepository.findAll();
+        return facultadMapper.fromEntityListToDto(facultadList);
     }
 
     /**
      * Actualiza los datos de una Facultad.
      */
     @Override
-    public Facultad update(Integer id, FacultadDto facultadDto) {
-        Facultad existingFacultad = getById(id);
-        facultadMapper.fromDtoToEntity(facultadDto, existingFacultad);
-        return facultadRepository.save(existingFacultad);
+    public FacultadDto update(Integer id, FacultadDto facultadDto) {
+        Facultad existingFacultad = facultadRepository.findById(id).
+                orElseThrow(() -> new EntityNotFoundException("Facultad no encontrada con id " + id));
+
+        Facultad facultadEdit = facultadMapper.fromDtoToEntity(facultadDto, existingFacultad);
+        Facultad facultadResultado = facultadRepository.save(facultadEdit);
+        return facultadMapper.fromEntityToDto(facultadResultado);
     }
 
     /**
@@ -60,7 +69,9 @@ public class FacultadServiceImpl implements FacultadService {
      */
     @Override
     public void delete(Integer id) {
-        Facultad facultad = getById(id);
+        Facultad facultad = facultadRepository.findById(id).
+                orElseThrow(() -> new EntityNotFoundException("Facultad no encontrada con id " + id));
+
         facultadRepository.delete(facultad);
     }
 }

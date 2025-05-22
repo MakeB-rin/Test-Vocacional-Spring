@@ -68,11 +68,11 @@ public class ResultadoServiceImpl implements ResultadoService {
     }
 
 
-    // Funcion nueva
-    @Override
-    public List<ResultadoResponse> searchToMunicipioList(){
-        return resultadoRepository.busquedaMunicipioList();
-    }
+//    // Funcion nueva
+//    @Override
+//    public List<ResultadoResponse> searchToMunicipioList(){
+//        return resultadoRepository.busquedaMunicipioList();
+//    }
 
     @Override
     public List<ResultadoDto> getByEstudianteId(Integer estudianteId) {

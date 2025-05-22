@@ -1,8 +1,15 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.mapper;
 
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Chaside;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Facultad;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Holland;
+import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.FacultadDto;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 // Mapper para convertir entre DTO y entidad
 @Component
@@ -18,6 +25,10 @@ public class FacultadMapper {
         Facultad facultadAux = (facultad != null) ? facultad : new Facultad();
         facultadAux.setCodigo(dto.getCodigo());
         facultadAux.setNombre(dto.getNombre());
+
+        Chaside chaside = new Chaside();
+        chaside.setIdChaside(dto.getIdChaside());
+        facultadAux.setChaside(chaside);
         return facultadAux;
     }
 
@@ -30,6 +41,33 @@ public class FacultadMapper {
         if (facultad == null) {
             return null;
         }
-        return new FacultadDto(facultad.getIdFacultad(), facultad.getCodigo(), facultad.getNombre());
+        FacultadDto facultadDto = new FacultadDto();
+        facultadDto.setIdFacultad(facultad.getIdFacultad());
+        facultadDto.setCodigo(facultad.getCodigo());
+        facultadDto.setNombre(facultad.getNombre());
+        facultadDto.setIdChaside(facultad.getChaside() != null ? facultad.getChaside().getIdChaside() : null);
+        return facultadDto;
     }
+
+    public List<FacultadDto> fromEntityListToDto(List<Facultad> facultadList){
+        List<FacultadDto> facultadDtos = new ArrayList<>();
+        for(Facultad facultadAux : facultadList){
+
+            FacultadDto facultadDto = new FacultadDto();
+
+            facultadDto.setIdFacultad(facultadAux.getIdFacultad());
+            facultadDto.setCodigo(facultadAux.getCodigo());
+            facultadDto.setNombre(facultadAux.getNombre());
+
+            if(facultadAux.getChaside() != null){
+                facultadDto.setIdChaside(facultadAux.getChaside().getIdChaside());
+            }
+            facultadDtos.add(facultadDto);
+        }
+
+
+        return facultadDtos;
+    }
+
+
 }

@@ -52,8 +52,8 @@ public class Resultado extends Base{
     @JoinColumn(name = "id_holland", referencedColumnName = "id_holland", nullable = false)
     private Holland holland;
 
-    @ManyToOne
-    @JoinColumn(name = "id_facultad", referencedColumnName = "id_facultad", nullable = false)
-    private Facultad facultad;
+//    @ManyToOne
+//    @JoinColumn(name = "id_facultad", referencedColumnName = "id_facultad", nullable = false)
+//    private Facultad facultad;
 
 }

@@ -147,6 +147,8 @@ INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW()
 INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 5I');
 INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 6D');
 INSERT INTO chaside (active, created_at, updated_at, codigo) VALUES (true, NOW(), NOW(), 'Tabla 7E');
+
+
 -- Holland
 INSERT INTO holland (active, personalidad, created_at, updated_at) VALUES (true, 1, NOW(), NOW());
 INSERT INTO holland (active, personalidad, created_at, updated_at) VALUES (true, 2, NOW(), NOW());
@@ -173,19 +175,20 @@ INSERT INTO estudiante (nombre, ap_paterno, ap_materno, ci_estudiante, edad, cel
 ----------------
 --- FACULTAD ---
 ----------------
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FA', 'FACULTAD DE AGRONOMÍA', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FAADU', 'FACULTAD DE ARQUITECTURA, ARTES, DISEÑO Y URBANISMO', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCEF', 'FACULTAD DE CIENCIAS ECONÓMICAS Y FINANCIERAS', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCFB', 'FACULTAD DE CIENCIAS FARMACÉUTICAS Y BIOQUÍMICAS', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCG', 'FACULTAD DE CIENCIAS GEOLÓGICAS', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCPN', 'FACULTAD DE CIENCIAS PURAS Y NATURALES', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FCS', 'FACULTAD DE CIENCIAS SOCIALES', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FDCP', 'FACULTAD DE DERECHO Y CIENCIAS POLÍTICAS', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FHCE', 'FACULTAD DE HUMANIDADES Y CIENCIAS DE LA EDUCACIÓN', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FI', 'FACULTAD DE INGENIERÍA', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FMENT', 'FACULTAD DE MEDICINA, ENFERMERÍA, NUTRICIÓN Y TECNOLOGÍA MÉDICA', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FO', 'FACULTAD DE ODONTOLOGÍA', true, NOW(), NOW());
-INSERT INTO facultad (codigo, nombre, active, created_at, updated_at) VALUES ('FT', 'FACULTAD DE TECNOLOGÍA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FA', '1', 'FACULTAD DE AGRONOMÍA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FAADU', '1', 'FACULTAD DE ARQUITECTURA, ARTES, DISEÑO Y URBANISMO', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FCEF', '1', 'FACULTAD DE CIENCIAS ECONÓMICAS Y FINANCIERAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FCFB', '1', 'FACULTAD DE CIENCIAS FARMACÉUTICAS Y BIOQUÍMICAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FCG', '1', 'FACULTAD DE CIENCIAS GEOLÓGICAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FCPN', '1', 'FACULTAD DE CIENCIAS PURAS Y NATURALES', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FCS', '1', 'FACULTAD DE CIENCIAS SOCIALES', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FDCP', '1', 'FACULTAD DE DERECHO Y CIENCIAS POLÍTICAS', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FHCE', '1', 'FACULTAD DE HUMANIDADES Y CIENCIAS DE LA EDUCACIÓN', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FI', '1', 'FACULTAD DE INGENIERÍA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FMENT', '1', 'FACULTAD DE MEDICINA, ENFERMERÍA, NUTRICIÓN Y TECNOLOGÍA MÉDICA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FO', '1', 'FACULTAD DE ODONTOLOGÍA', true, NOW(), NOW());
+INSERT INTO facultad (codigo,id_chaside,  nombre, active, created_at, updated_at) VALUES ('FT', '1', 'FACULTAD DE TECNOLOGÍA', true, NOW(), NOW());
+
 
 ----------------
 ---  USUARIO ---
@@ -196,8 +199,9 @@ INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombr
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 4, now(), now(), 'ADMIN3', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 5, now(), now(), 'ADMIN4', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 6, 1, 1, 75, NOW(), NOW(), NOW(), 'R:10, I:8, A:7, S:6, E:5, C:4');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 6, 2, 2, 85, NOW(), NOW(), NOW(), 'I:9, R:7, A:6, S:5, C:4, E:3');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 3, 3, 3, 3, 92, NOW(), NOW(), NOW(), 'A:10, E:9, S:8, I:7, R:6, C:5');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 4, 4, 4, 70, NOW(), NOW(), NOW(), 'S:8, E:7, C:6, R:5, I:4, A:3');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_facultad, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 5, 5, 1, 1, 81, NOW(), NOW(), NOW(), 'E:9, A:8, S:7, I:6, C:5, R:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 6,  1, 75, NOW(), NOW(), NOW(), 'R:10, I:8, A:7, S:6, E:5, C:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 6,  2, 85, NOW(), NOW(), NOW(), 'I:9, R:7, A:6, S:5, C:4, E:3');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 3, 3,  3, 92, NOW(), NOW(), NOW(), 'A:10, E:9, S:8, I:7, R:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 4,  4, 70, NOW(), NOW(), NOW(), 'S:8, E:7, C:6, R:5, I:4, A:3');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 5, 5,  1, 81, NOW(), NOW(), NOW(), 'E:9, A:8, S:7, I:6, C:5, R:4');
+

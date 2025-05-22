@@ -32,10 +32,6 @@ public class ResultadoMapper {
         holland.setIdHolland(dto.getIdHolland());
         resultadoAux.setHolland(holland);
 
-        Facultad facultad = new Facultad();
-        facultad.setIdFacultad(dto.getIdFacultad());
-        resultadoAux.setFacultad(facultad);
-
         return resultadoAux;
     }
 
@@ -55,31 +51,8 @@ public class ResultadoMapper {
         dto.setIdEstudiante(resultado.getEstudiante() != null ? resultado.getEstudiante().getIdEstudiante() : null);
         dto.setIdChaside(resultado.getChaside() != null ? resultado.getChaside().getIdChaside() : null);
         dto.setIdHolland(resultado.getHolland() != null ? resultado.getHolland().getIdHolland() : null);
-        dto.setIdFacultad(resultado.getFacultad() != null ? resultado.getFacultad().getIdFacultad() : null);
         return dto;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public List<ResultadoDto> fromEntityListToDtoList(List<Resultado> resultadoList) {
         List<ResultadoDto> resultadoDtoList = new ArrayList<>();
@@ -100,9 +73,6 @@ public class ResultadoMapper {
             }
             if(resultado.getHolland() != null){
                 resultadoDto.setIdEstudiante(resultado.getHolland().getIdHolland());
-            }
-            if(resultado.getFacultad() != null){
-                resultadoDto.setIdEstudiante(resultado.getFacultad().getIdFacultad());
             }
 
             resultadoDtoList.add(resultadoDto);

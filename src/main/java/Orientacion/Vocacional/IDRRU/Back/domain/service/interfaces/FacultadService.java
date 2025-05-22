@@ -7,11 +7,11 @@ import java.util.List;
 // Interfaz del servicio para operaciones de Facultad
 public interface FacultadService {
 
-    Facultad create(FacultadDto facultadDto);
+    FacultadDto create(FacultadDto facultadDto);
 
-    Facultad update(Integer id, FacultadDto facultadDto);
+    FacultadDto update(Integer id, FacultadDto facultadDto);
 
-    Facultad getById(Integer id);
-    List<Facultad> getAll();
+    FacultadDto findById(Integer id);
+    List<FacultadDto> findAll();
     void delete(Integer id);
 }

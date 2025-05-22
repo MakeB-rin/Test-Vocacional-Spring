@@ -54,11 +54,12 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,"/provincia/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/chaside/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/holland/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/facultad/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/resultado/**").permitAll()
 
                         //.requestMatchers("/estudiante/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/estudiante/**").permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/estudiante/**").permitAll()
-
+                        .requestMatchers(HttpMethod.POST, "/resultado/**").permitAll()
                         // Las demas rutas requieren autenticacion
                         .anyRequest().authenticated()
                 )

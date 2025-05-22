@@ -15,17 +15,16 @@ public interface  ResultadoRepository extends GenericRepository<Resultado, Integ
 
     //JPQL -> Entidades
     // Muestra en general por cada municipio la cantidad de estudiantes por facultad de respuesta
-    @Query("""
-     SELECT new Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoResponse( 
-      m.nombre, f.nombre, COUNT(r.estudiante.idEstudiante))
-     FROM Resultado r
-     JOIN r.estudiante e
-     JOIN e.municipio m
-     JOIN r.facultad f
-     GROUP BY m.nombre, f.nombre
-     ORDER BY m.nombre""")
-    List<ResultadoResponse> busquedaMunicipioList();
+//    @Query("""
+//     SELECT new Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoResponse(
+//      m.nombre, f.nombre, COUNT(r.estudiante.idEstudiante))
+//     FROM Resultado r
+//     JOIN r.estudiante e
+//     JOIN e.municipio m
+//     JOIN r.facultad f
+//     GROUP BY m.nombre, f.nombre
+//     ORDER BY m.nombre""")
+//    List<ResultadoResponse> busquedaMunicipioList();
 
-    Optional<Resultado> findByEstudianteIdEstudiante(Integer idEstudiante);
     List<Resultado> findAllByEstudianteIdEstudiante(Integer idEstudiante);
 }

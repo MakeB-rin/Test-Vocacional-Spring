@@ -34,7 +34,7 @@ public class ResultadoDto {
     @NotNull(message = "El id del holland es requerido")
     private Integer idHolland;
 
-    @NotNull(message = "El id de la facultad es requerido")
-    private Integer idFacultad;
+//    @NotNull(message = "El id de la facultad es requerido")
+//    private Integer idFacultad;
 
 }

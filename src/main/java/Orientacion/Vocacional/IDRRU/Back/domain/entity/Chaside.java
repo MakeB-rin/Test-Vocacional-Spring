@@ -23,4 +23,7 @@ public class Chaside extends Base{
     @OneToMany(mappedBy = "chaside", cascade = CascadeType.ALL)
     private List<Resultado> resultados;
 
+    @OneToMany(mappedBy = "chaside", cascade = CascadeType.ALL)
+    private List<Facultad> facultades;
+
 }

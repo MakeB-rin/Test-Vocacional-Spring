@@ -56,11 +56,11 @@ public class ResultadoController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/busqueda/")
-    public ResponseEntity<List<ResultadoResponse>> busquedaMunicipioList(){
-        List<ResultadoResponse> resultadoResponseList = resultadoService.searchToMunicipioList();
-        return ResponseEntity.ok(resultadoResponseList);
-    }
+//    @GetMapping("/busqueda/")
+//    public ResponseEntity<List<ResultadoResponse>> busquedaMunicipioList(){
+//        List<ResultadoResponse> resultadoResponseList = resultadoService.searchToMunicipioList();
+//        return ResponseEntity.ok(resultadoResponseList);
+//    }
     @GetMapping("/estudiante/{estudianteId}")
     public ResponseEntity<List<ResultadoDto>> getByEstudianteId(@PathVariable Integer estudianteId) {
         List<ResultadoDto> resultados = resultadoService.getByEstudianteId(estudianteId);
