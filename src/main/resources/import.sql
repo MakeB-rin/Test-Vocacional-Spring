@@ -187,7 +187,7 @@ INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at
 INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FI', '1', 'FACULTAD DE INGENIERÍA', true, NOW(), NOW());
 INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FMENT', '1', 'FACULTAD DE MEDICINA, ENFERMERÍA, NUTRICIÓN Y TECNOLOGÍA MÉDICA', true, NOW(), NOW());
 INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FO', '1', 'FACULTAD DE ODONTOLOGÍA', true, NOW(), NOW());
-INSERT INTO facultad (codigo,id_chaside,  nombre, active, created_at, updated_at) VALUES ('FT', '1', 'FACULTAD DE TECNOLOGÍA', true, NOW(), NOW());
+INSERT INTO facultad (codigo, id_chaside, nombre, active, created_at, updated_at) VALUES ('FT', '1', 'FACULTAD DE TECNOLOGÍA', true, NOW(), NOW());
 
 
 ----------------
