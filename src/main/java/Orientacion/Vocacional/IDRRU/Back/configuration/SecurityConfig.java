@@ -49,13 +49,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Rutas publicas
                         .requestMatchers("/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.GET,"/estudiante/**").permitAll()
+//                        .requestMatchers(HttpMethod.GET,"/estudiante/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/municipio/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/provincia/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/chaside/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/holland/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/facultad/**").permitAll()
-                        .requestMatchers(HttpMethod.GET,"/resultado/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/resultado/busqueda").permitAll()
 
                         //.requestMatchers("/estudiante/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/estudiante/**").permitAll()

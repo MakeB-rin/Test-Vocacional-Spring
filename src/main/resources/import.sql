@@ -199,9 +199,9 @@ INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombr
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 4, now(), now(), 'ADMIN3', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 5, now(), now(), 'ADMIN4', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 6,  1, 75, NOW(), NOW(), NOW(), 'R:10, I:8, A:7, S:6, E:5, C:4');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 6,  2, 85, NOW(), NOW(), NOW(), 'I:9, R:7, A:6, S:5, C:4, E:3');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 3, 3,  3, 92, NOW(), NOW(), NOW(), 'A:10, E:9, S:8, I:7, R:6, C:5');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 4,  4, 70, NOW(), NOW(), NOW(), 'S:8, E:7, C:6, R:5, I:4, A:3');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 5, 5,  1, 81, NOW(), NOW(), NOW(), 'E:9, A:8, S:7, I:6, C:5, R:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 6,  1, 75, NOW(), NOW(), NOW(), 'RAC');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 6,  2, 85, NOW(), NOW(), NOW(), 'IRA');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 3, 3,  3, 92, NOW(), NOW(), NOW(), 'ACR');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 4,  4, 70, NOW(), NOW(), NOW(), 'SIA');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 5, 5,  1, 81, NOW(), NOW(), NOW(), 'ECR');
 
