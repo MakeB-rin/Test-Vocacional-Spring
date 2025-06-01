@@ -12,44 +12,28 @@ import java.util.List;
 @Component
 public class HollandMapper {
 
-    public Holland fromDtoToEntity(HollandDto dto, Holland holland) {
-        Holland hollandAux = new Holland();
-
-        if (holland != null) {
-            hollandAux = holland;
-        }
-
-        //seteo de los datos necesarios
-        hollandAux.setPersonalidad(dto.getPersonalidad());
-
-        return hollandAux;
-    }
-
-
     public HollandDto fromEntityToDto(Holland holland) {
-        HollandDto hollandAux = new HollandDto();
-
-        //seteo de los datos necesarios
-        hollandAux.setIdHolland(holland.getIdHolland());
-        hollandAux.setPersonalidad(holland.getPersonalidad());
-
-        return hollandAux;
-    }
-
-    public List<HollandDto> fromEntityListToDto(List<Holland> hollandlist) {
-        List<HollandDto> hollandList = new ArrayList<>();
-
-        for(Holland holland : hollandlist){
-
-            HollandDto hollandAuxDto = new HollandDto();
-
-            hollandAuxDto.setIdHolland(holland.getIdHolland());
-            hollandAuxDto.setPersonalidad(holland.getPersonalidad());
-
-            hollandList.add(hollandAuxDto);
+        if (holland == null) {
+            return null;
         }
-
-        return hollandList;
+        HollandDto hollandDto = new HollandDto();
+        hollandDto.setIdHolland(holland.getIdHolland());
+        hollandDto.setCodigo(holland.getCodigo());
+        hollandDto.setNombre(holland.getNombre());
+        hollandDto.setDescripcion(holland.getDescripcion());
+        return hollandDto;
     }
 
+    public List<HollandDto> fromEntityListToDto(List<Holland> hollandList){
+        List<HollandDto> hollandDtos = new ArrayList<>();
+        for(Holland hollandAux : hollandList){
+            HollandDto hollandDto = new HollandDto();
+            hollandDto.setIdHolland(hollandAux.getIdHolland());
+            hollandDto.setCodigo(hollandAux.getCodigo());
+            hollandDto.setNombre(hollandAux.getNombre());
+            hollandDto.setDescripcion(hollandAux.getDescripcion());
+            hollandDtos.add(hollandDto);
+        }
+        return hollandDtos;
+    }
 }

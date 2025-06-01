@@ -6,11 +6,6 @@ import Orientacion.Vocacional.IDRRU.Back.presentation.dto.HollandDto;
 import java.util.List;
 
 public interface HollandService {
-
-    HollandDto getById(Integer id);
-
-    List<HollandDto> getAll();
-
-    HollandDto create(HollandDto hollandDto);
-
+    HollandDto findById(Integer id);
+    List<HollandDto> findAll();
 }

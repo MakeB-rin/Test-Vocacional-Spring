@@ -10,41 +10,26 @@ import java.util.List;
 @Component
 public class ChasideMapper {
 
-    public Chaside fromDtoToEntity(ChasideDto dto, Chaside chaside) {
-        Chaside chasideAux = new Chaside ();
-
-        if (chaside != null) {
-            chasideAux = chaside;
-        }
-
-        //seteo de los datos necesarios
-        chasideAux.setCodigo(dto.getCodigo());
-
-        return chasideAux;
-    }
-
     public ChasideDto fromEntityToDto(Chaside chaside) {
-        ChasideDto chasideAux = new ChasideDto();
-
-        //seteo de los datos necesarios
-        chasideAux.setIdChaside(chaside.getIdChaside());
-        chasideAux.setCodigo(chaside.getCodigo());
-
-        return chasideAux;
+        if (chaside == null) {
+            return null;
+        }
+        ChasideDto chasideDto = new ChasideDto();
+        chasideDto.setIdChaside(chaside.getIdChaside());
+        chasideDto.setCodigo(chaside.getCodigo());
+        chasideDto.setDescripcion(chaside.getDescripcion());
+        return chasideDto;
     }
 
-    public List<ChasideDto> fromEntityListToDto(List<Chaside> chasidelist) {
-        List<ChasideDto> chasideList = new ArrayList<>();
-        for(Chaside chaside : chasidelist){
-
-            ChasideDto chasideAuxDto = new ChasideDto();
-
-            chasideAuxDto.setIdChaside(chaside.getIdChaside());
-            chasideAuxDto.setCodigo(chaside.getCodigo());
-
-            chasideList.add(chasideAuxDto);
+    public List<ChasideDto> fromEntityListToDto(List<Chaside> chasideList){
+        List<ChasideDto> chasideDtos = new ArrayList<>();
+        for(Chaside chasideAux : chasideList){
+            ChasideDto chasideDto = new ChasideDto();
+            chasideDto.setIdChaside(chasideAux.getIdChaside());
+            chasideDto.setCodigo(chasideAux.getCodigo());
+            chasideDto.setDescripcion(chasideAux.getDescripcion());
+            chasideDtos.add(chasideDto);
         }
-
-        return chasideList;
+        return chasideDtos;
     }
 }

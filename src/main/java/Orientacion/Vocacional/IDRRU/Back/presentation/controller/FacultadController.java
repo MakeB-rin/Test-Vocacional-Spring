@@ -18,21 +18,6 @@ public class FacultadController {
 
     private final FacultadService facultadService;
 
-    @PostMapping
-    public ResponseEntity<FacultadDto> save(@Valid @RequestBody FacultadDto facultadDto) {
-        FacultadDto createdFacultad = facultadService.create(facultadDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdFacultad);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<FacultadDto> update(
-            @PathVariable Integer id,
-            @Valid @RequestBody FacultadDto facultadDto
-    ) {
-        FacultadDto updatedFacultad = facultadService.update(id, facultadDto);
-        return ResponseEntity.ok(updatedFacultad);
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<FacultadDto> findById(@PathVariable Integer id) {
         FacultadDto facultad = facultadService.findById(id);
@@ -43,11 +28,5 @@ public class FacultadController {
     public ResponseEntity<List<FacultadDto>> getAll() {
         List<FacultadDto> facultades = facultadService.findAll();
         return ResponseEntity.ok(facultades);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
-        facultadService.delete(id);
-        return ResponseEntity.noContent().build();
     }
 }

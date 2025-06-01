@@ -19,7 +19,6 @@ public class Base {
     @CreationTimestamp
     public LocalDateTime createdAt;
 
-
     @Column(name = "updated_at")
     @UpdateTimestamp
     public LocalDateTime updatedAt;

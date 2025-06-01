@@ -24,9 +24,14 @@ public class Facultad extends Base{
     @Column(nullable = false, length = 200)
     private String nombre;
 
-//    //Relación con la entidad Resultado
-//    @OneToMany(mappedBy = "facultad", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private List<Resultado> resultados;
+    @Column(length = 500)
+    private String url;
+
+    @Column(name = "img_logo", length = 500)
+    private String imgLogo;
+
+    @Column(columnDefinition = "TEXT")
+    private String carreras;
 
     @ManyToOne
     @JoinColumn(name = "id_chaside", referencedColumnName = "id_chaside", nullable = false)

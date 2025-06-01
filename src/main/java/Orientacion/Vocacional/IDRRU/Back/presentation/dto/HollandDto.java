@@ -6,14 +6,12 @@ import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Getter
 @Setter
-@Builder
 public class HollandDto {
-
     private Integer idHolland;
-
-    @NotNull
-    private Integer personalidad;
-
+    private String codigo;
+    private String nombre;
+    private String descripcion;
 }
