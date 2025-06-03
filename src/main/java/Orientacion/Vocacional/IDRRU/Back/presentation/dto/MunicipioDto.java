@@ -17,7 +17,7 @@ public class MunicipioDto {
 
   @NotBlank(message = "El nombre NO debe ser blanco")
   @Size(min = 1, max = 200, message = "el nombre debe tener entre 2-198 caracteres")
-  private String Nombre;
+  private String nombre;
 
   @NotNull(message = "Debe incluir el id provincia")
   private Integer idProvincia;

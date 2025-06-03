@@ -6,6 +6,9 @@ import Orientacion.Vocacional.IDRRU.Back.presentation.dto.MunicipioDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ProvinciaDto;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ProvinciaMapper {
 
@@ -27,5 +30,19 @@ public class ProvinciaMapper {
         dto.setNombre(provincia.getNombre());
         return dto;
     }
+    public List<ProvinciaDto> fromEntityListToDto (List<Provincia> provinciaList){
 
+        List<ProvinciaDto> provinciaDtos = new ArrayList<>();
+
+        for(Provincia provincia : provinciaList){
+
+            ProvinciaDto provinciaDto = new ProvinciaDto();
+
+            provinciaDto.setIdProvincia(provincia.getIdProvincia());
+            provinciaDto.setNombre(provincia.getNombre());
+
+            provinciaDtos.add(provinciaDto);
+        }
+        return provinciaDtos;
+    }
 }

@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MunicipioController {
 
   private final MunicipioService municipioService;
-  private final MunicipioMapper municipioMapper;
 
   @GetMapping
   public ResponseEntity<List<MunicipioDto>> getAll() {
@@ -28,8 +27,14 @@ public class MunicipioController {
 
   @GetMapping("/{id}")
   public ResponseEntity<MunicipioDto> getById(@PathVariable Integer id) {
-    MunicipioDto municipioDto = municipioMapper.fromEntityToDto(municipioService.getById(id));
+    MunicipioDto municipioDto = municipioService.getById(id);
     return ResponseEntity.status(HttpStatus.OK).body(municipioDto);
+  }
+
+  @GetMapping("/provincia/{idProvincia}")
+  public ResponseEntity<List<MunicipioDto>> getMunicipiosPorProvincia(@PathVariable ("idProvincia") Integer idProvincia) {
+    List<MunicipioDto> municipios = municipioService.getByIdProvincia(idProvincia);
+    return ResponseEntity.ok(municipios);
   }
 
 }

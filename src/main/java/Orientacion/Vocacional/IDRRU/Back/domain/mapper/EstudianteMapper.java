@@ -2,6 +2,7 @@ package Orientacion.Vocacional.IDRRU.Back.domain.mapper;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ProvinciaService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
@@ -30,7 +31,12 @@ public class EstudianteMapper {
         estudianteAux.setCurso(dto.getCurso());
         estudianteAux.setEdad(dto.getEdad());
         estudianteAux.setCelular(dto.getCelular());
-        estudianteAux.setMunicipio(municipioService.getById(dto.getId_municipio()));
+
+        // municipio revisar
+        Municipio municipio = new Municipio();
+        municipio.setIdMunicipio(dto.getId_municipio());
+        estudianteAux.setMunicipio(municipio);
+
 
         return estudianteAux;
     }

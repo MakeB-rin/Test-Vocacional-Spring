@@ -2,6 +2,7 @@ package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ResultadoService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDto;
+import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDtoResponse;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -56,16 +57,25 @@ public class ResultadoController {
         return ResponseEntity.noContent().build();
     }
 
-//    @GetMapping("/busqueda/")
-//    public ResponseEntity<List<ResultadoResponse>> busquedaMunicipioList(){
-//        List<ResultadoResponse> resultadoResponseList = resultadoService.searchToMunicipioList();
+//
+//    @GetMapping("/busqueda-municipio/{id}")
+//    public ResponseEntity<List<ResultadoResponse>> busquedaMunicipioList(@PathVariable Long id,
+//                                                                         @RequestParam (required = false) String year){
+//        List<ResultadoResponse>  resultadoResponseList = resultadoService.searchToMunicipioList(id, year);
 //        return ResponseEntity.ok(resultadoResponseList);
 //    }
+
+    @GetMapping("/busqueda-provincia")
+    public ResponseEntity<List<ResultadoDtoResponse>> busquedaProvinciaList(@RequestParam (required = false) Long idProvincia,
+                                                                            @RequestParam (required = false) Long idMunicipio,
+                                                                            @RequestParam (required = false) String year){
+        List<ResultadoDtoResponse> resultadoResponseList = resultadoService.searchToProvinciaList(idProvincia,idMunicipio, year);
+        return ResponseEntity.ok(resultadoResponseList);
+    }
+
     @GetMapping("/estudiante/{estudianteId}")
     public ResponseEntity<List<ResultadoDto>> getByEstudianteId(@PathVariable Integer estudianteId) {
         List<ResultadoDto> resultados = resultadoService.getByEstudianteId(estudianteId);
         return ResponseEntity.ok(resultados);
     }
-
-
 }

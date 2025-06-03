@@ -1,6 +1,5 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
-
 import lombok.*;
 
 
@@ -9,7 +8,9 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-public class ResultadoResponse {
+public class ResultadoDtoResponse {
+
+    private String provincia;
 
     private String municipio;
 
@@ -18,6 +19,7 @@ public class ResultadoResponse {
     private String fecha;
 
     private Long cantidadEstudiantes;
+
 
 
 }

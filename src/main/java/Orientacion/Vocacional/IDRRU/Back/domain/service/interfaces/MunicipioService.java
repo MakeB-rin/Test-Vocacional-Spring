@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface MunicipioService {
 
-  Municipio getById(Integer id);
+  MunicipioDto getById(Integer id);
 
   List<MunicipioDto> getAll();
 
+  List<MunicipioDto> getByIdProvincia(Integer idProvincia);
 }

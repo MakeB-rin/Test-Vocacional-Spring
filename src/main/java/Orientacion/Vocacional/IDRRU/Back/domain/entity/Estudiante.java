@@ -44,7 +44,7 @@ public class Estudiante extends Base{
     private String celular;
 
     @ManyToOne
-    @JoinColumn(name = "id_municipio",referencedColumnName = "id_municipio", nullable = false)
+    @JoinColumn(name = "id_municipio", referencedColumnName = "id_municipio", nullable = false)
     private Municipio municipio;
 
     @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)

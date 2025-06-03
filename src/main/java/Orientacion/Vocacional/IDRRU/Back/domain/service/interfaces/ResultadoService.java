@@ -2,6 +2,7 @@ package Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Resultado;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDto;
+import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDtoResponse;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoResponse;
 
 import java.util.List;
@@ -20,8 +21,11 @@ public interface ResultadoService {
 
     void delete(Integer id);
 
-//    List<ResultadoResponse> searchToMunicipioList();
+    List<ResultadoDtoResponse> searchToProvinciaList(Long idProvincia,Long idMunicipio, String fecha);
 
     List<ResultadoDto> getByEstudianteId(Integer estudianteId);
+
+//    List<ResultadoDtoResponse> searchToProvinciaList(Long idProvincia, String fecha);
+
 
 }

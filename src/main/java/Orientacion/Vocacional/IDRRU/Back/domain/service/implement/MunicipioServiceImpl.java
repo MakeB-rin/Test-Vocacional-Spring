@@ -1,10 +1,12 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.service.implement;
 
 import Orientacion.Vocacional.IDRRU.Back.data.repository.MunicipioRepository;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Holland;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
 import Orientacion.Vocacional.IDRRU.Back.domain.mapper.MunicipioMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
+import Orientacion.Vocacional.IDRRU.Back.presentation.dto.HollandDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.MunicipioDto;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -29,8 +31,18 @@ public class MunicipioServiceImpl implements MunicipioService {
   }
 
   @Override
-  public Municipio getById(Integer id) {
-    return municipioRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Municipio", id));
+  public MunicipioDto getById(Integer id) {
+    Municipio municipio = municipioRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Municipio", id));
+    return municipioMapper.fromEntityToDto(municipio);
   }
+
+
+  public List<MunicipioDto> getByIdProvincia(Integer provinciaId) {
+    // Asumamos que el repositorio devuelve entidades Municipio
+    List<Municipio> municipios = municipioRepository.findByProvinciaIdProvinciaMunicipio(provinciaId);
+    // Convertir a DTO
+    return municipioMapper.fromEntityListToDto(municipios);
+  }
+
 
 }

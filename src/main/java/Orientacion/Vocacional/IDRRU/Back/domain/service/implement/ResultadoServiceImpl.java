@@ -6,6 +6,7 @@ import Orientacion.Vocacional.IDRRU.Back.domain.mapper.ResultadoMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ResultadoService;
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDto;
+import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDtoResponse;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoResponse;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -68,11 +69,11 @@ public class ResultadoServiceImpl implements ResultadoService {
     }
 
 
-//    // Funcion nueva
-//    @Override
-//    public List<ResultadoResponse> searchToMunicipioList(){
-//        return resultadoRepository.busquedaMunicipioList();
-//    }
+    // Funcion nueva
+    @Override
+    public List<ResultadoDtoResponse> searchToProvinciaList(Long idProvincia,Long idMunicipio, String year){
+        return resultadoRepository.busquedaProvinciaList(idProvincia,idMunicipio, year);
+    }
 
     @Override
     public List<ResultadoDto> getByEstudianteId(Integer estudianteId) {
@@ -81,5 +82,9 @@ public class ResultadoServiceImpl implements ResultadoService {
                 .map(resultadoMapper::fromEntityToDto)
                 .collect(Collectors.toList());
     }
-
+//    // Funcion nueva
+//    @Override
+//    public List<ResultadoDtoResponse> searchToProvinciaList(Long id, String year){
+//        return resultadoRepository.busquedaProvinciaList(id, year);
+//    }
 }

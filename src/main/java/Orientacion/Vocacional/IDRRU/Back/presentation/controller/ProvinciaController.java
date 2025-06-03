@@ -3,6 +3,8 @@ package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Provincia;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ProvinciaService;
 import java.util.List;
+
+import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ProvinciaDto;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,14 +22,14 @@ public class ProvinciaController {
     private final ProvinciaService provinciaService;
 
     @GetMapping
-    public ResponseEntity<List<Provincia>> getAll() {
-        List<Provincia> provinciaList = provinciaService.getAll();
+    public ResponseEntity<List<ProvinciaDto>> getAll() {
+        List<ProvinciaDto> provinciaList = provinciaService.getAll();
         return ResponseEntity.status(HttpStatus.OK).body(provinciaList);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Provincia> getById(@PathVariable Integer id) {
-        Provincia provinciaFound = provinciaService.getById(id);
+    public ResponseEntity<ProvinciaDto> getById(@PathVariable Integer id) {
+        ProvinciaDto provinciaFound = provinciaService.getById(id);
         return ResponseEntity.status(HttpStatus.OK).body(provinciaFound);
     }
 }
