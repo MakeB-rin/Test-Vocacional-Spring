@@ -6,11 +6,6 @@ import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ChasideDto;
 import java.util.List;
 
 public interface ChasideService {
-
-    ChasideDto getById(Integer id);
-
-    List<ChasideDto> getAll();
-
-    ChasideDto create(ChasideDto chasideDto);
-
+    ChasideDto findById(Integer id);
+    List<ChasideDto> findAll();
 }

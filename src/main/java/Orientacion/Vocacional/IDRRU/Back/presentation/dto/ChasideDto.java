@@ -13,9 +13,7 @@ import lombok.*;
 public class ChasideDto {
 
     private Integer idChaside;
-
-    @NotBlank(message = "El codigo NO debe ser blanco")
-    @Size(min = 1, max = 200, message = "el codigo debe tener entre 2-198 caracteres")
     private String codigo;
+    private String descripcion;
 
 }

@@ -45,6 +45,9 @@ public class FacultadMapper {
         facultadDto.setIdFacultad(facultad.getIdFacultad());
         facultadDto.setCodigo(facultad.getCodigo());
         facultadDto.setNombre(facultad.getNombre());
+        facultadDto.setUrl(facultad.getUrl());
+        facultadDto.setImgLogo(facultad.getImgLogo());
+        facultadDto.setCarreras(facultad.getCarreras());
         facultadDto.setIdChaside(facultad.getChaside() != null ? facultad.getChaside().getIdChaside() : null);
         return facultadDto;
     }
@@ -58,7 +61,9 @@ public class FacultadMapper {
             facultadDto.setIdFacultad(facultadAux.getIdFacultad());
             facultadDto.setCodigo(facultadAux.getCodigo());
             facultadDto.setNombre(facultadAux.getNombre());
-
+            facultadDto.setUrl(facultadAux.getUrl());
+            facultadDto.setImgLogo(facultadAux.getImgLogo());
+            facultadDto.setCarreras(facultadAux.getCarreras());
             if(facultadAux.getChaside() != null){
                 facultadDto.setIdChaside(facultadAux.getChaside().getIdChaside());
             }

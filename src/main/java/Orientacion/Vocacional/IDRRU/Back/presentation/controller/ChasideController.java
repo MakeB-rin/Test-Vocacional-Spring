@@ -20,20 +20,14 @@ public class ChasideController {
     private final ChasideService chasideService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<ChasideDto> getById(@PathVariable Integer id) {
-        ChasideDto chasideDto = chasideService.getById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(chasideDto);
+    public ResponseEntity<ChasideDto> findById(@PathVariable Integer id) {
+        ChasideDto chaside = chasideService.findById(id);
+        return ResponseEntity.ok(chaside);
     }
 
     @GetMapping
-    public ResponseEntity<List<ChasideDto>> getById() {
-        List<ChasideDto> chasideList = chasideService.getAll();
-        return ResponseEntity.status(HttpStatus.OK).body(chasideList);
-    }
-
-    @PostMapping("/")
-    public ResponseEntity<ChasideDto> save(@Valid @RequestBody ChasideDto dto) {
-        ChasideDto chaside = chasideService.create(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(chaside);
+    public ResponseEntity<List<ChasideDto>> getAll() {
+        List<ChasideDto> chasides = chasideService.findAll();
+        return ResponseEntity.ok(chasides);
     }
 }

@@ -16,29 +16,19 @@ import java.util.List;
 @AllArgsConstructor
 public class HollandServiceImpl implements HollandService {
 
-
-    private HollandRepository hollandRepository;
-
-    @Autowired
-    private HollandMapper hollandMapper;
+    private final HollandRepository hollandRepository;
+    private final HollandMapper hollandMapper;
 
     @Override
-    public HollandDto getById(Integer id){
-        Holland holland = hollandRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Holland", id));
+    public HollandDto findById(Integer id) {
+        Holland holland = hollandRepository.findById(id).
+                orElseThrow(() -> new EntityNotFoundException("Holland no encontrado con id " + id));
         return hollandMapper.fromEntityToDto(holland);
     }
 
     @Override
-    public List<HollandDto> getAll(){
-        List<Holland> holland = hollandRepository.findAll();
-        return hollandMapper.fromEntityListToDto(holland);
+    public List<HollandDto> findAll() {
+        List<Holland> hollandList = hollandRepository.findAll();
+        return hollandMapper.fromEntityListToDto(hollandList);
     }
-
-    @Override
-    public HollandDto create(HollandDto hollandDto){
-        Holland holland = hollandMapper.fromDtoToEntity(hollandDto, null);
-        Holland hollandSave = hollandRepository.save(holland);
-        return hollandMapper.fromEntityToDto(hollandSave);
-    }
-
 }

@@ -18,12 +18,15 @@ public class Chaside extends Base{
     @Column(name = "id_chaside")
     private Integer idChaside;
 
+    @Column(nullable = false, length = 10)
     private String codigo;
+
+    @Column(nullable = false, length = 500)
+    private String descripcion;
 
     @OneToMany(mappedBy = "chaside", cascade = CascadeType.ALL)
     private List<Resultado> resultados;
 
     @OneToMany(mappedBy = "chaside", cascade = CascadeType.ALL)
     private List<Facultad> facultades;
-
 }
