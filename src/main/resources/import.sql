@@ -134,13 +134,13 @@ INSERT INTO MUNICIPIO(NOMBRE, ACTIVE, CREATED_AT, UPDATED_AT, ID_PROVINCIA) VALU
 ----------------
 --- CHASIDE ----
 ----------------
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'C', 'Administrativas, Contables y Económicas');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'H', 'Humanísticas, Ciencias Jurídicas y Ciencias Sociales');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'A', 'Artísticas');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'S', 'Ciencias de la Salud');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'I', 'Ingenierías, Carreras Técnicas y Computación');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'D', 'Defensa y Seguridad');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'E', 'Ciencias Agrarias de la Naturaleza, Zoológicas y Biológicas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 1C', 'Administrativas, Contables y Económicas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 2H', 'Humanísticas, Ciencias Jurídicas y Ciencias Sociales');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 3A', 'Artísticas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 4S', 'Ciencias de la Salud');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 5I', 'Ingenierías, Carreras Técnicas y Computación');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 6D', 'Defensa y Seguridad');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 7E', 'Ciencias Agrarias de la Naturaleza, Zoológicas y Biológicas');
 
 ----------------
 --- HOLLAND ----
@@ -1188,12 +1188,12 @@ INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_l
 INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'FMENT', 'Facultad de Medicina, Enfermeria, Nutricion y Tecnologia Medica', 'http://fment.umsa.bo/', 'assets/logos-facultades/FMENT.png', 4, '["Medicina", "Enfermeria", "Nutricion y Dietetica", "Tecnologia Medica"]');
 INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'FO', 'Facultad de Odontologia', 'http://fo.umsa.bo/', 'assets/logos-facultades/FO.png', 4, '["Odontologia"]');
 INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'FT', 'Facultad de Tecnologia', 'http://ft.umsa.bo/', 'assets/logos-facultades/FT.png', 5, '["Aeronautica", "Construcciones Civiles", "Electricidad Industrial", "Electronica y Telecomunicaciones", "Electromecanica", "Mecanica Automotriz", "Mecanica Industrial", "Quimica Industrial", "Geodesia, Topografia y Geomatica", "Programa Tec. Sup. Construccion", "Programa Tec. Sup. Electromecanica", "Programa Tec. Sup. Mecanica Automotriz", "Programa Tec. Med. Mecanica Automotriz", "Programa Tecnologia de Alimentos", "Programa Tec. Sup. Procesos Quimicos"]');
-INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'ANAPOL', 'Academia Nacional de Policías (ANAPOL)', 'http://www.unipol.edu.bo/?page_id=223', '', 6, '["Oficial de Policía"]');
-INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'FATESCIPOL', 'Facultad Técnica Superior en Ciencias Policiales (FATESCIPOL)', 'http://www.unipol.edu.bo/?page_id=258', '', 6, '["Técnico Superior en Ciencias Policiales"]');
-INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'COLMIL', 'Colegio Militar del Ejército - Cnl. Gualberto Villarroel', 'https://www.colmil.mil.bo/', '', 6, '["Oficial del Ejército"]');
-INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'COLMILAV', 'Colegio Militar de Aviación (COLMILAV)', 'https://fab.bo/colmilav/', '', 6, '["Oficial de la Fuerza Aérea"]');
-INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'ESCUELANAVAL', 'Escuela Naval Militar - Eduardo Abaroa Hidalgo', 'https://www.armada.mil.bo/', '', 6, '["Oficial de la Armada"]');
-INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'EMSGT', 'Escuela Militar de Sargentos del Ejército', 'https://ejercito.mil.bo/', '', 6, '["Sargento del Ejército"]');
+INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'ANAPOL', 'Academia Nacional de Policías (ANAPOL)', 'http://www.unipol.edu.bo/?page_id=223', 'assets/logos-facultades/ANAPOL.png', 6, '["Oficial de Policía"]');
+INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'FATESCIPOL', 'Facultad Técnica Superior en Ciencias Policiales (FATESCIPOL)', 'http://www.unipol.edu.bo/?page_id=258', 'assets/logos-facultades/ANAPOL.png', 6, '["Técnico Superior en Ciencias Policiales"]');
+INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'COLMIL', 'Colegio Militar del Ejército - Cnl. Gualberto Villarroel', 'https://www.colmil.mil.bo/', 'assets/logos-facultades/COLMILAV.png', 6, '["Oficial del Ejército"]');
+INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'COLMILAV', 'Colegio Militar de Aviación (COLMILAV)', 'https://fab.bo/colmilav/', 'assets/logos-facultades/COLMILAV.png', 6, '["Oficial de la Fuerza Aérea"]');
+INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'ESCUELANAVAL', 'Escuela Naval Militar - Eduardo Abaroa Hidalgo', 'https://www.armada.mil.bo/', 'assets/logos-facultades/ESCUELANAVAL.png', 6, '["Oficial de la Armada"]');
+INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'EMSGT', 'Escuela Militar de Sargentos del Ejército', 'https://ejercito.mil.bo/', 'assets/logos-facultades/COLMILAV.png', 6, '["Sargento del Ejército"]');
 
 
 ----------------
@@ -1205,9 +1205,9 @@ INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombr
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 4, now(), now(), 'ADMIN3', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 5, now(), now(), 'ADMIN4', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 1,  1, 75, NOW(), NOW(), 2025, 'R:10, I:8, A:7, S:6, E:5, C:4');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 2,  2, 85, NOW(), NOW(), 2025, 'I:9, R:7, A:6, S:5, C:4, E:3');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 3, 3,  3, 92, NOW(), NOW(), 2025, 'A:10, E:9, S:8, I:7, R:6, C:5');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 4,  4, 70, NOW(), NOW(), 2025, 'S:8, E:7, C:6, R:5, I:4, A:3');
-INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 5, 5,  1, 81, NOW(), NOW(), 2025, 'E:9, A:8, S:7, I:6, C:5, R:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 1,  1, 75, NOW(), NOW(), 2025, 'RES');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 2,  2, 85, NOW(), NOW(), 2025, 'IRA');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 3, 3,  3, 92, NOW(), NOW(), 2025, 'AES');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 4,  4, 70, NOW(), NOW(), 2025, 'SEC');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 5, 5,  1, 81, NOW(), NOW(), 2025, 'EAS');
 
