@@ -7,7 +7,7 @@ INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('CARANAVI'
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('FRANZ TAMAYO', false, '2023-11-25 10:55:40', '2024-01-05 22:10:05');
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('GUALBERTO VILLAROEL', true, '2024-01-30 13:45:30', '2024-02-25 19:35:50');
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('INGAVI', false, '2023-10-15 06:10:20', '2023-12-30 20:25:15');
-INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('INQUISIVO', true, '2024-02-10 11:50:05', '2024-03-01 15:20:40');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('INQUISIVI', true, '2024-02-10 11:50:05', '2024-03-01 15:20:40');
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('JOSE MANUEL PANDO', false, '2023-09-05 17:30:10', '2023-11-15 08:45:25');
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('LARECAJA', true, '2024-03-01 12:34:56', '2024-03-05 08:23:45');
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('LOAYZA', false, '2024-02-15 09:12:33', '2024-03-01 14:56:20');
@@ -18,7 +18,7 @@ INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('MURILLO',
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('NOR YUNGAS', true, '2024-01-30 13:45:30', '2024-02-25 19:35:50');
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('OMASUYOS', false, '2023-10-15 06:10:20', '2023-12-30 20:25:15');
 INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('PACAJES', true, '2024-02-10 11:50:05', '2024-03-01 15:20:40');
-INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('SUDYUNGAS', false, '2023-09-05 17:30:10', '2023-11-15 08:45:25');
+INSERT INTO provincia(nombre, active, created_at, updated_at) VALUES ('SUD YUNGAS', false, '2023-09-05 17:30:10', '2023-11-15 08:45:25');
 
 
 --MUNICIPIOS
@@ -134,13 +134,13 @@ INSERT INTO MUNICIPIO(NOMBRE, ACTIVE, CREATED_AT, UPDATED_AT, ID_PROVINCIA) VALU
 ----------------
 --- CHASIDE ----
 ----------------
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'C', 'Administrativas, Contables y Económicas');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'H', 'Humanísticas, Ciencias Jurídicas y Ciencias Sociales');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'A', 'Artísticas');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'S', 'Ciencias de la Salud');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'I', 'Ingenierías, Carreras Técnicas y Computación');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'D', 'Defensa y Seguridad');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'E', 'Ciencias Agrarias de la Naturaleza, Zoológicas y Biológicas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 1C', 'Administrativas, Contables y Económicas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 2H', 'Humanísticas, Ciencias Jurídicas y Ciencias Sociales');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 3A', 'Artísticas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 4S', 'Ciencias de la Salud');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 5I', 'Ingenierías, Carreras Técnicas y Computación');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 6D', 'Defensa y Seguridad');
+INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 7E', 'Ciencias Agrarias de la Naturaleza, Zoológicas y Biológicas');
 
 ----------------
 --- HOLLAND ----
@@ -1195,15 +1195,19 @@ INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_l
 INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'ESCUELANAVAL', 'Escuela Naval Militar - Eduardo Abaroa Hidalgo', 'https://www.armada.mil.bo/', '', 6, '["Oficial de la Armada"]');
 INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_logo, id_chaside, carreras) VALUES (true, NOW(), NOW(), 'EMSGT', 'Escuela Militar de Sargentos del Ejército', 'https://ejercito.mil.bo/', '', 6, '["Sargento del Ejército"]');
 
-
 ----------------
 ---  USUARIO ---
 ----------------
+
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 1, now(), now(), 'ADMIN', 'ADMINISTRADOR', '$2a$10$dZTWcB1gfFI11HxZdVWQSuBkYaAon1He/dVL9hkfDAlBMG2d0gYeK');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 2, now(), now(), 'ADMIN1', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 3, now(), now(), 'ADMIN2', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 4, now(), now(), 'ADMIN3', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
 INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 5, now(), now(), 'ADMIN4', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
+
+------------------
+---  RESULTADO ---
+------------------
 
 INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 1,  1, 75, NOW(), NOW(), 2025, 'R:10, I:8, A:7, S:6, E:5, C:4');
 INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 2,  2, 85, NOW(), NOW(), 2025, 'I:9, R:7, A:6, S:5, C:4, E:3');
@@ -1211,3 +1215,209 @@ INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, 
 INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 4,  4, 70, NOW(), NOW(), 2025, 'S:8, E:7, C:6, R:5, I:4, A:3');
 INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante,  id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 5, 5,  1, 81, NOW(), NOW(), 2025, 'E:9, A:8, S:7, I:6, C:5, R:4');
 
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 76, 2, 6, 5, 83, NOW(), NOW(), 2025, 'E:6, I:10, S:4, C:9, R:5, A:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 89, 4, 7, 3, 72, NOW(), NOW(), 2025, 'C:7, A:4, S:9, R:6, I:5, E:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 68, 1, 8, 2, 91, NOW(), NOW(), 2025, 'I:8, R:4, A:9, C:6, E:5, S:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 93, 6, 9, 1, 87, NOW(), NOW(), 2025, 'S:6, R:9, C:8, A:3, E:7, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 84, 7, 10, 6, 74, NOW(), NOW(), 2025, 'E:7, S:5, R:4, I:6, C:10, A:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 72, 5, 11, 4, 88, NOW(), NOW(), 2025, 'R:8, A:5, E:4, I:6, C:7, S:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 66, 2, 12, 2, 92, NOW(), NOW(), 2025, 'A:10, R:7, S:6, C:5, E:8, I:3');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 3, 13, 5, 67, NOW(), NOW(), 2025, 'S:4, C:6, I:7, A:8, R:5, E:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 79, 1, 14, 3, 70, NOW(), NOW(), 2025, 'I:9, S:6, C:4, E:5, A:10, R:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 87, 6, 15, 1, 80, NOW(), NOW(), 2025, 'C:5, A:6, S:10, E:7, I:8, R:3');
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 74, 7, 16, 2, 86, NOW(), NOW(), 2025, 'S:5, I:10, R:4, E:6, C:7, A:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 91, 1, 17, 5, 71, NOW(), NOW(), 2025, 'A:6, C:4, I:7, R:8, S:9, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 68, 4, 18, 6, 89, NOW(), NOW(), 2025, 'I:5, C:9, E:6, R:7, S:10, A:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 85, 6, 19, 1, 75, NOW(), NOW(), 2025, 'S:7, E:9, A:5, R:6, C:3, I:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 67, 3, 20, 3, 90, NOW(), NOW(), 2025, 'C:6, I:8, E:10, S:5, R:4, A:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 93, 2, 21, 4, 63, NOW(), NOW(), 2025, 'I:9, R:3, C:5, A:6, E:8, S:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 71, 5, 22, 2, 81, NOW(), NOW(), 2025, 'R:10, E:9, I:4, A:8, S:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 6, 23, 6, 69, NOW(), NOW(), 2025, 'S:10, I:6, E:4, R:5, C:7, A:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 76, 4, 24, 1, 78, NOW(), NOW(), 2025, 'C:10, E:8, R:7, S:5, A:6, I:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 1, 25, 5, 92, NOW(), NOW(), 2025, 'I:7, A:10, E:9, R:6, S:8, C:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 3, 26, 4, 66, NOW(), NOW(), 2025, 'E:4, C:9, A:6, R:5, I:10, S:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 64, 2, 27, 2, 87, NOW(), NOW(), 2024, 'C:8, I:5, A:9, S:6, E:7, R:3');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 78, 7, 28, 3, 73, NOW(), NOW(), 2024, 'S:4, R:9, A:8, I:6, C:7, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 86, 5, 29, 1, 84, NOW(), NOW(), 2024, 'A:10, C:4, I:5, R:6, S:7, E:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 77, 6, 30, 6, 90, NOW(), NOW(), 2024, 'E:6, S:9, I:4, A:5, R:7, C:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 75, 4, 31, 3, 82, NOW(), NOW(), 2025, 'C:5, R:10, A:6, I:9, E:8, S:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 81, 3, 32, 5, 88, NOW(), NOW(), 2025, 'R:4, C:6, S:10, E:7, I:8, A:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 2, 33, 2, 77, NOW(), NOW(), 2025, 'A:6, S:9, C:8, R:7, E:5, I:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 92, 1, 34, 4, 85, NOW(), NOW(), 2025, 'E:10, I:7, R:6, C:5, S:4, A:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 72, 7, 35, 6, 64, NOW(), NOW(), 2025, 'R:5, A:7, I:8, E:9, C:4, S:6');
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 84, 4, 36, 5, 78, NOW(), NOW(), 2025, 'I:6, S:10, C:5, R:7, A:9, E:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 66, 5, 37, 3, 70, NOW(), NOW(), 2025, 'C:8, A:7, I:5, R:9, E:6, S:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 79, 2, 38, 2, 89, NOW(), NOW(), 2025, 'A:9, E:5, C:4, S:6, R:7, I:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 1, 39, 6, 74, NOW(), NOW(), 2025, 'E:10, A:6, R:5, C:3, S:9, I:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 87, 6, 40, 1, 82, NOW(), NOW(), 2025, 'S:9, I:7, A:6, C:8, E:5, R:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 3, 41, 4, 90, NOW(), NOW(), 2025, 'C:7, A:5, I:6, E:4, S:8, R:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 91, 7, 42, 5, 68, NOW(), NOW(), 2025, 'R:8, S:6, A:7, C:9, I:10, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 77, 4, 43, 3, 86, NOW(), NOW(), 2024, 'I:9, C:5, E:6, R:4, A:7, S:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 82, 5, 44, 6, 65, NOW(), NOW(), 2024, 'A:4, R:10, E:9, I:8, C:6, S:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 74, 1, 45, 2, 73, NOW(), NOW(), 2024, 'S:6, I:5, C:9, E:7, A:8, R:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 2, 46, 1, 85, NOW(), NOW(), 2024, 'R:10, I:7, S:8, C:4, E:6, A:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 6, 47, 3, 80, NOW(), NOW(), 2025, 'E:5, R:6, C:8, A:7, S:10, I:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 78, 3, 48, 4, 72, NOW(), NOW(), 2025, 'A:10, E:6, I:5, S:8, R:9, C:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 66, 4, 49, 5, 64, NOW(), NOW(), 2025, 'C:6, A:9, I:4, R:5, E:8, S:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 85, 5, 50, 6, 91, NOW(), NOW(), 2025, 'S:10, I:6, A:8, R:4, E:7, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 73, 7, 51, 2, 77, NOW(), NOW(), 2025, 'R:7, E:5, S:10, A:9, C:4, I:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 92, 6, 52, 3, 83, NOW(), NOW(), 2025, 'A:6, I:10, C:7, R:5, E:4, S:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 64, 1, 53, 1, 70, NOW(), NOW(), 2025, 'C:5, A:4, S:10, R:9, E:8, I:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 3, 54, 4, 90, NOW(), NOW(), 2025, 'E:7, R:6, C:9, A:5, I:8, S:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 71, 2, 55, 5, 76, NOW(), NOW(), 2025, 'R:6, A:7, E:5, S:10, I:9, C:8');
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 79, 4, 56, 2, 84, NOW(), NOW(), 2025, 'I:8, R:6, A:7, E:9, S:10, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 67, 2, 57, 3, 69, NOW(), NOW(), 2025, 'C:7, E:8, I:6, R:9, A:5, S:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 6, 58, 4, 90, NOW(), NOW(), 2025, 'S:10, R:8, A:6, I:5, E:7, C:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 71, 1, 59, 6, 73, NOW(), NOW(), 2025, 'R:10, E:6, C:5, I:7, S:9, A:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 85, 5, 60, 1, 86, NOW(), NOW(), 2025, 'I:6, A:9, R:8, C:5, S:10, E:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 68, 7, 61, 2, 78, NOW(), NOW(), 2025, 'C:6, R:7, I:10, A:8, S:9, E:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 92, 3, 62, 3, 88, NOW(), NOW(), 2024, 'E:9, A:5, C:4, R:10, I:8, S:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 76, 6, 63, 5, 71, NOW(), NOW(), 2024, 'I:9, A:8, S:10, R:7, E:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 83, 1, 64, 4, 85, NOW(), NOW(), 2024, 'S:8, I:6, R:10, A:7, E:5, C:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 4, 65, 6, 74, NOW(), NOW(), 2024, 'A:10, E:4, S:6, I:8, C:9, R:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 2, 66, 2, 79, NOW(), NOW(), 2025, 'E:6, I:10, R:9, C:8, S:7, A:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 73, 5, 67, 1, 66, NOW(), NOW(), 2025, 'C:7, R:8, S:6, A:9, I:10, E:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 6, 68, 3, 87, NOW(), NOW(), 2025, 'A:9, I:6, C:5, R:7, S:10, E:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 1, 69, 5, 72, NOW(), NOW(), 2025, 'S:7, R:10, C:4, A:6, E:9, I:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 87, 3, 70, 4, 89, NOW(), NOW(), 2025, 'I:10, S:9, A:8, E:6, R:5, C:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 75, 7, 71, 6, 70, NOW(), NOW(), 2025, 'R:8, E:5, A:6, I:9, S:10, C:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 66, 2, 72, 1, 68, NOW(), NOW(), 2025, 'C:6, S:10, R:9, I:8, A:7, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 84, 4, 73, 2, 83, NOW(), NOW(), 2025, 'E:6, I:10, A:9, R:8, S:7, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 5, 74, 3, 76, NOW(), NOW(), 2025, 'S:10, R:9, C:4, E:5, I:8, A:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 91, 6, 75, 4, 90, NOW(), NOW(), 2025, 'R:7, A:9, S:10, I:8, E:6, C:5');
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 77, 1, 76, 5, 82, NOW(), NOW(), 2025, 'I:9, S:8, R:7, A:6, C:5, E:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 2, 77, 6, 75, NOW(), NOW(), 2024, 'R:10, C:6, E:5, A:9, S:8, I:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 86, 3, 78, 1, 91, NOW(), NOW(), 2024, 'S:10, A:9, I:8, R:6, C:5, E:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 74, 4, 79, 2, 70, NOW(), NOW(), 2024, 'E:6, I:10, C:4, S:9, R:8, A:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 92, 5, 80, 3, 88, NOW(), NOW(), 2024, 'A:10, S:9, I:8, R:7, E:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 67, 6, 81, 4, 72, NOW(), NOW(), 2024, 'I:8, E:7, C:4, S:10, A:9, R:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 79, 7, 82, 5, 83, NOW(), NOW(), 2024, 'R:9, A:10, S:8, I:6, C:5, E:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 1, 83, 6, 74, NOW(), NOW(), 2024, 'E:9, I:7, C:6, R:8, A:10, S:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 2, 84, 1, 89, NOW(), NOW(), 2024, 'S:10, R:9, I:8, C:5, E:6, A:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 66, 3, 85, 2, 68, NOW(), NOW(), 2024, 'A:8, E:7, R:10, C:4, S:9, I:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 84, 4, 86, 3, 87, NOW(), NOW(), 2025, 'R:6, I:10, A:9, S:8, C:7, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 73, 5, 87, 4, 79, NOW(), NOW(), 2025, 'S:10, C:5, R:8, E:6, A:9, I:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 81, 6, 88, 5, 85, NOW(), NOW(), 2025, 'I:7, R:9, A:8, C:6, E:5, S:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 68, 7, 89, 6, 76, NOW(), NOW(), 2025, 'C:6, S:10, E:7, I:9, R:8, A:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 1, 90, 1, 91, NOW(), NOW(), 2025, 'E:7, I:10, C:5, A:8, R:6, S:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 75, 2, 91, 2, 80, NOW(), NOW(), 2025, 'I:9, R:10, S:6, A:7, C:5, E:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 85, 3, 92, 3, 86, NOW(), NOW(), 2025, 'R:8, S:10, I:7, E:6, C:4, A:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 72, 4, 93, 4, 77, NOW(), NOW(), 2025, 'S:10, A:9, E:6, I:8, R:7, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 78, 5, 94, 5, 84, NOW(), NOW(), 2025, 'I:10, S:9, R:8, A:7, C:5, E:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 87, 6, 95, 6, 88, NOW(), NOW(), 2025, 'E:9, I:8, S:10, R:7, A:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 7, 96, 1, 72, NOW(), NOW(), 2025, 'C:4, I:9, A:8, R:6, S:10, E:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 83, 1, 97, 2, 83, NOW(), NOW(), 2025, 'R:10, C:5, S:8, E:6, I:9, A:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 71, 2, 98, 3, 79, NOW(), NOW(), 2025, 'A:8, I:10, R:6, S:9, E:5, C:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 89, 3, 99, 4, 90, NOW(), NOW(), 2025, 'S:10, C:6, R:8, A:9, I:7, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 76, 4, 100, 5, 81, NOW(), NOW(), 2025, 'E:6, A:9, I:10, C:5, R:7, S:8');
+
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 92, 6, 101, 3, 88, NOW(), NOW(), 2025, 'R:9, I:7, E:6, C:10, S:8, A:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 78, 1, 102, 5, 73, NOW(), NOW(), 2025, 'C:6, R:10, E:8, S:7, A:9, I:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 66, 4, 103, 1, 69, NOW(), NOW(), 2025, 'I:6, A:8, S:7, R:5, E:9, C:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 85, 2, 104, 6, 91, NOW(), NOW(), 2025, 'E:7, S:10, C:6, R:8, A:9, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 7, 105, 2, 94, NOW(), NOW(), 2025, 'A:6, I:7, R:10, C:8, S:5, E:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 63, 2, 106, 4, 71, NOW(), NOW(), 2025, 'S:8, E:6, I:5, A:7, R:9, C:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 81, 5, 107, 1, 80, NOW(), NOW(), 2025, 'C:5, S:9, A:7, R:10, I:8, E:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 76, 3, 108, 5, 78, NOW(), NOW(), 2025, 'E:4, C:8, I:9, R:7, S:6, A:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 6, 109, 3, 82, NOW(), NOW(), 2025, 'I:7, A:5, S:10, C:9, R:6, E:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 71, 1, 110, 6, 76, NOW(), NOW(), 2025, 'R:10, S:9, I:6, A:7, C:8, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 83, 7, 111, 4, 87, NOW(), NOW(), 2025, 'A:7, C:6, R:9, E:5, I:10, S:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 68, 2, 112, 2, 66, NOW(), NOW(), 2025, 'S:10, A:5, I:6, C:7, R:8, E:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 94, 3, 113, 5, 85, NOW(), NOW(), 2024, 'C:6, R:9, I:8, E:7, S:10, A:4');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 87, 5, 114, 2, 74, NOW(), NOW(), 2024, 'I:5, E:10, A:8, C:6, S:7, R:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 72, 6, 115, 3, 72, NOW(), NOW(), 2024, 'E:8, I:6, S:7, R:5, A:10, C:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 95, 1, 116, 1, 93, NOW(), NOW(), 2024, 'R:8, A:10, C:6, S:7, E:9, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 67, 4, 117, 6, 68, NOW(), NOW(), 2025, 'C:9, E:7, A:8, R:10, I:6, S:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 77, 3, 118, 5, 70, NOW(), NOW(), 2025, 'I:9, A:10, C:4, R:8, S:7, E:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 119, 2, 79, NOW(), NOW(), 2025, 'E:6, I:10, A:8, C:7, S:9, R:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 84, 6, 120, 4, 90, NOW(), NOW(), 2025, 'S:7, E:10, R:6, I:9, A:8, C:5');
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 73, 5, 121, 3, 78, NOW(), NOW(), 2025, 'C:8, R:9, I:5, S:10, A:7, E:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 86, 7, 122, 2, 92, NOW(), NOW(), 2025, 'A:10, E:5, I:9, C:6, S:8, R:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 64, 1, 123, 6, 65, NOW(), NOW(), 2025, 'S:7, R:8, C:9, A:5, E:6, I:10');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 91, 2, 124, 1, 89, NOW(), NOW(), 2025, 'I:7, A:9, R:10, S:6, C:5, E:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 75, 4, 125, 5, 83, NOW(), NOW(), 2025, 'C:6, A:7, S:9, E:5, I:10, R:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 6, 126, 3, 76, NOW(), NOW(), 2025, 'R:10, I:8, S:9, A:6, C:7, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 2, 127, 4, 69, NOW(), NOW(), 2025, 'A:8, E:9, S:6, I:10, R:5, C:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 84, 3, 128, 6, 86, NOW(), NOW(), 2025, 'E:6, I:5, R:10, S:7, A:9, C:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 1, 129, 2, 71, NOW(), NOW(), 2025, 'C:9, S:10, A:7, E:8, R:5, I:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 93, 5, 130, 1, 95, NOW(), NOW(), 2025, 'I:8, C:7, R:10, S:6, A:5, E:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 77, 7, 131, 3, 79, NOW(), NOW(), 2025, 'R:6, A:10, I:5, E:7, C:9, S:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 67, 4, 132, 5, 66, NOW(), NOW(), 2025, 'E:8, R:7, S:10, I:6, A:9, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 2, 133, 6, 82, NOW(), NOW(), 2025, 'I:10, S:9, R:8, C:6, A:7, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 62, 1, 134, 2, 68, NOW(), NOW(), 2024, 'S:6, C:7, A:9, R:10, I:5, E:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 96, 6, 135, 4, 90, NOW(), NOW(), 2024, 'E:10, S:9, C:8, A:7, R:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 85, 3, 136, 1, 81, NOW(), NOW(), 2024, 'A:9, R:10, C:6, I:7, S:8, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 74, 5, 137, 5, 75, NOW(), NOW(), 2024, 'C:8, I:9, R:7, S:10, E:6, A:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 89, 7, 138, 2, 84, NOW(), NOW(), 2025, 'I:6, E:10, A:8, S:7, C:5, R:9');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 2, 139, 6, 67, NOW(), NOW(), 2025, 'E:9, R:8, C:10, A:7, S:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 82, 4, 140, 3, 85, NOW(), NOW(), 2025, 'S:9, I:6, E:8, R:10, C:5, A:7');
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 81, 2, 141, 5, 84, NOW(), NOW(), 2025, 'R:10, I:9, S:8, C:7, A:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 74, 6, 142, 1, 77, NOW(), NOW(), 2025, 'I:8, A:10, S:6, R:9, E:5, C:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 67, 3, 143, 6, 68, NOW(), NOW(), 2025, 'C:10, S:8, R:7, E:9, A:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 92, 7, 144, 4, 89, NOW(), NOW(), 2025, 'S:9, E:7, C:6, A:8, R:10, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 78, 1, 145, 2, 82, NOW(), NOW(), 2025, 'I:10, A:9, R:7, S:6, C:8, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 86, 5, 146, 3, 88, NOW(), NOW(), 2025, 'C:9, R:10, S:8, A:7, I:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 4, 147, 5, 70, NOW(), NOW(), 2025, 'S:10, A:8, R:9, E:6, C:5, I:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 84, 2, 148, 6, 83, NOW(), NOW(), 2025, 'C:10, E:9, A:7, I:6, S:8, R:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 71, 3, 149, 1, 75, NOW(), NOW(), 2025, 'I:9, A:10, C:6, S:7, R:8, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 89, 6, 150, 2, 87, NOW(), NOW(), 2025, 'A:10, E:7, R:8, C:9, S:5, I:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 66, 1, 151, 4, 65, NOW(), NOW(), 2025, 'S:8, I:7, C:10, R:9, A:5, E:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 95, 7, 152, 3, 94, NOW(), NOW(), 2025, 'R:10, S:9, A:8, E:6, I:5, C:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 76, 4, 153, 1, 79, NOW(), NOW(), 2025, 'I:9, A:10, S:8, R:6, C:7, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 82, 2, 154, 6, 80, NOW(), NOW(), 2025, 'E:10, C:9, A:7, S:6, I:5, R:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 63, 3, 155, 5, 68, NOW(), NOW(), 2025, 'S:10, R:8, I:7, C:9, A:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 87, 5, 156, 2, 90, NOW(), NOW(), 2025, 'A:9, I:10, E:8, S:6, R:7, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 68, 6, 157, 1, 70, NOW(), NOW(), 2025, 'I:10, C:7, R:9, A:6, E:5, S:8');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 91, 1, 158, 4, 93, NOW(), NOW(), 2025, 'S:9, C:10, A:8, I:7, R:5, E:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 79, 7, 159, 3, 81, NOW(), NOW(), 2025, 'R:8, A:7, S:10, E:9, I:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 72, 4, 160, 6, 74, NOW(), NOW(), 2025, 'C:10, E:6, S:8, A:7, I:9, R:5');
+
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 88, 3, 161, 2, 85, NOW(), NOW(), 2025, 'A:10, I:9, R:8, S:7, C:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 73, 6, 162, 5, 76, NOW(), NOW(), 2025, 'S:9, R:8, A:7, C:10, E:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 1, 163, 4, 82, NOW(), NOW(), 2025, 'S:10, E:8, R:9, A:7, C:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 85, 7, 164, 6, 83, NOW(), NOW(), 2025, 'C:10, A:8, S:7, E:6, R:9, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 77, 2, 165, 3, 78, NOW(), NOW(), 2025, 'R:10, C:8, A:9, S:7, I:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 5, 166, 1, 71, NOW(), NOW(), 2025, 'I:9, A:10, C:8, R:7, E:5, S:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 91, 4, 167, 2, 92, NOW(), NOW(), 2024, 'A:10, I:8, R:7, S:6, C:9, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 64, 6, 168, 5, 67, NOW(), NOW(), 2024, 'S:10, C:9, R:8, A:7, I:5, E:6');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 86, 3, 169, 4, 84, NOW(), NOW(), 2024, 'S:9, E:10, A:8, I:7, C:6, R:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 78, 1, 170, 6, 80, NOW(), NOW(), 2024, 'C:10, A:9, R:8, S:6, E:5, I:7');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 70, 7, 171, 3, 73, NOW(), NOW(), 2025, 'R:10, A:8, S:9, C:7, I:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 83, 2, 172, 2, 85, NOW(), NOW(), 2025, 'I:9, A:10, R:8, S:7, E:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 5, 173, 1, 88, NOW(), NOW(), 2025, 'I:10, A:9, R:8, C:7, E:6, S:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 75, 4, 174, 5, 77, NOW(), NOW(), 2025, 'S:10, C:8, R:9, A:6, I:7, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 82, 6, 175, 3, 80, NOW(), NOW(), 2025, 'R:10, A:9, S:8, I:7, C:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 1, 176, 4, 66, NOW(), NOW(), 2025, 'S:9, E:10, A:8, R:7, C:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 87, 7, 177, 6, 89, NOW(), NOW(), 2025, 'C:10, R:9, A:8, I:7, E:6, S:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 74, 3, 178, 2, 76, NOW(), NOW(), 2025, 'I:10, A:9, C:8, R:7, S:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 93, 5, 179, 1, 95, NOW(), NOW(), 2025, 'I:10, R:9, A:8, S:7, C:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 68, 4, 180, 5, 70, NOW(), NOW(), 2025, 'S:10, C:8, R:9, A:7, I:6, E:5');
+
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 86, 2, 181, 3, 88, NOW(), NOW(), 2025, 'R:10, A:9, S:8, C:7, I:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 71, 6, 182, 2, 70, NOW(), NOW(), 2025, 'I:10, A:9, C:8, R:7, S:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 79, 5, 183, 4, 77, NOW(), NOW(), 2025, 'S:9, E:8, C:7, R:10, A:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 90, 1, 184, 6, 91, NOW(), NOW(), 2025, 'C:10, R:9, A:8, S:7, I:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 82, 4, 185, 5, 84, NOW(), NOW(), 2025, 'S:10, C:9, A:8, I:7, R:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 76, 7, 186, 1, 78, NOW(), NOW(), 2024, 'I:10, A:9, C:8, S:7, R:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 89, 3, 187, 2, 87, NOW(), NOW(), 2024, 'I:9, A:8, R:10, S:7, E:6, C:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 65, 2, 188, 3, 66, NOW(), NOW(), 2024, 'R:10, C:9, A:8, S:7, E:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 84, 6, 189, 4, 85, NOW(), NOW(), 2024, 'S:9, E:10, A:8, R:7, C:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 73, 5, 190, 5, 74, NOW(), NOW(), 2025, 'S:10, C:8, A:9, R:7, I:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 81, 4, 191, 6, 83, NOW(), NOW(), 2025, 'C:10, R:9, A:8, I:7, E:6, S:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 69, 1, 192, 1, 70, NOW(), NOW(), 2025, 'I:10, A:9, C:8, R:7, S:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 92, 7, 193, 3, 94, NOW(), NOW(), 2025, 'R:10, A:9, S:8, C:7, I:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 74, 3, 194, 2, 75, NOW(), NOW(), 2025, 'I:9, A:10, C:8, R:7, S:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 66, 5, 195, 4, 68, NOW(), NOW(), 2025, 'S:10, E:9, R:8, C:7, A:6, I:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 80, 6, 196, 6, 81, NOW(), NOW(), 2025, 'C:10, A:9, R:8, I:7, S:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 87, 2, 197, 1, 89, NOW(), NOW(), 2025, 'I:10, R:9, A:8, C:7, S:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 78, 4, 198, 2, 80, NOW(), NOW(), 2025, 'I:9, A:10, S:8, C:7, R:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 68, 7, 199, 5, 69, NOW(), NOW(), 2025, 'S:10, R:9, C:8, A:7, I:6, E:5');
+INSERT INTO resultado (active, aptitud, id_chaside, id_estudiante, id_holland, interes, created_at, updated_at, fecha, puntaje_holland) VALUES (true, 75, 1, 200, 3, 77, NOW(), NOW(), 2025, 'R:10, A:9, C:8, S:7, I:6, E:5');
