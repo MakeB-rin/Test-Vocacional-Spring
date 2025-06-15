@@ -1,6 +1,5 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Provincia;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ProvinciaService;
 import java.util.List;
 

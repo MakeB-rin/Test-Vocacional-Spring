@@ -1,6 +1,5 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
-import Orientacion.Vocacional.IDRRU.Back.domain.mapper.MunicipioMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.MunicipioDto;
 import java.util.List;
@@ -36,5 +35,4 @@ public class MunicipioController {
     List<MunicipioDto> municipios = municipioService.getByIdProvincia(idProvincia);
     return ResponseEntity.ok(municipios);
   }
-
 }

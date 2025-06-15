@@ -1,7 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.List;

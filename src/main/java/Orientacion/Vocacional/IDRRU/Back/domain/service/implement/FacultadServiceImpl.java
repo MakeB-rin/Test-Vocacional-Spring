@@ -1,7 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.service.implement;
 
 import Orientacion.Vocacional.IDRRU.Back.data.repository.FacultadRepository;
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Facultad;
 import Orientacion.Vocacional.IDRRU.Back.domain.mapper.FacultadMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.FacultadService;

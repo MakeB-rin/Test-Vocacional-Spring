@@ -7,7 +7,6 @@ import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.HollandServic
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.HollandDto;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

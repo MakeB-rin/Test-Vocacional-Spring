@@ -1,8 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.mapper;
 
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Chaside;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Holland;
-import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ChasideDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.HollandDto;
 import org.springframework.stereotype.Component;
 

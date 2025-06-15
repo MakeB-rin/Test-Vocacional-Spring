@@ -1,14 +1,11 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.service.implement;
 
 import Orientacion.Vocacional.IDRRU.Back.data.repository.MunicipioRepository;
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Holland;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
 import Orientacion.Vocacional.IDRRU.Back.domain.mapper.MunicipioMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
-import Orientacion.Vocacional.IDRRU.Back.presentation.dto.HollandDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.MunicipioDto;
-import jakarta.transaction.Transactional;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +40,4 @@ public class MunicipioServiceImpl implements MunicipioService {
     // Convertir a DTO
     return municipioMapper.fromEntityListToDto(municipios);
   }
-
-
 }

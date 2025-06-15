@@ -1,10 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.mapper;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Chaside;
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Facultad;
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Holland;
-import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.FacultadDto;
 import org.springframework.stereotype.Component;
 

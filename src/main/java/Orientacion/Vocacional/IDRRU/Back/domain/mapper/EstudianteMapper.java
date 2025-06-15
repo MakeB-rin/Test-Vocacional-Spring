@@ -4,7 +4,6 @@ import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
-import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ProvinciaService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

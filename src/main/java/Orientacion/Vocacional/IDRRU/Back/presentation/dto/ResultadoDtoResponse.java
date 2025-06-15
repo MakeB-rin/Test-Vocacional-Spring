@@ -20,6 +20,16 @@ public class ResultadoDtoResponse {
 
     private Long cantidadEstudiantes;
 
+    public ResultadoDtoResponse(String provincia, String municipio, String chaside,
+                                String fechaInicio, String fechaFin, Long cantidadEstudiantes) {
+        this.provincia = provincia;
+        this.municipio = municipio;
+        this.chaside = chaside;
 
+        // Aquí va la lógica que preguntabas:
+        this.fecha = fechaInicio.equals(fechaFin) ? fechaInicio : fechaInicio + "-" + fechaFin;
+
+        this.cantidadEstudiantes = cantidadEstudiantes;
+    }
 
 }

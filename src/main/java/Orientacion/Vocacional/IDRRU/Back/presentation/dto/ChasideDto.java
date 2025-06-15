@@ -1,9 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.*;
-
 
 @AllArgsConstructor
 @NoArgsConstructor

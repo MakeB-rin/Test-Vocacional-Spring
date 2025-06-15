@@ -71,5 +71,4 @@ public class EstudianteServiceImpl implements EstudianteService {
         estudiante.active= estudiante.active? false: true;
         estudianteRepository.save(estudiante);
     }
-
 }

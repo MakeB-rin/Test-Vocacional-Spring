@@ -6,9 +6,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
-
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -50,6 +47,5 @@ public class EstudianteDto extends Base {
 
     @NotNull(message = "Debe incluir el id municipio")
     private Integer id_municipio;
-
 
 }

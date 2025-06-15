@@ -18,6 +18,4 @@ public class ResultadoResponse {
     private String fecha;
 
     private Long cantidadEstudiantes;
-
-
 }

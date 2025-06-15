@@ -1,15 +1,13 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Facultad;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.FacultadService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.FacultadDto;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 // Controlador REST para Facultad
 @RestController
 @AllArgsConstructor

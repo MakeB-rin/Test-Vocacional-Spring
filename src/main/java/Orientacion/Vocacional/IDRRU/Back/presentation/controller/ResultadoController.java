@@ -3,7 +3,6 @@ package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ResultadoService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDtoResponse;
-import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,11 +64,21 @@ public class ResultadoController {
 //        return ResponseEntity.ok(resultadoResponseList);
 //    }
 
+
+
     @GetMapping("/busqueda-provincia")
     public ResponseEntity<List<ResultadoDtoResponse>> busquedaProvinciaList(@RequestParam (required = false) Long idProvincia,
                                                                             @RequestParam (required = false) Long idMunicipio,
-                                                                            @RequestParam (required = false) String year){
-        List<ResultadoDtoResponse> resultadoResponseList = resultadoService.searchToProvinciaList(idProvincia,idMunicipio, year);
+                                                                            @RequestParam (required = false) String fechaInicio,
+                                                                            @RequestParam (required = false) String fechaFin) {
+        List<ResultadoDtoResponse> resultadoResponseList = resultadoService.searchToProvinciaList(idProvincia,idMunicipio, fechaInicio, fechaFin);
+        return ResponseEntity.ok(resultadoResponseList);
+    }
+
+    @GetMapping("/fecha")
+    public ResponseEntity<List<String>> obtenerAniosDisponiblesResultados(@RequestParam (required = false) Long idProvincia,
+                                                                          @RequestParam (required = false) Long idMunicipio) {
+        List<String> resultadoResponseList = resultadoService.obtenerAniosDisponibles(idProvincia, idMunicipio);
         return ResponseEntity.ok(resultadoResponseList);
     }
 

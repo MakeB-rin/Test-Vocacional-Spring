@@ -7,7 +7,6 @@ import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ResultadoServ
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDto;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDtoResponse;
-import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoResponse;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -71,9 +70,15 @@ public class ResultadoServiceImpl implements ResultadoService {
 
     // Funcion nueva
     @Override
-    public List<ResultadoDtoResponse> searchToProvinciaList(Long idProvincia,Long idMunicipio, String year){
-        return resultadoRepository.busquedaProvinciaList(idProvincia,idMunicipio, year);
+    public List<ResultadoDtoResponse> searchToProvinciaList(Long idProvincia,Long idMunicipio, String fechaInicio, String fechaFin) {
+        return resultadoRepository.busquedaProvinciaList(idProvincia,idMunicipio, fechaInicio, fechaFin);
     }
+
+    @Override
+    public List<String> obtenerAniosDisponibles(Long idProvincia,Long idMunicipio) {
+        return resultadoRepository.obtenerListaAniosDisponibles(idProvincia,idMunicipio);
+    }
+
 
     @Override
     public List<ResultadoDto> getByEstudianteId(Integer estudianteId) {
@@ -82,6 +87,7 @@ public class ResultadoServiceImpl implements ResultadoService {
                 .map(resultadoMapper::fromEntityToDto)
                 .collect(Collectors.toList());
     }
+
 //    // Funcion nueva
 //    @Override
 //    public List<ResultadoDtoResponse> searchToProvinciaList(Long id, String year){
