@@ -2,14 +2,11 @@ package Orientacion.Vocacional.IDRRU.Back.data.repository;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Resultado;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoDtoResponse;
-import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ResultadoResponse;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface  ResultadoRepository extends GenericRepository<Resultado, Integer>{
