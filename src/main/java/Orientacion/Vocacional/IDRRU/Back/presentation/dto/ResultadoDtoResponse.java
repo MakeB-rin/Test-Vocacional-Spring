@@ -2,6 +2,8 @@ package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
 import lombok.*;
 
+import java.util.Objects;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,8 +28,16 @@ public class ResultadoDtoResponse {
         this.municipio = municipio;
         this.chaside = chaside;
 
-        // Aquí va la lógica que preguntabas:
-        this.fecha = fechaInicio.equals(fechaFin) ? fechaInicio : fechaInicio + "-" + fechaFin;
+        // Aquí va la lógica Alternativa más compacta usando Objects.equals():
+        if (fechaInicio != null && fechaFin != null) {
+            this.fecha = Objects.equals(fechaInicio, fechaFin) ? fechaInicio : fechaInicio + "-" + fechaFin;
+        } else if (fechaInicio != null) {
+            this.fecha = fechaInicio;
+        } else if (fechaFin != null) {
+            this.fecha = fechaFin;
+        } else {
+            this.fecha = "Sin fecha";
+        }
 
         this.cantidadEstudiantes = cantidadEstudiantes;
     }
