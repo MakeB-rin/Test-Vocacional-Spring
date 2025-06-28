@@ -1,20 +1,17 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Getter
 @Setter
 public class HollandDto {
-
-    @NotNull
-    private Integer personalidad;
-
+    private Integer idHolland;
+    private String codigo;
+    private String nombre;
+    private String descripcion;
 }

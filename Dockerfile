@@ -20,5 +20,3 @@ RUN ./mvnw clean install -DskipTest #no ejecutar pruebas
 
 #LEVANTAR LA APLICACION CUANDO EL CONTENEDOR INICIE
 ENTRYPOINT ["java","-jar"]
-
-

@@ -7,7 +7,6 @@ import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.HollandServic
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.HollandDto;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,26 +15,19 @@ import java.util.List;
 @AllArgsConstructor
 public class HollandServiceImpl implements HollandService {
 
-
-    private HollandRepository hollandRepository;
-
-    @Autowired
-    private HollandMapper hollandMapper;
+    private final HollandRepository hollandRepository;
+    private final HollandMapper hollandMapper;
 
     @Override
-    public Holland getById(Integer id){
-        return hollandRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Holland", id));
+    public HollandDto findById(Integer id) {
+        Holland holland = hollandRepository.findById(id).
+                orElseThrow(() -> new EntityNotFoundException("Holland no encontrado con id " + id));
+        return hollandMapper.fromEntityToDto(holland);
     }
 
     @Override
-    public List<Holland> getAll(){
-        return hollandRepository.findAll();
+    public List<HollandDto> findAll() {
+        List<Holland> hollandList = hollandRepository.findAll();
+        return hollandMapper.fromEntityListToDto(hollandList);
     }
-
-    @Override
-    public Holland create(HollandDto hollandDto){
-        Holland holland = hollandMapper.fromDtoToEntity(hollandDto, null);
-        return hollandRepository.save(holland);
-    }
-
 }

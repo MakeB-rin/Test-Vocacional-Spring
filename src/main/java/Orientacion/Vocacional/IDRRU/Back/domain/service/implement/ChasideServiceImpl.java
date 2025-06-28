@@ -7,7 +7,6 @@ import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ChasideServic
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ChasideDto;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,26 +16,19 @@ import java.util.List;
 @AllArgsConstructor
 public class ChasideServiceImpl implements ChasideService {
 
-
-    private ChasideRepository chasideRepository;
-
-    @Autowired
-    private ChasideMapper chasideMapper;
+    private final ChasideRepository chasideRepository;
+    private final ChasideMapper chasideMapper;
 
     @Override
-    public Chaside getById(Integer id){
-        return chasideRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Chaside", id));
+    public ChasideDto findById(Integer id) {
+        Chaside chaside = chasideRepository.findById(id).
+                orElseThrow(() -> new EntityNotFoundException("Chaside no encontrado con id " + id));
+        return chasideMapper.fromEntityToDto(chaside);
     }
 
     @Override
-    public List<Chaside> getAll(){
-        return chasideRepository.findAll();
+    public List<ChasideDto> findAll() {
+        List<Chaside> chasideList = chasideRepository.findAll();
+        return chasideMapper.fromEntityListToDto(chasideList);
     }
-
-    @Override
-    public Chaside create(ChasideDto chasideDto){
-        Chaside chaside = chasideMapper.fromDtoToEntity(chasideDto, null);
-        return chasideRepository.save(chaside);
-    }
-
 }

@@ -9,30 +9,44 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
-
-@Entity
-public class Estudiante {
+@Builder
+@Entity(name = "estudiante")
+public class Estudiante extends Base{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_estudiante")
     private Integer idEstudiante;
 
+    @Column(name = "ci_estudiante")
     private String ciEstudiante;
+
+    @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "ap_paterno")
     private String apPaterno;
+
+    @Column(name = "ap_materno")
     private String apMaterno;
+
+    @Column(name = "colegio")
     private String colegio;
+
+    @Column(name = "curso")
     private String curso;
+
+    @Column(name = "edad")
     private Integer edad;
+
+    @Column(name = "celular")
     private String celular;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_municipio", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_municipio", referencedColumnName = "id_municipio", nullable = false)
     private Municipio municipio;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "estudiante")
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
     private List<Resultado> resultados;
 
 }

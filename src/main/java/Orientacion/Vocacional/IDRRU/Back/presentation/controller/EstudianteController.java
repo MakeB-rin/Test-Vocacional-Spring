@@ -1,40 +1,76 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
-import Orientacion.Vocacional.IDRRU.Back.data.repository.EstudianteRepository;
-import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.EstudianteService;
+import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/estudiante")
 public class EstudianteController {
-    @Autowired
-    private EstudianteRepository estudianteRepository;
 
+    @Autowired
     private final EstudianteService estudianteService;
 
-    @GetMapping("/")
-    public ResponseEntity<List<Estudiante>> getAll(Pageable pageable){
-        List<Estudiante> EstudianteList = estudianteService.findAll();
+    // http://localhost:8080/estudiante/?id=5
+    // @RequestParam(required = false) Integer id (id o null)
+    // List.of(estudianteDto) crea una lista inmutable que contiene solo ese objeto.
+//    @GetMapping("/")
+//    public ResponseEntity<List<EstudianteDto>> getAll(@RequestParam(required = false) Integer id){
+//        if(id != null){
+//            EstudianteDto estudianteDto = estudianteService.findById(id);
+//            return ResponseEntity.status(HttpStatus.OK).body(List.of(estudianteDto));
+//        }else {
+//            List<EstudianteDto> EstudianteList = estudianteService.findAll();
+//            return ResponseEntity.status(HttpStatus.OK).body(EstudianteList);
+//        }
+//    }
+
+    @GetMapping
+    public ResponseEntity<List<EstudianteDto>> getAll(){
+        List<EstudianteDto> EstudianteList = estudianteService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(EstudianteList);
     }
 
+
     @GetMapping("/{id}")
-    public ResponseEntity<Estudiante> findEstudianteById(@PathVariable Integer id){
-        Estudiante estudianteFound = estudianteService.findById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(estudianteFound);
+    public ResponseEntity<EstudianteDto> findById(@PathVariable Integer id){
+        EstudianteDto estudianteDto = estudianteService.findById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(estudianteDto);
     }
 
+    @PostMapping("/")
+    public ResponseEntity<Object> save(@Valid @RequestBody EstudianteDto dto) {
+        try{
+            EstudianteDto estudianteDto = estudianteService.create(dto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(estudianteDto);
+        }catch (Exception e){
+          return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error en el servidor E" + e.getMessage());
+        }
+    }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<EstudianteDto> update(@PathVariable Integer id, @Valid @RequestBody EstudianteDto estudianteDto) {
+        EstudianteDto estudianteUpdate = estudianteService.update(id, estudianteDto);
+        return ResponseEntity.status(HttpStatus.OK).body(estudianteUpdate);
+    }
+
+    @PutMapping("/state/{id}")
+    public ResponseEntity<Object> save(@PathVariable Integer id) {
+        estudianteService.changeState(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> delete(@PathVariable Integer id) {
+        estudianteService.delete(id);
+        return ResponseEntity.ok().build();
+    }
 }

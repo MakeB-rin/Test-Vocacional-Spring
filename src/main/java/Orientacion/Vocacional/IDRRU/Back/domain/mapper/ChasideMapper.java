@@ -4,20 +4,32 @@ import Orientacion.Vocacional.IDRRU.Back.domain.entity.Chaside;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ChasideDto;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ChasideMapper {
 
-        public Chaside fromDtoToEntity(ChasideDto dto, Chaside chaside) {
-        Chaside chasideAux = new Chaside ();
-
-        if (chaside != null) {
-            chasideAux = chaside;
+    public ChasideDto fromEntityToDto(Chaside chaside) {
+        if (chaside == null) {
+            return null;
         }
-
-        //seteo de los datos necesarios
-        chasideAux.setCodigo(dto.getCodigo());
-
-        return chasideAux;
+        ChasideDto chasideDto = new ChasideDto();
+        chasideDto.setIdChaside(chaside.getIdChaside());
+        chasideDto.setCodigo(chaside.getCodigo());
+        chasideDto.setDescripcion(chaside.getDescripcion());
+        return chasideDto;
     }
 
+    public List<ChasideDto> fromEntityListToDto(List<Chaside> chasideList){
+        List<ChasideDto> chasideDtos = new ArrayList<>();
+        for(Chaside chasideAux : chasideList){
+            ChasideDto chasideDto = new ChasideDto();
+            chasideDto.setIdChaside(chasideAux.getIdChaside());
+            chasideDto.setCodigo(chasideAux.getCodigo());
+            chasideDto.setDescripcion(chasideAux.getDescripcion());
+            chasideDtos.add(chasideDto);
+        }
+        return chasideDtos;
+    }
 }

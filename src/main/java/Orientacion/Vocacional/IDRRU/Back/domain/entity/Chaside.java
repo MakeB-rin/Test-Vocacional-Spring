@@ -10,19 +10,23 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
-
 @Entity
-public class Chaside {
+public class Chaside extends Base{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_chaside")
     private Integer idChaside;
 
+    @Column(nullable = false, length = 10)
     private String codigo;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "chaside")
-    @JsonIgnore
+    @Column(nullable = false, length = 500)
+    private String descripcion;
+
+    @OneToMany(mappedBy = "chaside", cascade = CascadeType.ALL)
     private List<Resultado> resultados;
 
+    @OneToMany(mappedBy = "chaside", cascade = CascadeType.ALL)
+    private List<Facultad> facultades;
 }
