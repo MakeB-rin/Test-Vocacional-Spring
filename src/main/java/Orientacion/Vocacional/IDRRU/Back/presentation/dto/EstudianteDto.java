@@ -30,9 +30,9 @@ public class EstudianteDto extends Base {
     @Size(min = 1, max = 200, message = "el apellido materno debe tener entre 2-198 caracteres")
     private String apMaterno;
 
-    @NotBlank(message = "El colegio NO debe ser blanco")
-    @Size(min = 1, max = 200, message = "el colegio debe tener entre 2-198 caracteres")
-    private String colegio;
+    // @NotBlank(message = "El colegio NO debe ser blanco")
+    // @Size(min = 1, max = 200, message = "el colegio debe tener entre 2-198 caracteres")
+    // private String colegio;
 
     @NotBlank(message = "El curso NO debe ser blanco")
     @Size(min = 1, max = 200, message = "el curso debe tener entre 2-198 caracteres")
@@ -44,6 +44,9 @@ public class EstudianteDto extends Base {
     @NotBlank(message = "El celular NO debe ser blanco")
     @Size(min = 1, max = 200, message = "el celular debe tener entre 2-198 caracteres")
     private String celular;
+
+    @NotNull(message = "Debe incluir el id municipio")
+    private Integer idColegio;
 
     @NotNull(message = "Debe incluir el id municipio")
     private Integer id_municipio;
