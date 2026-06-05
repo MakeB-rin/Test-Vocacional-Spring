@@ -1,5 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.mapper;
 
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Colegio;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
@@ -26,10 +27,14 @@ public class EstudianteMapper {
         estudianteAux.setNombre(dto.getNombre());
         estudianteAux.setApPaterno(dto.getApPaterno());
         estudianteAux.setApMaterno(dto.getApMaterno());
-        estudianteAux.setColegio(dto.getColegio());
+        // estudianteAux.setColegio(dto.getColegio());
         estudianteAux.setCurso(dto.getCurso());
         estudianteAux.setEdad(dto.getEdad());
         estudianteAux.setCelular(dto.getCelular());
+
+        Colegio colegio = new Colegio();
+        colegio.setIdColegio(dto.getIdColegio());
+        estudianteAux.setColegio(colegio);
 
         // municipio revisar
         Municipio municipio = new Municipio();
@@ -48,7 +53,7 @@ public class EstudianteMapper {
         estudianteDto.setNombre(estudiante.getNombre());
         estudianteDto.setApPaterno(estudiante.getApPaterno());
         estudianteDto.setApMaterno(estudiante.getApMaterno());
-        estudianteDto.setColegio(estudiante.getColegio());
+        // estudianteDto.setColegio(estudiante.getColegio());
         estudianteDto.setCurso(estudiante.getCurso());
         estudianteDto.setEdad(estudiante.getEdad());
         estudianteDto.setCelular(estudiante.getCelular());
@@ -56,6 +61,9 @@ public class EstudianteMapper {
         estudianteDto.setCreatedAt(estudiante.getCreatedAt());
         estudianteDto.setUpdatedAt(estudiante.getUpdatedAt());
 
+        if(estudiante.getColegio() != null){
+            estudianteDto.setIdColegio(estudiante.getColegio().getIdColegio());
+        }
         if(estudiante.getMunicipio() != null){
             estudianteDto.setId_municipio(estudiante.getMunicipio().getIdMunicipio());
         }
@@ -72,14 +80,18 @@ public class EstudianteMapper {
             estudianteDto.setNombre(estudianteAux.getNombre());
             estudianteDto.setApPaterno(estudianteAux.getApPaterno());
             estudianteDto.setApMaterno(estudianteAux.getApMaterno());
-            estudianteDto.setColegio(estudianteAux.getColegio());
+            // estudianteDto.setColegio(estudianteAux.getColegio());
             estudianteDto.setCurso(estudianteAux.getCurso());
             estudianteDto.setEdad(estudianteAux.getEdad());
             estudianteDto.setCelular(estudianteAux.getCelular());
 
             estudianteDto.setCreatedAt(estudianteAux.getCreatedAt());
             estudianteDto.setUpdatedAt(estudianteAux.getUpdatedAt());
-            
+
+            if(estudianteAux.getColegio() != null){
+                estudianteDto.setIdColegio(estudianteAux.getColegio().getIdColegio());
+            }
+
             if(estudianteAux.getMunicipio() != null){
                 estudianteDto.setId_municipio(estudianteAux.getMunicipio().getIdMunicipio());
             }

@@ -1,5 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,6 +24,10 @@ public class Municipio extends Base{
     @ManyToOne
     @JoinColumn(name = "id_provincia", referencedColumnName = "id_provincia", nullable = false)
     private Provincia provincia;
+
+    @OneToMany(mappedBy = "municipio", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Colegio> colegios;
 
     @OneToMany(mappedBy = "municipio", cascade = CascadeType.ALL)
     private List<Estudiante> estudiantes;
