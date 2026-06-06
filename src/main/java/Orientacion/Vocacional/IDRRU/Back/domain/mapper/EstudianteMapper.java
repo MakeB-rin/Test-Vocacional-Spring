@@ -32,16 +32,6 @@ public class EstudianteMapper {
         estudianteAux.setEdad(dto.getEdad());
         estudianteAux.setCelular(dto.getCelular());
 
-        Colegio colegio = new Colegio();
-        colegio.setIdColegio(dto.getIdColegio());
-        estudianteAux.setColegio(colegio);
-
-        // municipio revisar
-        Municipio municipio = new Municipio();
-        municipio.setIdMunicipio(dto.getId_municipio());
-        estudianteAux.setMunicipio(municipio);
-
-
         return estudianteAux;
     }
 

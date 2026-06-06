@@ -17,7 +17,6 @@ public class ProvinciaMapper {
         }
         //seteo de los datos necesarios
         provinciaAux.setNombre(dto.getNombre());
-        provinciaAux.setIdProvincia(dto.getIdProvincia());
         return provinciaAux;
     }
 

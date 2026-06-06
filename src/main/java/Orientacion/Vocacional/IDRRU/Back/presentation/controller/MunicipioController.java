@@ -1,15 +1,15 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.MunicipioDto;
 import java.util.List;
+
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -34,5 +34,25 @@ public class MunicipioController {
   public ResponseEntity<List<MunicipioDto>> getMunicipiosPorProvincia(@PathVariable ("idProvincia") Integer idProvincia) {
     List<MunicipioDto> municipios = municipioService.getByIdProvincia(idProvincia);
     return ResponseEntity.ok(municipios);
+  }
+
+  @PostMapping
+  public ResponseEntity<MunicipioDto> create(@Valid @RequestBody MunicipioDto dto){
+    MunicipioDto response = municipioService.create(dto);
+
+    return ResponseEntity.status(HttpStatus.CREATED).body(response);
+  }
+
+  @PutMapping("{/id}")
+  public ResponseEntity<MunicipioDto> update(@PathVariable Integer id, @Valid @RequestBody MunicipioDto dto){
+    MunicipioDto response = municipioService.update(id, dto);
+
+    return ResponseEntity.status(HttpStatus.OK).body(response);
+  }
+
+  @DeleteMapping("{/id}")
+  public ResponseEntity<Void> delete(@PathVariable Integer id){
+    municipioService.delete(id);
+    return ResponseEntity.noContent().build();
   }
 }

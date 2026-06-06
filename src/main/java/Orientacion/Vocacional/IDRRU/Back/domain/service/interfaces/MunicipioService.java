@@ -11,4 +11,10 @@ public interface MunicipioService {
 
   List<MunicipioDto> getByIdProvincia(Integer idProvincia);
 
+  MunicipioDto create(MunicipioDto dto);
+
+  MunicipioDto update(Integer id, MunicipioDto dto);
+
+  void delete(Integer id);
+
 }
