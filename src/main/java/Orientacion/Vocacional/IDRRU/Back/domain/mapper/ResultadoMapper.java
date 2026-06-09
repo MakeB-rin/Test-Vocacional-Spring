@@ -17,6 +17,7 @@ public class ResultadoMapper {
         resultadoAux.setInteres(dto.getInteres());
         resultadoAux.setAptitud(dto.getAptitud());
         resultadoAux.setPuntajeHolland(dto.getPuntajeHolland());
+        resultadoAux.setPuntajeChaside(dto.getPuntajeChaside());
         //No editar el año
         //resultadoAux.setFecha(dto.getFecha());
 

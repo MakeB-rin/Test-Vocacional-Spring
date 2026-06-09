@@ -16,6 +16,7 @@ public class ChasideMapper {
         }
         ChasideDto chasideDto = new ChasideDto();
         chasideDto.setCodigo(chaside.getCodigo());
+        chasideDto.setPuntaje(chaside.getPuntaje());
         chasideDto.setDescripcion(chaside.getDescripcion());
         return chasideDto;
     }

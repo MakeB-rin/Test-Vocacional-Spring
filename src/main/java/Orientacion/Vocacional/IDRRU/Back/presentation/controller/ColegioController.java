@@ -36,14 +36,14 @@ public class ColegioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @PutMapping("{/id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ColegioDto> updated(@PathVariable Integer id, @Valid @RequestBody ColegioDto dto){
         ColegioDto response = colegioService.update(id, dto);
 
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         colegioService.delete(id);
         return ResponseEntity.noContent().build();

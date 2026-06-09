@@ -23,6 +23,9 @@ public class ResultadoDto {
     @NotBlank(message = "El puntaje Holland no debe ser blanco")
     private String puntajeHolland;
 
+    @NotBlank(message = "El puntaje Chaside no debe ser blanco")
+    private String puntajeChaside;
+
     private String fecha;
 
     @NotNull(message = "El id del estudiante es requerido")

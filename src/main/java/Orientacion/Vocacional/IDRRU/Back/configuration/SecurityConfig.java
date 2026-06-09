@@ -57,6 +57,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,"/resultado/busqueda-provincia**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/resultado/fecha**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/colegio").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/evaluacion/").permitAll()
 
                         //.requestMatchers("/estudiante/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/estudiante/**").permitAll()

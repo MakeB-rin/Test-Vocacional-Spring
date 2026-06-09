@@ -43,14 +43,14 @@ public class MunicipioController {
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
 
-  @PutMapping("{/id}")
+  @PutMapping("/{id}")
   public ResponseEntity<MunicipioDto> update(@PathVariable Integer id, @Valid @RequestBody MunicipioDto dto){
     MunicipioDto response = municipioService.update(id, dto);
 
     return ResponseEntity.status(HttpStatus.OK).body(response);
   }
 
-  @DeleteMapping("{/id}")
+  @DeleteMapping("/{id}")
   public ResponseEntity<Void> delete(@PathVariable Integer id){
     municipioService.delete(id);
     return ResponseEntity.noContent().build();
