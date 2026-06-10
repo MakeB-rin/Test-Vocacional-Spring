@@ -21,9 +21,9 @@ public class ResultadoMapper {
         //No editar el año
         //resultadoAux.setFecha(dto.getFecha());
 
-        Estudiante estudiante = new Estudiante();
-        estudiante.setIdEstudiante(dto.getIdEstudiante());
-        resultadoAux.setEstudiante(estudiante);
+        // Estudiante estudiante = new Estudiante();
+        // estudiante.setIdEstudiante(dto.getIdEstudiante());
+        // resultadoAux.setEstudiante(estudiante);
 
         Chaside chaside = new Chaside();
         chaside.setIdChaside(dto.getIdChaside());
@@ -49,7 +49,7 @@ public class ResultadoMapper {
         dto.setPuntajeHolland(resultado.getPuntajeHolland());
         dto.setFecha(resultado.getFecha());
         // Se asignan los IDs de las relaciones
-        dto.setIdEstudiante(resultado.getEstudiante() != null ? resultado.getEstudiante().getIdEstudiante() : null);
+        // dto.setIdEstudiante(resultado.getEstudiante() != null ? resultado.getEstudiante().getIdEstudiante() : null);
         dto.setIdChaside(resultado.getChaside() != null ? resultado.getChaside().getIdChaside() : null);
         dto.setIdHolland(resultado.getHolland() != null ? resultado.getHolland().getIdHolland() : null);
         return dto;
@@ -66,14 +66,14 @@ public class ResultadoMapper {
             resultadoDto.setInteres(resultado.getInteres());
             resultadoDto.setFecha(resultado.getFecha());
             resultadoDto.setPuntajeHolland(resultado.getPuntajeHolland());
-            if(resultado.getEstudiante() != null){
-                resultadoDto.setIdEstudiante(resultado.getEstudiante().getIdEstudiante());
-            }
+            //if(resultado.getEstudiante() != null){
+            //    resultadoDto.setIdEstudiante(resultado.getEstudiante().getIdEstudiante());
+            //}
             if(resultado.getChaside() != null){
                 resultadoDto.setIdChaside(resultado.getChaside().getIdChaside());
             }
             if(resultado.getHolland() != null){
-                resultadoDto.setIdEstudiante(resultado.getHolland().getIdHolland());
+                resultadoDto.setIdHolland(resultado.getHolland().getIdHolland());
             }
 
             resultadoDtoList.add(resultadoDto);

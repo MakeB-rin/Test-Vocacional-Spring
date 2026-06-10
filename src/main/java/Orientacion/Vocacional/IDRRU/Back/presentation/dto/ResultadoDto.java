@@ -28,8 +28,8 @@ public class ResultadoDto {
 
     private String fecha;
 
-    @NotNull(message = "El id del estudiante es requerido")
-    private Integer idEstudiante;
+    // @NotNull(message = "El id del estudiante es requerido")
+    // private Integer idEstudiante;
 
     @NotNull(message = "El id del chaside es requerido")
     private Integer idChaside;

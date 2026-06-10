@@ -43,18 +43,11 @@ public class EstudianteServiceImpl implements EstudianteService {
 
     @Override
     public EstudianteDto create(EstudianteDto estudianteDto) {
-        Colegio colegio = colegioRepository
-                .findById(estudianteDto.getIdColegio())
-                .orElseThrow(()->
-                        new EntityNotFoundException("Colegio", estudianteDto.getIdColegio()));
-        Municipio municipio = municipioRepository
-                .findById(estudianteDto.getId_municipio())
-                .orElseThrow(()->
-                        new EntityNotFoundException("Municipio", estudianteDto.getId_municipio()));
+
         Estudiante estudiante = estudianteMapper.fromDtoToEntity(estudianteDto, null);
-        estudiante.setColegio(colegio);
-        estudiante.setMunicipio(municipio);
+
         Estudiante estudianteSave = estudianteRepository.save(estudiante);
+
         return estudianteMapper.fromEntityToDto(estudianteSave);
     }
 

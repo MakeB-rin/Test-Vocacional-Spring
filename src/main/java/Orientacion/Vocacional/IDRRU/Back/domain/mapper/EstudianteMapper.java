@@ -1,33 +1,46 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.mapper;
 
+import Orientacion.Vocacional.IDRRU.Back.data.repository.ColegioRepository;
+import Orientacion.Vocacional.IDRRU.Back.data.repository.MunicipioRepository;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Colegio;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
-
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
-import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.MunicipioService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.EstudianteDto;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class EstudianteMapper {
 
-    @Autowired
-    private MunicipioService municipioService;
+    private final MunicipioRepository municipioRepository;
+    private final ColegioRepository colegioRepository;
 
     public Estudiante fromDtoToEntity(EstudianteDto dto, Estudiante estudiante) {
         Estudiante estudianteAux = new Estudiante();
         if (estudiante != null) {
             estudianteAux = estudiante;
         }
+        if (dto.getId_municipio() != null){
+            Municipio municipio = municipioRepository.findById(dto.getId_municipio())
+                    .orElseThrow(()->
+                            new RuntimeException("Municipio no encontrado"));
+            estudianteAux.setMunicipio(municipio);
+        }
+        if (dto.getIdColegio() != null){
+            Colegio colegio = colegioRepository.findById(dto.getIdColegio())
+                    .orElseThrow(()->
+                            new RuntimeException("Colegio no encontrado"));
+            estudianteAux.setColegio(colegio);
+        }
         estudianteAux.setCiEstudiante(dto.getCiEstudiante());
         estudianteAux.setNombre(dto.getNombre());
         estudianteAux.setApPaterno(dto.getApPaterno());
         estudianteAux.setApMaterno(dto.getApMaterno());
-        // estudianteAux.setColegio(dto.getColegio());
+        estudianteAux.setNombreColegio(dto.getNombreColegio());
         estudianteAux.setCurso(dto.getCurso());
         estudianteAux.setEdad(dto.getEdad());
         estudianteAux.setCelular(dto.getCelular());
@@ -43,7 +56,7 @@ public class EstudianteMapper {
         estudianteDto.setNombre(estudiante.getNombre());
         estudianteDto.setApPaterno(estudiante.getApPaterno());
         estudianteDto.setApMaterno(estudiante.getApMaterno());
-        // estudianteDto.setColegio(estudiante.getColegio());
+        estudianteDto.setNombreColegio(estudiante.getNombreColegio());
         estudianteDto.setCurso(estudiante.getCurso());
         estudianteDto.setEdad(estudiante.getEdad());
         estudianteDto.setCelular(estudiante.getCelular());

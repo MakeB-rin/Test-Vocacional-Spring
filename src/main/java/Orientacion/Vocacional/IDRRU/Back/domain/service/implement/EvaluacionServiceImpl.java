@@ -1,7 +1,9 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.service.implement;
 
+import Orientacion.Vocacional.IDRRU.Back.data.repository.ConfiguracionRepository;
 import Orientacion.Vocacional.IDRRU.Back.data.repository.EstudianteRepository;
 import Orientacion.Vocacional.IDRRU.Back.data.repository.ResultadoRepository;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Configuracion;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Resultado;
 import Orientacion.Vocacional.IDRRU.Back.domain.mapper.EstudianteMapper;
@@ -21,27 +23,51 @@ public class EvaluacionServiceImpl implements EvaluacionService {
 
     private final EstudianteRepository estudianteRepository;
     private final ResultadoRepository resultadoRepository;
+    private final ConfiguracionRepository configuracionRepository;
 
     private final EstudianteMapper estudianteMapper;
     private final ResultadoMapper resultadoMapper;
 
     @Override
     public EvaluacionResponseDto guardarEvaluacion(EvaluacionRequestDto evaluacionRequestDto) {
-        // guardamos el estudiante
-        Estudiante estudiante = estudianteMapper.fromDtoToEntity(evaluacionRequestDto.getEstudianteDto(), null);
-        estudiante = estudianteRepository.save(estudiante);
 
-        // guardamos el resultado
-        Resultado resultado = resultadoMapper.fromDtoToEntity(evaluacionRequestDto.getResultadoDto(), null);
-        resultado.setEstudiante(estudiante);
-        resultado = resultadoRepository.save(resultado);
+        // obtener la configuracion
+        Configuracion configuracion = configuracionRepository.findById(1)
+                .orElseThrow(()->
+                        new RuntimeException("No existe la configuracion"));
+
+        if(Boolean.FALSE.equals(configuracion.getFormularioHabilitado())){
+            throw new RuntimeException("El formulario esta desahbilitado");
+        }
+
+        Estudiante estudiante;
+        Resultado resultado;
+
+        // verificar si la opcion de guardar en la base de datos esta habilitada
+        if(Boolean.TRUE.equals(configuracion.getGuardarResultados())){
+            // guardamos el estudiante
+            estudiante = estudianteMapper.fromDtoToEntity(evaluacionRequestDto.getEstudianteDto(), null);
+            estudiante = estudianteRepository.save(estudiante);
+
+            // guardamos el resultado
+            resultado = resultadoMapper.fromDtoToEntity(evaluacionRequestDto.getResultadoDto(), null);
+            resultado.setEstudiante(estudiante);
+            resultado = resultadoRepository.save(resultado);
+
+        } else {
+            estudiante = estudianteMapper.fromDtoToEntity(evaluacionRequestDto.getEstudianteDto(), null);
+            resultado = resultadoMapper.fromDtoToEntity(evaluacionRequestDto.getResultadoDto(), null);
+        }
 
         // respondemos con la informacion para construir la pagina de resultados
         return EvaluacionResponseDto.builder()
+                .guardarResultado(configuracion.getGuardarResultados())
                 .nombre(estudiante.getNombre())
                 .apPaterno(estudiante.getApPaterno())
                 .apMaterno(estudiante.getApMaterno())
+                .nombreColegio(estudiante.getNombreColegio())
                 .colegio(estudiante.getColegio().getNombre())
+                .codigoSeguridad(resultado.getCodigoSeguridad())
                 .puntajeInteres(resultado.getInteres())
                 .puntajeAptitud(resultado.getAptitud())
                 .holland(resultado.getPuntajeHolland())

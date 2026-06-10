@@ -7,10 +7,13 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EvaluacionResponseDto {
+    private Boolean guardarResultado;
     private String nombre;
     private String apPaterno;
     private String apMaterno;
+    private String nombreColegio;
     private String colegio;
+    private String codigoSeguridad;
     private Integer puntajeInteres;
     private Integer puntajeAptitud;
     private String holland;
