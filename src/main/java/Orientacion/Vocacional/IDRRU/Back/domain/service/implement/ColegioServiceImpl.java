@@ -71,4 +71,12 @@ public class ColegioServiceImpl implements ColegioService {
         }
         colegioRepository.deleteById(Id);
     }
+
+    @Override
+    public List<ColegioDto> getByMunicipio(Integer idMunicipio) {
+
+        List<Colegio> colegios = colegioRepository.findByMunicipioIdMunicipio(idMunicipio);
+
+        return colegioMapper.fromEntityListToDto(colegios);
+    }
 }

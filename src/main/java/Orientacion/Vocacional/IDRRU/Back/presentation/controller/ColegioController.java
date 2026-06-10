@@ -1,5 +1,6 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Colegio;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ColegioService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ColegioDto;
 import jakarta.validation.Valid;
@@ -48,4 +49,13 @@ public class ColegioController {
         colegioService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/municipio/{idMunicipio}")
+    public ResponseEntity<List<ColegioDto>> getByMunicipio(@PathVariable Integer idMunicipio){
+
+        List<ColegioDto> colegios = colegioService.getByMunicipio(idMunicipio);
+
+        return ResponseEntity.status(HttpStatus.OK).body(colegios);
+    }
+
 }

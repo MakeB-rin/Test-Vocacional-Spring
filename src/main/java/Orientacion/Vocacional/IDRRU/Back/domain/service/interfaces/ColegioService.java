@@ -17,4 +17,6 @@ public interface ColegioService {
 
     void delete(Integer Id);
 
+    List<ColegioDto> getByMunicipio(Integer idMunicipio);
+
 }
