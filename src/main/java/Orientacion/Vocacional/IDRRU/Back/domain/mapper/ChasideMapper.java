@@ -28,6 +28,7 @@ public class ChasideMapper {
             chasideDto.setIdChaside(chasideAux.getIdChaside());
             chasideDto.setCodigo(chasideAux.getCodigo());
             chasideDto.setDescripcion(chasideAux.getDescripcion());
+            chasideDto.setPuntaje(chasideAux.getPuntaje());
             chasideDtos.add(chasideDto);
         }
         return chasideDtos;
