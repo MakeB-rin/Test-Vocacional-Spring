@@ -43,8 +43,11 @@ public class EvaluacionServiceImpl implements EvaluacionService {
         Estudiante estudiante;
         Resultado resultado;
 
+        boolean guardarEnBD = Boolean.TRUE.equals(configuracion.getGuardarResultados())
+                && evaluacionRequestDto.getEstudianteDto().getIdColegio() != null;
+
         // verificar si la opcion de guardar en la base de datos esta habilitada
-        if(Boolean.TRUE.equals(configuracion.getGuardarResultados())){
+        if(guardarEnBD){
             // guardamos el estudiante
             estudiante = estudianteMapper.fromDtoToEntity(evaluacionRequestDto.getEstudianteDto(), null);
             estudiante = estudianteRepository.save(estudiante);
@@ -59,15 +62,26 @@ public class EvaluacionServiceImpl implements EvaluacionService {
             resultado = resultadoMapper.fromDtoToEntity(evaluacionRequestDto.getResultadoDto(), null);
         }
 
+        String nombreColegio;
+        if (estudiante.getColegio() != null) {
+            nombreColegio = estudiante.getColegio().getNombre();
+        } else {
+            nombreColegio = estudiante.getNombreColegio();
+        }
+
         // respondemos con la informacion para construir la pagina de resultados
         return EvaluacionResponseDto.builder()
                 .guardarResultado(configuracion.getGuardarResultados())
                 .nombre(estudiante.getNombre())
                 .apPaterno(estudiante.getApPaterno())
                 .apMaterno(estudiante.getApMaterno())
-                .nombreColegio(estudiante.getNombreColegio())
-                .colegio(estudiante.getColegio().getNombre())
-                .codigoSeguridad(resultado.getCodigoSeguridad())
+                .ciEstudiante(estudiante.getCiEstudiante())
+                .nombreColegio(nombreColegio)
+                .codigoSeguridad(
+                        guardarEnBD
+                                ? resultado.getCodigoSeguridad()
+                                : null
+                )
                 .puntajeInteres(resultado.getInteres())
                 .puntajeAptitud(resultado.getAptitud())
                 .holland(resultado.getPuntajeHolland())

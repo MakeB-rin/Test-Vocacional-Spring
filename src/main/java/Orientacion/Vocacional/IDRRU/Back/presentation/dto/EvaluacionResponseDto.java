@@ -9,10 +9,10 @@ import lombok.*;
 public class EvaluacionResponseDto {
     private Boolean guardarResultado;
     private String nombre;
+    private String ciEstudiante;
     private String apPaterno;
     private String apMaterno;
     private String nombreColegio;
-    private String colegio;
     private String codigoSeguridad;
     private Integer puntajeInteres;
     private Integer puntajeAptitud;
