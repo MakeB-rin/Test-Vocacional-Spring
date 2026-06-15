@@ -3,6 +3,7 @@ package Orientacion.Vocacional.IDRRU.Back.security;
 import Orientacion.Vocacional.IDRRU.Back.data.repository.UsuarioRepository;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Usuario;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.List;
 
 
 /**
@@ -34,10 +36,13 @@ public class CustomUserDetailsService implements UserDetailsService {
         Usuario usuario = usuarioRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + username));
 
+        List<GrantedAuthority> authorities =
+                List.of(new SimpleGrantedAuthority("ROLE_"+usuario.getRol()));
+
         return new User(
                 usuario.getUsername(),
                 usuario.getPassword(),
-                Collections.emptyList()
+                authorities
         );
     }
 }

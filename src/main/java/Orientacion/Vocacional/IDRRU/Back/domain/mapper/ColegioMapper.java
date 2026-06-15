@@ -1,6 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.mapper;
 
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Colegio;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ColegioDto;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,6 @@ public class ColegioMapper {
             colegioAux = colegio;
         }
         colegioAux.setNombre(dto.getNombre());
-        colegioAux.setIdColegio(dto.getIdColegio());
 
         return colegioAux;
     }

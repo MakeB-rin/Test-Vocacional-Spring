@@ -1,14 +1,13 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.controller;
 
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Colegio;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.ColegioService;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.ColegioDto;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +28,34 @@ public class ColegioController {
     public ResponseEntity<ColegioDto> getById(@PathVariable Integer id){
         ColegioDto colegioDto = colegioService.getById(id);
         return ResponseEntity.status(HttpStatus.OK).body(colegioDto);
+    }
+
+    @PostMapping
+    public ResponseEntity<ColegioDto> create(@Valid @RequestBody ColegioDto dto){
+        ColegioDto response = colegioService.create(dto);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ColegioDto> updated(@PathVariable Integer id, @Valid @RequestBody ColegioDto dto){
+        ColegioDto response = colegioService.update(id, dto);
+
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Integer id){
+        colegioService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/municipio/{idMunicipio}")
+    public ResponseEntity<List<ColegioDto>> getByMunicipio(@PathVariable Integer idMunicipio){
+
+        List<ColegioDto> colegios = colegioService.getByMunicipio(idMunicipio);
+
+        return ResponseEntity.status(HttpStatus.OK).body(colegios);
     }
 
 }

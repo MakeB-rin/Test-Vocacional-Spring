@@ -16,7 +16,6 @@ public class MunicipioMapper {
       municipioAux = municipio;
     }
     //seteo de los datos necesarios
-    municipioAux.setIdMunicipio(dto.getIdMunicipio());
     municipioAux.setNombre(dto.getNombre());
     return municipioAux;
   }

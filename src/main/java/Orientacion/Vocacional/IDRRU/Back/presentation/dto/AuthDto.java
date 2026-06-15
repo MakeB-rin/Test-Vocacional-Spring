@@ -27,6 +27,7 @@ public class AuthDto {
     public static class LoginResponse {
         private String token;
         private String username;
+        private String rol;
         private String nombre;
     }
     @Data
@@ -41,6 +42,9 @@ public class AuthDto {
         @NotBlank(message = "La contrasena no debe estar en blanco")
         @Size(min = 4, message = "La contrasena debe tener al menos 4 caracteres")
         private String password;
+
+        @NotBlank(message = "El rol no debe estar en blanco")
+        private String rol;
 
         @NotBlank(message = "El nombre no debe estar en blanco")
         private String nombre;

@@ -152,13 +152,13 @@ INSERT INTO MUNICIPIO(NOMBRE, ACTIVE, CREATED_AT, UPDATED_AT, ID_PROVINCIA) VALU
 ----------------
 --- CHASIDE ----
 ----------------
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 1C', 'Administrativas, Contables y Económicas');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 2H', 'Humanísticas, Ciencias Jurídicas y Ciencias Sociales');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 3A', 'Artísticas');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 4S', 'Ciencias de la Salud');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 5I', 'Ingenierías, Carreras Técnicas y Computación');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 6D', 'Defensa y Seguridad');
-INSERT INTO chaside (active, created_at, updated_at, codigo, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 7E', 'Ciencias Agrarias de la Naturaleza, Zoológicas y Biológicas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, puntaje, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 1C', 'C', 'Administrativas, Contables y Económicas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, puntaje, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 2H', 'H', 'Humanísticas, Ciencias Jurídicas y Ciencias Sociales');
+INSERT INTO chaside (active, created_at, updated_at, codigo, puntaje, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 3A', 'A', 'Artísticas');
+INSERT INTO chaside (active, created_at, updated_at, codigo, puntaje, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 4S', 'S', 'Ciencias de la Salud');
+INSERT INTO chaside (active, created_at, updated_at, codigo, puntaje, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 5I', 'I', 'Ingenierías, Carreras Técnicas y Computación');
+INSERT INTO chaside (active, created_at, updated_at, codigo, puntaje, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 6D', 'D', 'Defensa y Seguridad');
+INSERT INTO chaside (active, created_at, updated_at, codigo, puntaje, descripcion) VALUES (true, NOW(), NOW(), 'TABLA 7E', 'E', 'Ciencias Agrarias de la Naturaleza, Zoológicas y Biológicas');
 
 ----------------
 --- HOLLAND ----
@@ -212,9 +212,13 @@ INSERT INTO facultad (active, created_at, updated_at, codigo, nombre, url, img_l
 ---  USUARIO ---
 ----------------
 
-INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 1, now(), now(), 'ADMIN', 'ADMINISTRADOR', '$2a$10$dZTWcB1gfFI11HxZdVWQSuBkYaAon1He/dVL9hkfDAlBMG2d0gYeK');
-INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 2, now(), now(), 'ADMIN1', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
-INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 3, now(), now(), 'ADMIN2', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
-INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 4, now(), now(), 'ADMIN3', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
-INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password) VALUES (true, 5, now(), now(), 'ADMIN4', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password , rol) VALUES (true, 1, now(), now(), 'ADMIN', 'ADMINISTRADOR', '$2a$10$dZTWcB1gfFI11HxZdVWQSuBkYaAon1He/dVL9hkfDAlBMG2d0gYeK' , 'ADMINISTRADOR');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password , rol) VALUES (true, 2, now(), now(), 'ADMIN1', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy' , 'EVALUADOR');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password , rol) VALUES (true, 3, now(), now(), 'ADMIN2', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy' , 'EVALUADOR');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password , rol) VALUES (true, 4, now(), now(), 'ADMIN3', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy' , 'EVALUADOR');
+INSERT INTO usuario (active, id_usuario, created_at, updated_at, username, nombre, password , rol) VALUES (true, 5, now(), now(), 'ADMIN4', 'ADMINISTRADOR', '$2a$10$Qb99gA8roPHnJX0IXJ8e5.iPyumHBfoF8YrsGnMfmYgiQigUBZoEy' , 'EVALUADOR');
 
+----------------------
+---- CONFIGURACION ---
+----------------------
+INSERT INTO configuracion (active, created_at, updated_at, guardar_resultados, formulario_habilitado) VALUES (true, now(), now(), false, false)

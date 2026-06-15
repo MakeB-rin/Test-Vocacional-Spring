@@ -46,6 +46,7 @@ public class AuthService {
                 .token(token)
                 .username(usuario.getUsername())
                 .nombre(usuario.getNombre())
+                .rol(usuario.getRol().name())
                 .build();
     }
 
@@ -63,6 +64,7 @@ public class AuthService {
         Usuario usuario = new Usuario();
         usuario.setUsername(request.getUsername());
         usuario.setPassword(passwordEncoder.encode(request.getPassword()));
+        usuario.setRol(Usuario.Rol.valueOf(request.getRol().toUpperCase()));
         usuario.setNombre(request.getNombre());
 
         return usuarioRepository.save(usuario);

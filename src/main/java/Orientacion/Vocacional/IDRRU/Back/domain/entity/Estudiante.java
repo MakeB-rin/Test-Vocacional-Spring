@@ -30,9 +30,6 @@ public class Estudiante extends Base{
     @Column(name = "ap_materno")
     private String apMaterno;
 
-    // @Column(name = "colegio")
-    // private String colegio;
-
     @Column(name = "curso")
     private String curso;
 
@@ -41,6 +38,9 @@ public class Estudiante extends Base{
 
     @Column(name = "celular")
     private String celular;
+
+    @Column(name = "nombreColegio")
+    private String nombreColegio;
 
     @ManyToOne
     @JoinColumn(name = "id_colegio", referencedColumnName = "id_colegio", nullable = false)
