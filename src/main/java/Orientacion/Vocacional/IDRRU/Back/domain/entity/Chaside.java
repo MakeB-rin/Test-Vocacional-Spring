@@ -21,6 +21,9 @@ public class Chaside extends Base{
     @Column(nullable = false, length = 10)
     private String codigo;
 
+    @Column(nullable = false, length = 5)
+    private String puntaje;
+
     @Column(nullable = false, length = 500)
     private String descripcion;
 

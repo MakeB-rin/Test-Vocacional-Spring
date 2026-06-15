@@ -1,7 +1,11 @@
 package Orientacion.Vocacional.IDRRU.Back.domain.service.implement;
 
+import Orientacion.Vocacional.IDRRU.Back.data.repository.ColegioRepository;
 import Orientacion.Vocacional.IDRRU.Back.data.repository.EstudianteRepository;
+import Orientacion.Vocacional.IDRRU.Back.data.repository.MunicipioRepository;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Colegio;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Estudiante;
+import Orientacion.Vocacional.IDRRU.Back.domain.entity.Municipio;
 import Orientacion.Vocacional.IDRRU.Back.domain.mapper.EstudianteMapper;
 import Orientacion.Vocacional.IDRRU.Back.domain.service.interfaces.EstudianteService;
 import Orientacion.Vocacional.IDRRU.Back.exception.EntityNotFoundException;
@@ -17,8 +21,9 @@ import java.util.List;
 @AllArgsConstructor
 public class EstudianteServiceImpl implements EstudianteService {
 
-    @Autowired
-    private EstudianteRepository estudianteRepository;
+    private final EstudianteRepository estudianteRepository;
+    private final ColegioRepository colegioRepository;
+    private final MunicipioRepository municipioRepository;
 
     @Autowired
     private EstudianteMapper estudianteMapper;
@@ -38,20 +43,34 @@ public class EstudianteServiceImpl implements EstudianteService {
 
     @Override
     public EstudianteDto create(EstudianteDto estudianteDto) {
+
         Estudiante estudiante = estudianteMapper.fromDtoToEntity(estudianteDto, null);
+
         Estudiante estudianteSave = estudianteRepository.save(estudiante);
+
         return estudianteMapper.fromEntityToDto(estudianteSave);
     }
 
     @Override
     public EstudianteDto update(Integer id, EstudianteDto estudianteDto) {
 
-        Estudiante estudianteId =  estudianteRepository.findById(id).orElseThrow(
-                ()-> new EntityNotFoundException("Estudiante", id));
-
+        Estudiante estudianteId =  estudianteRepository
+                .findById(id)
+                .orElseThrow(()->
+                        new EntityNotFoundException("Estudiante", id));
+        Colegio colegio = colegioRepository
+                .findById(estudianteDto.getIdColegio())
+                .orElseThrow(()->
+                        new EntityNotFoundException("Colegio", estudianteDto.getIdColegio()));
+        Municipio municipio = municipioRepository
+                .findById(estudianteDto.getId_municipio())
+                .orElseThrow(()->
+                        new EntityNotFoundException("Municipio", estudianteDto.getId_municipio()));
         Estudiante estudianteEdit = estudianteMapper.fromDtoToEntity(estudianteDto, estudianteId);
-        Estudiante estudianteResultado = estudianteRepository.save(estudianteEdit);
-        return estudianteMapper.fromEntityToDto(estudianteResultado);
+        estudianteEdit.setMunicipio(municipio);
+        estudianteEdit.setColegio(colegio);
+        Estudiante updated = estudianteRepository.save(estudianteEdit);
+        return estudianteMapper.fromEntityToDto(updated);
     }
 
     @Transactional

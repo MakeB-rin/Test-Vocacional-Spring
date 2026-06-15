@@ -12,5 +12,6 @@ public class ChasideDto {
     private Integer idChaside;
     private String codigo;
     private String descripcion;
+    private String puntaje;
 
 }

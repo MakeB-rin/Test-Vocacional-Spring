@@ -27,6 +27,15 @@ public class Usuario extends Base {
     @Column(nullable = false)
     private String password;
 
+    public enum Rol {
+        ADMINISTRADOR,
+        EVALUADOR
+    }
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Rol rol;
+
     @Column(nullable = false, length = 100)
     private String nombre;
 }

@@ -13,7 +13,6 @@ import lombok.*;
 @Builder
 public class EstudianteDto extends Base {
 
-
     private Integer idEstudiante;
 
     private String ciEstudiante;
@@ -22,17 +21,15 @@ public class EstudianteDto extends Base {
     @Size(min = 1, max = 200, message = "el nombre debe tener entre 2-198 caracteres")
     private String nombre;
 
-    @NotBlank(message = "El apellido paterno NO debe ser blanco")
     @Size(min = 1, max = 200, message = "el apellido paterno debe tener entre 2-198 caracteres")
     private String apPaterno;
 
-    @NotBlank(message = "El apellido materno NO debe ser blanco")
     @Size(min = 1, max = 200, message = "el apellido materno debe tener entre 2-198 caracteres")
     private String apMaterno;
 
     // @NotBlank(message = "El colegio NO debe ser blanco")
-    // @Size(min = 1, max = 200, message = "el colegio debe tener entre 2-198 caracteres")
-    // private String colegio;
+    @Size(min = 1, max = 200, message = "el colegio debe tener entre 2-198 caracteres")
+    private String nombreColegio;
 
     @NotBlank(message = "El curso NO debe ser blanco")
     @Size(min = 1, max = 200, message = "el curso debe tener entre 2-198 caracteres")
@@ -45,7 +42,7 @@ public class EstudianteDto extends Base {
     @Size(min = 1, max = 200, message = "el celular debe tener entre 2-198 caracteres")
     private String celular;
 
-    @NotNull(message = "Debe incluir el id municipio")
+    // @NotNull(message = "Debe incluir el id colegio")
     private Integer idColegio;
 
     @NotNull(message = "Debe incluir el id municipio")

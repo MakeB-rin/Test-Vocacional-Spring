@@ -10,7 +10,6 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-
 public class ColegioDto {
 
     private Integer idColegio;

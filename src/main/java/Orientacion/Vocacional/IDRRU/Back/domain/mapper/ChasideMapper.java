@@ -15,8 +15,8 @@ public class ChasideMapper {
             return null;
         }
         ChasideDto chasideDto = new ChasideDto();
-        chasideDto.setIdChaside(chaside.getIdChaside());
         chasideDto.setCodigo(chaside.getCodigo());
+        chasideDto.setPuntaje(chaside.getPuntaje());
         chasideDto.setDescripcion(chaside.getDescripcion());
         return chasideDto;
     }
@@ -28,6 +28,7 @@ public class ChasideMapper {
             chasideDto.setIdChaside(chasideAux.getIdChaside());
             chasideDto.setCodigo(chasideAux.getCodigo());
             chasideDto.setDescripcion(chasideAux.getDescripcion());
+            chasideDto.setPuntaje(chasideAux.getPuntaje());
             chasideDtos.add(chasideDto);
         }
         return chasideDtos;
