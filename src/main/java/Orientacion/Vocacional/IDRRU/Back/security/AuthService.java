@@ -3,6 +3,7 @@ package Orientacion.Vocacional.IDRRU.Back.security;
 import Orientacion.Vocacional.IDRRU.Back.data.repository.UsuarioRepository;
 import Orientacion.Vocacional.IDRRU.Back.domain.entity.Usuario;
 import Orientacion.Vocacional.IDRRU.Back.presentation.dto.AuthDto;
+import Orientacion.Vocacional.IDRRU.Back.presentation.dto.UsuarioDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -11,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Servicio para autenticacion de usuarios.
@@ -83,5 +86,88 @@ public class AuthService {
         Long expirationTimeMillis = expirationDate.getTime();
         tokenBlacklistService.blacklistToken(token, expirationTimeMillis);
 
+    }
+
+    /**
+     * Lista a todos los usuarios en el sistema.
+     *
+     * @return Los usuarios registrados.
+     */
+    public List<AuthDto.UsuarioResponse> getAll() {
+        return usuarioRepository.findAll()
+                .stream()
+                .map(usuario ->
+                        AuthDto.UsuarioResponse.builder()
+                                .idUsuario(usuario.getIdUsuario())
+                                .username(usuario.getUsername())
+                                .nombre(usuario.getNombre())
+                                .rol(usuario.getRol().name())
+                                .build()
+                        )
+                        .toList();
+    }
+
+    /**
+     * Retorna un usuario con el id.
+     *
+     * @param idUsuario di del usuario a buscar.
+     */
+    public AuthDto.UsuarioResponse getById(Integer idUsuario) {
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+                .orElseThrow(() ->
+                        new RuntimeException("Usuario no encontrado"));
+        return AuthDto.UsuarioResponse.builder()
+                .idUsuario(usuario.getIdUsuario())
+                .nombre(usuario.getNombre())
+                .username(usuario.getUsername())
+                .rol(usuario.getRol().name())
+                .build();
+    }
+
+    /**
+     * Actualiza los datos de un usuario.
+     *
+     * @param idUsuario el id del Usuario que se quiere actualizar ").
+     * @param request toda la informacion del usuario actualizada ").
+     */
+    public AuthDto.UsuarioResponse update(Integer idUsuario, AuthDto.UpdateRequest request){
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+                .orElseThrow(() ->
+                        new RuntimeException("Usuario no encontrado"));
+
+        Optional<Usuario> existente = usuarioRepository.findByUsername(request.getUsername());
+
+        if (existente.isPresent() && !existente.get().getIdUsuario().equals(idUsuario)){
+            throw new RuntimeException("El nombre de usuario ya esta en uso");
+        }
+
+        usuario.setUsername(request.getUsername());
+        usuario.setNombre(request.getNombre());
+        usuario.setRol(Usuario.Rol.valueOf(request.getRol().toUpperCase()));
+
+        if (request.getPassword() != null && !request.getPassword().isBlank()){
+            usuario.setPassword(
+                    passwordEncoder.encode(request.getPassword())
+            );
+        }
+
+        return AuthDto.UsuarioResponse.builder()
+                .idUsuario(usuario.getIdUsuario())
+                .nombre(usuario.getNombre())
+                .username(usuario.getUsername())
+                .rol(usuario.getRol().name())
+                .build();
+    }
+
+    /**
+     * Borra un usuario completamente.
+     *
+     * @param idUsuario el id del Usuario que se quiere borrar ").
+     */
+    public void delete(Integer idUsuario){
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+                .orElseThrow(() ->
+                        new RuntimeException("Usuario no encontrado"));
+        usuarioRepository.delete(usuario);
     }
 }
