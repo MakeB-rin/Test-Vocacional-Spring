@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Controlador para manejar las peticiones de autenticacion.
  */
@@ -33,4 +35,26 @@ public class AuthController {
         authService.cerrarSesion(token);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<AuthDto.UsuarioResponse>> getAll() {
+        return ResponseEntity.ok(authService.getAll());
+    }
+
+    @GetMapping("/users/{id}")
+    public ResponseEntity<AuthDto.UsuarioResponse> getById(@PathVariable Integer id) {
+        return ResponseEntity.ok(authService.getById(id));
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<AuthDto.UsuarioResponse> update(@PathVariable Integer id, @RequestBody AuthDto.UpdateRequest request) {
+        return ResponseEntity.ok(authService.update(id, request));
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+        authService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
