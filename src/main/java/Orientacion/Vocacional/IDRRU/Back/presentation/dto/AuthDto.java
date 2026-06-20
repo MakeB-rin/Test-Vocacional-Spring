@@ -1,6 +1,7 @@
 package Orientacion.Vocacional.IDRRU.Back.presentation.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -49,4 +50,39 @@ public class AuthDto {
         @NotBlank(message = "El nombre no debe estar en blanco")
         private String nombre;
     }
+
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class UpdateRequest{
+
+        @NotBlank(message = "El nombre de usuario no debe estar en blanco")
+        @Size(min = 3, max = 50, message = "El nombre de usuario debe tener entre 3 y 50 caracteres")
+        private String username;
+
+        @NotBlank(message = "La contrasena no debe estar en blanco")
+        @Size(min = 4, message = "La contrasena debe tener al menos 4 caracteres")
+        private String password;
+
+        @NotBlank(message = "El rol no debe estar en blanco")
+        private String rol;
+
+        @NotBlank(message = "El nombre no debe estar en blanco")
+        private String nombre;
+    }
+
+    @Data
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class UsuarioResponse{
+        private Integer idUsuario;
+
+        private String username;
+        private String rol;
+        private String nombre;
+    }
+
+
 }
